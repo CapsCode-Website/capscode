@@ -1,0 +1,48 @@
+[
+    {
+        "id":"1",
+        "avatarShortName": "R",
+        "teamMemberName": "Rahul",
+        "teamMemberImage": "./Images/rahul.png",   
+        "designation": "Founder",
+        "joinedDate": "20 JAN 2020",
+        "desc": "He is a Software Developer with a great experience of 3+ year working in top IT companies in India. He is a tech enthuastic and hunger to learn new technologies. He love to teach to give tranining and a good guidence and mentoship to the young future around the Nation. He is having great exerience in Web & App Development"
+
+    },
+    {
+        "id":"2",
+        "avatarShortName": "M",
+        "teamMemberName": "Mohit",
+        "teamMemberImage": "./Images/mohit.png",
+        "designation": "Co-Founder",
+        "joinedDate": "20 JAN 2020",
+        "desc": "i am a software developer expert"
+    },
+    {
+        "id":"3",
+        "avatarShortName": "P",
+        "teamMemberName": "Priyanka",
+        "teamMemberImage": "./Images/priyanka.png",
+        "designation": "Founder",
+        "joinedDate": "20 JAN 2020",
+        "desc": "i am a software developer expert"
+    },
+    {
+        "id":"5",
+        "avatarShortName": "P",
+        "teamMemberName": "Prabir",
+        "teamMemberImage": "./Images/prabir.png",
+        "designation": "Co-Founder",
+        "joinedDate": "20 JAN 2020",
+        "desc": "i am a software developer expert"
+    },
+    {
+        "id":"6",
+        "avatarShortName": "U",
+        "teamMemberName": "You ?",
+        "teamMemberImage": "./Images/prabir.png",
+        "designation": "CapsCode Member",
+        "joinedDate": "mm/dd/yyyy",
+        "desc": "He is a software developer expert and he writes tons of code.(You are 1 step behind of joining CapsCode, Just lean code and send resume to us and be the part of CapsCode in 2nd step. All the Best)"
+    }
+]

@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+AOS.init({
+  duration : 1000
+})
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,3 +22,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+

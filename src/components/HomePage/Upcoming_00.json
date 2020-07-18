@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "eventName": "Basics of programing",
+        "duration": "1hr",
+        "link": "https://teams.microsoft.com/join/ise1ltku0tw2",
+        "cardColor": "linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%)",
+        "date_time": "22 July 3pm IST",
+        "platform": "Hangout",
+        "type": "Online"
+    },
+    {
+        "id": "2",
+        "eventName": "HTML5 & CSS3",
+        "duration": "1hr",
+        "link": "www.google.com",
+        "cardColor": "linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%)",
+        "date_time": "22 July 3pm IST",
+        "platform": "Hangout",
+        "type": "Offline"
+    },
+    {
+        "id": "3",
+        "eventName": "JavaScript",
+        "duration": "1hr",
+        "link": "www.google.com",
+        "cardColor": "linear-gradient(to top, #feada6 0%, #f5efef 100%)",
+        "date_time": "22 July 3pm IST",
+        "platform": "Hangout",
+        "type": "Offline"
+    },
+    {
+        "id": "4",
+        "eventName": "Git/ GitHub",
+        "duration": "1hr",
+        "link": "www.google.com",
+        "cardColor": "linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%)",
+        "date_time": "22 July 3pm IST",
+        "platform": "Hangout",
+        "type": "Online"
+    },
+    {
+        "id": "5",
+        "eventName": "GraphQL",
+        "duration": "1hr",
+        "link": "www.google.com",
+        "cardColor": "linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%)",
+        "date_time": "22 July 3pm IST",
+        "platform": "Hangout",
+        "type": "Online"
+    }
+]

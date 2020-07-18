@@ -1,0 +1,35 @@
+
+a.social {
+    margin: 0 1rem;
+    transition: transform 280ms;
+    display: inline-block;
+  }
+
+  a.social:hover {
+    transform: translateY(-10px);
+  }
+
+  a.youtube {
+    color: #eb3223;
+  }
+  
+  a.facebook {
+    color: royalblue;
+  }
+  
+  a.twitter {
+    color: #49a1eb;
+  }
+  
+  a.instagram {
+    color: purple;
+  }
+
+  a.linkedin {
+      color: blue
+  }
+
+  a.whatsapp {
+      color: green
+  }
+
