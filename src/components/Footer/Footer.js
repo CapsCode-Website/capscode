@@ -42,11 +42,11 @@ export default function Footer() {
       <footer className={classes.footer}>
         
         <Container maxWidth="xs">
-          <Typography>share with the world and help us improving more</Typography>
+          <Typography>Join CapsCode community and help us spreading education across India and improving more</Typography>
         <Share/>
-          <Typography variant="body1">Welcome to the world of Learning Code. www.capscode.in</Typography>
+          <Typography variant="body1">Welcome to the world of Learning Code (www.capscode.in)</Typography>
           <Typography variant="body1">Address: No- 333, Hari OM Tower, Lalpur Ranchi, Jharkhand 834005</Typography>
-          <Typography variant="body1">Phone: 8986774801, 7858833371</Typography>
+          <Typography variant="body1">Phone: 08986774801, 07858833371</Typography>
           <Copyright />
         </Container>
       </footer>

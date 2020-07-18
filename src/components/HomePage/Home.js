@@ -115,9 +115,10 @@ function Home() {
                   >
                     <Typography varient='subtitle2' style={{ fontWeight: '600', }}>{e.eventName}</Typography>
                     <Divider />
-                    <Typography style={{ marginTop: '10px' }}>{`When: ${e.date_time}`}</Typography>
-                    <Typography>{`Duration: ${e.duration}`}</Typography>
-                    <Typography>{`Platofrm: ${e.platform}`}</Typography>
+                    <Typography style={{ marginTop: '10px' }}>{`Duration: ${e.duration}`}</Typography>
+                    <Typography>{`When: ${e.date_time}`}</Typography>
+                    <Typography>{`Platform: ${e.platform}`}</Typography>
+                    <Typography>{`Mode: ${e.type}`}</Typography>
                     <a href={e.link} target="_blank" style={{ textDecoration: 'none', fontWeight: '60px' }}><Typography style={{ fontWeight: '900', textAlign: 'center' }}>{`Click to join`}</Typography></a>
                   </Card>
                 </div>
