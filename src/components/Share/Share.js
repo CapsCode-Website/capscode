@@ -43,7 +43,7 @@ import {
           </a>
          
           <a
-            href="https://www.linkedin.com/capscode.in"
+            href="https://www.linkedin.com/in/capscode-in-6427331b2"
             target="_blank"
             className="linkedin social"
           >

@@ -26,3 +26,6 @@ and what is the use of  withRouter() HOC: very imp.
 
 //TODO:
 difference b/w withStyles and makeStyle
+
+//TODO:
+make 1 please wait of 404 page so whenver i require to make the visitor wait for some events then redirect them to this page

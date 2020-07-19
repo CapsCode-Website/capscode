@@ -218,7 +218,9 @@ export default function Aboutus(){
             </Grid>
 
           </Grid>
-
+          
+          <Divider/>
+          <h2 style={{textAlign:'center'}}>TEAM</h2>
           <Grid container  className={classes.team} style={{backgroundColor:'white'}}>
             {
               About.map((a,i)=>{

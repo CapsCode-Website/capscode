@@ -80,7 +80,8 @@ function Home() {
               padding:'8px',
               marginRight:'10px',
               borderRadius:'40px'}}>
-              <a href="https://capscodequiz.netlify.app/" target="_blank" style={{textDecoration: 'none',}}>
+              {/* <a href="https://capscodequiz.netlify.app/" target="_blank" style={{textDecoration: 'none',}}> */}
+              <a href="https://capscodecomingsoon.netlify.app/" target="_blank" style={{textDecoration: 'none',}}>
               <Grid item sm={12} md={12} lg={12} style={{
                   fontSize:'12px',
                   padding:'15px',
