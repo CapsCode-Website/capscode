@@ -5,19 +5,21 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Share from '../Share/Share'
-
-
+import { Divider } from '@material-ui/core';
 
 function Copyright() {
   return (
+    <>
     <Typography variant="body2" color="textSecondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://capscode.in/">
+      <Link color="inherit" href="https://www.capscode.in/">
         CapsCode.in
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+    
+    </>
   );
 }
 
@@ -31,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
   },
+
 }));
 
 export default function Footer() {
@@ -48,8 +51,14 @@ export default function Footer() {
           <Typography variant="body1">Address: No- 333, Hari OM Tower, Lalpur Ranchi, Jharkhand 834005</Typography>
           <Typography variant="body1">Phone: 08986774801, 07858833371</Typography>
           <Copyright />
+          <Typography>&#8594;TERMS AND CONDITIONS</Typography>
+          <Typography>&#8594;Disclaimer</Typography>
+          <Typography>&#8594;Privacy Policy</Typography>
+          <Divider/>
+          <Typography small color="textSecondary"style={{textAlign:'center'}}>Version: BETA</Typography>
         </Container>
       </footer>
+      
     </div>
   );
 }

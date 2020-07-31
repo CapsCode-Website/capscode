@@ -56,11 +56,12 @@ function Home() {
   localStorage.setItem('currentTab', 0) //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
   return (
-    <div className={classes.root} style={{ backgroundImage: `url(${backimage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className={classes.root} style={{backgroundColor:'white', backgroundImage: `url(${backimage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <Typography component="div" style={{ paddingLeft: '20px', paddingTop: '10px' }}>
         <Box fontWeight="fontWeightBold" textAlign="left"  m={1} letterSpacing={5} fontSize={30}>
           WELCOME TO CAPSCODE.IN
         </Box>
+        <small>(WE TEACH CODE TO KIDS STARTING FROM AGE OF 10 YRS.)</small>
       </Typography>
       <Grid container style={{ animation: 'pulse', animationDuration: '3s', height: '100%', minHeight: '95.5vh' }}>
         <Grid item sm={12} md={6} lg={6} style={{width: '100%', paddingLeft: '10px', paddingRight: '1 0px' }}>
@@ -70,6 +71,7 @@ function Home() {
             <Box fontWeight="fontWeightBold" m={1} fontSize={17}>LETS JOIN US ONLINE OR OFFLINE AND WRITE SOME CODE, EXPLORE THE NEW TECHNOLOGIES AND GET GUIDENCE FROM OUR EXPERTS</Box>
             <Box fontWeight="fontWeightBold" m={1} fontSize={17}>START WRITING CODE FROM THE VERY NEXT DAY YOU HAVE JOINED CapsCode.in</Box>
             <Box fontWeight="fontWeightBold" m={1} fontSize={17}>SO, WHAT ARE YOU WAITING FOR !!! </Box>
+            {/* <Box fontWeight="fontWeightBold" m={1} fontSize={17}>WE TEACH CODE FROM  </Box> */}
             <Box fontWeight="fontWeightBold" m={1} fontSize={17}>CHECK UPCOMING EVENTS BELOW  &darr;</Box>
             
 
@@ -80,8 +82,8 @@ function Home() {
               padding:'8px',
               marginRight:'10px',
               borderRadius:'40px'}}>
-              {/* <a href="https://capscodequiz.netlify.app/" target="_blank" style={{textDecoration: 'none',}}> */}
-              <a href="https://capscodecomingsoon.netlify.app/" target="_blank" style={{textDecoration: 'none',}}>
+              <a href="https://ccquiz.netlify.app/" target="_blank" style={{textDecoration: 'none',}}>
+              {/* <a href="https://capscodecomingsoon.netlify.app/" target="_blank" style={{textDecoration: 'none',}}> */}
               <Grid item sm={12} md={12} lg={12} style={{
                   fontSize:'12px',
                   padding:'15px',

@@ -125,7 +125,7 @@ function SideNavigation(props) {
           >
             <MenuIcon />
           </IconButton>
-          <a href="https://www.capscode.in" target="_blank" style={{textDecoration: 'none',width:'4.5em', height:'3em',}}>
+          <a href="https://www.capscode.in" target="_self" style={{textDecoration: 'none',width:'4.5em', height:'3em',}}>
             <img style={{width:'4em', height:'2.5em', paddingLeft:'7px'}} src={require('./cap.png')} alt="capscode" />
           </a>
           {/* <Typography style={{textShadow: '2px 2px 5px yellow'}} variant="h6" noWrap>

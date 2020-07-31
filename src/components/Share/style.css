@@ -33,6 +33,10 @@ a.social {
       color: green
   }
 
+  a.github {
+    color: black
+}
+
   a.gmail {
     color:orangered
   }

@@ -8,6 +8,7 @@ import {
   faWhatsapp,
   faLinkedin,
   faGooglePlus,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
   class Share extends React.Component{
@@ -36,14 +37,14 @@ import {
 
 
           <a 
-          href="https://www.twitter.com/capscode.in" 
+          href="https://www.twitter.com/capscodeindia" 
           target="_blank"
           className="twitter social">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
          
           <a
-            href="https://www.linkedin.com/in/capscode-in-6427331b2"
+            href="https://www.linkedin.com/in/capscode"
             target="_blank"
             className="linkedin social"
           >
@@ -56,6 +57,15 @@ import {
             className="instagram social"
           >
             <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </a>
+
+
+          <a
+            href="https://github.com/capscode"
+            target="_blank"
+            className="github social"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
 
 
