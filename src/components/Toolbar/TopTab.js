@@ -52,7 +52,7 @@ function TopTab() {
       {/* <Typography variant="h6" noWrap style={{textShadow: '2px 2px 5px yellow',paddingLeft: '15px', paddingTop: '5px', color:'black'}}>
             {"< CapsCode />"}
       </Typography> */}
-      <a href="https://www.capscode.in" target="_self" style={{textDecoration: 'none',width:'5.5em', height:'3em'}}>
+      <a href="https://www.capscode.in" target="_self" style={{textDecoration: 'none'}}>
         <img style={{width:'5em', height:'2.5em', paddingLeft:'20px',paddingTop:'3px'}} src={require('./cap.png')} alt="capscode" />
       </a>
       <Tabs

@@ -200,7 +200,8 @@ const [CourseFile, setCourseFile] = useState([]);
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">{c.coursePrice}</Typography>
+              {/* <Typography variant="subtitle1">{c.coursePrice}</Typography> */}
+              <Typography variant="subtitle1">Chargeable</Typography>
             </Grid>
           </Grid>
           

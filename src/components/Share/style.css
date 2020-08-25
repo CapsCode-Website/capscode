@@ -14,7 +14,7 @@ a.social {
   }
   
   a.facebook {
-    color: royalblue;
+    color: #3b5998;
   }
   
   a.twitter {
@@ -22,22 +22,22 @@ a.social {
   }
   
   a.instagram {
-    color: purple;
+    color: rgb(170, 11, 136);
   }
 
   a.linkedin {
-      color: blue
+      color: #0e76a8;
   }
 
   a.whatsapp {
-      color: green
+      color: green;
   }
 
   a.github {
-    color: black
+    color: black;
 }
 
   a.gmail {
-    color:orangered
+    color:#B23121;
   }
 

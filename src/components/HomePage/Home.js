@@ -61,9 +61,9 @@ function Home() {
         <Box fontWeight="fontWeightBold" textAlign="left"  m={1} letterSpacing={5} fontSize={30}>
           WELCOME TO CAPSCODE.IN
         </Box>
-        <small>(WE TEACH CODE TO KIDS STARTING FROM AGE OF 10 YRS.)</small>
+        <small>(WE TEACH CODE TO EVERYONE STARTING FROM AGE OF 10 YRS.)</small>
       </Typography>
-      <Grid container style={{ animation: 'pulse', animationDuration: '3s', height: '100%', minHeight: '95.5vh' }}>
+      <Grid container style={{ animation: 'pulse', animationDuration: '1s', height: '100%', minHeight: '95.5vh' }}>
         <Grid item sm={12} md={6} lg={6} style={{width: '100%', paddingLeft: '10px', paddingRight: '1 0px' }}>
           <Typography component="div">
             <Box fontWeight="fontWeightBold" m={1} fontSize={17}>WANT TO BECOME A CODER?<br/>WANT TO GET READY FOR FUTURE? WANT TO MAKE YOUR KID READY FOR FUTURE? <br/>NEED GUIDENCE IN LIFE?</Box>
@@ -90,18 +90,18 @@ function Home() {
                   borderRadius:'35px',
                   backgroundImage: 'linear-gradient(147deg, #000000 0%, #434343 74%)',
                   color:'yellow'}}>
-                  <b>CLICK TO TAKE PART IN WEEKLY QUIZ AND WIN EXCITING PRIZES AND CASH PRIZES ALSO!</b>
+                  <b>CLICK TO TAKE PART IN MONTHLY QUIZ "CapsQuiz" AND WIN EXCITING PRIZES AND CASH PRIZES ALSO!</b>
               </Grid>
             </a>
             
             </Grid>
            
             
-            <Box fontWeight="fontWeightBold" m={1} fontSize={10}>(We are now available at Ranchi for Offline course)</Box>
+            <Box fontWeight="fontWeightBold" m={1} fontSize={10}>(We are now available at Ranchi for Offline courses)</Box>
           </Typography>
         </Grid>
         <Grid item sm={12} md={6} lg={6} style={{ padding: '10px', justifyContent: 'flex-end', }}>
-          <img style={{ animation: 'bounceInDown', animationDuration: '2s', width: '89%', height: '90%', paddingLeft: '10px' }} src={require('./innovation_.png')} alt="capscode.in" />
+          <img style={{ animation: 'bounceInDown', animationDuration: '1.5s', width: '89%', height: '90%', paddingLeft: '10px' }} src={require('./innovation_.png')} alt="capscode.in" />
         </Grid>
       </Grid>
 
@@ -122,7 +122,7 @@ function Home() {
                     <Typography>{`When: ${e.date_time}`}</Typography>
                     <Typography>{`Platform: ${e.platform}`}</Typography>
                     <Typography>{`Mode: ${e.type}`}</Typography>
-                    <a href={e.link} target="_blank" style={{ textDecoration: 'none', fontWeight: '60px' }}><Typography style={{ fontWeight: '900', textAlign: 'center' }}>{`Click to join`}</Typography></a>
+                    <a href={e.link} target="_blank" style={{ textDecoration: 'none', fontWeight: '60px' }}><Typography style={{ fontWeight: '900', textAlign: 'center' }}>{`Click to register`}</Typography></a>
                   </Card>
                 </div>
               </Grid>
