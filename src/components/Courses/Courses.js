@@ -1,36 +1,39 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-// import CourseFile from './Courses.json';
 import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {withRouter} from 'react-router';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Loader from '../Loading/Loader'
+import { Button } from '@material-ui/core';
+import CourseForm from './CourseForm'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    minHeight: '100vh',
-    margin:'30px',
-    marginTop: '90px',
+    // minHeight: '100vh',
+    margin: '30px',
+    marginTop: '98px'
   },
   paper: {
     marginTop: '20px',
-    borderRadius:'10px',
+    borderRadius: '10px',
     padding: '20px',
-    width:'100%',
+    width: '100%',
     // boxShadow: '0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     // boxShadow: '0 17px 15px 0 rgba(0,0,0,0.2)',
     transition: 'transform .05s',
     "&:hover": {
       // boxShadow: '0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-      boxShadow: '0 20px 40px rgba(59, 43, 91, 0.7)',
-      transform: 'scale(1.03)',
+      boxShadow: '0 10px 30px rgba(59, 43, 91, 0.7)',
+      transform: 'scale(1.02)',
     },
   },
   image: {
@@ -46,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
     minWidth: '100%',
     minHeight: '100%'
-    
+
   },
 }));
 
@@ -100,35 +103,33 @@ const ExpansionPanelDetails = withStyles((theme) => ({
 export default function Courses() {
 
 
-  
-//added on 05th July:
-const [error, setError] = useState(null);
-const [isLoaded, setIsLoaded] = useState(false);
-const [CourseFile, setCourseFile] = useState([]);
 
+  //added on 05th July:
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [CourseFile, setCourseFile] = useState([]);
+  const [open, setOpen] = React.useState(false);
+  const [subjectRequestedFor, setSubjectRequestedFor] = React.useState("")
 
 
   useEffect(() => {
-      fetch("https://rahulnag.github.io/capscodefiles/Courses.json")
-        .then(res => res.json())
-        .then(
-          (result) => {
-            // console.log(".........."+result)
-            setIsLoaded(true);
-            setCourseFile(result);
-            
-          },
-          (error) => {
-            setIsLoaded(true);
-            setError(error);
-          }
-        )
-    }, [])
+    window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
 
+    fetch("https://rahulnag.github.io/capscodefiles/Courses.json")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(".........."+result)
+          setIsLoaded(true);
+          setCourseFile(result);
 
-
-
-
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
 
 
   localStorage.setItem('currentTab', 1);
@@ -141,96 +142,110 @@ const [CourseFile, setCourseFile] = useState([]);
   }
 
 
-  window.addEventListener("storage",(e) => {
-    // console.log("ccccccoooooouuuuuurrs"+e.newValue)
-    // localStorage.setItem('currentTab', e.newValue);
-  //  handleChange(null, e.newValue);  
-  });
-  
-
+  const handleClickOpen = (s) => {
+    console.log(s)
+    setSubjectRequestedFor(s)
+    setOpen(true);
+  };
 
 
 
   if (error) {
-    return <div style={{paddingTop:'40vh'}}>Error : {error.message} (Check Internet Connection Once)</div>;
+    return <div style={{ paddingTop: '40vh' }}><Loader />Error : {error.message} (Check Internet Connection Once)</div>;
   } else if (!isLoaded) {
-    return <div style={{paddingTop:'40vh'}}>Loading...Please wait</div>;
+    return <div style={{ paddingTop: '40vh' }}><Loader />Loading...Please wait</div>;
   } else {
-    
 
 
 
-  return (
 
-    <div className={classes.root}>
-      {
-      CourseFile.map((c, i)=> {
-        return(
-          <div key={i} data-aos="fade-down-right">
-        <Paper className={classes.paper}>
-        <Grid container spacing={1}>
-          <Grid item xs={12} sm={6} md={3}>
-            {/* below commented code is the one when the image was used locally */}
-            {/* <ButtonBase className={classes.image}>
+    return (
+      <div className={classes.root}>
+        <CourseForm open={open} setOpen={setOpen} subjectRequestedFor={subjectRequestedFor} />
+        <CssBaseline />
+        <div style={{ color: '#535C68' }}>
+          <Typography variant="h4">
+            WE TEACH YOU LIVE &#128994;
+          </Typography>
+          <Typography gutterBottom variant="subtitle1">
+            ONCE YOU TOOK UP ANY OF THE BELOW COURSES OUR TEAM WILL CONTACT YOU TO CONFIRM YOU AVAILABILTY
+          </Typography>
+        </div>
+        {
+          CourseFile.map((c, i) => {
+            return (
+              <div key={i} data-aos="zoom-in">
+                <Paper className={classes.paper}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12} sm={6} md={3}>
+                      {/* below commented code is the one when the image was used locally */}
+                      {/* <ButtonBase className={classes.image}>
               <img className={classes.img} alt="course image" src={require(`${c.image}`)} />
             </ButtonBase> */}
-            <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="course image" src={c.image}/>
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm={6} md={9} container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
-                  {c.courseName}
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  {c.courseDescrption}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  {c.courseDuration}
-                </Typography>
-              </Grid>
-              <Grid item>
-                {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
+                      <ButtonBase className={classes.image}>
+                        <img className={classes.img} alt="course" src={c.image} />
+                      </ButtonBase>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={9} container>
+                      <Grid item xs container direction="column" spacing={2}>
+                        <Grid item xs>
+                          <Typography gutterBottom variant="subtitle1">
+                            {c.courseName}
+                          </Typography>
+                          <Typography variant="body2" gutterBottom>
+                            {c.courseDescrption}
+                          </Typography>
+                          <Typography variant="body2" color="textSecondary">
+                            Course Duration: {c.courseDuration}
+                          </Typography>
+                        </Grid>
+                        <Grid item>
+                          {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   Click to get syllabus
               </Typography> */}
 
 
-              </Grid>
-            </Grid>
-            <Grid item>
-              {/* <Typography variant="subtitle1">{c.coursePrice}</Typography> */}
-              <Typography variant="subtitle1">Chargeable</Typography>
-            </Grid>
-          </Grid>
-          
-        </Grid>
-        <ExpansionPanel expanded={expanded === i} onChange={handleChange(i)}>
-              <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
-                <Typography style={{marginBottom:'12px',textAlign:'center', color:'grey'}}><b>Click to get syllabus</b></Typography>
-                <ExpandMoreIcon/>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  {
-                    c.syllabus.map((c,i) => {
-                      return (
-                      <Typography key={i}>
-                        {c}
+                        </Grid>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle1">{c.coursePrice}</Typography>
+                        <Typography variant="subtitle1">
+                          <span 
+                            onClick={() => handleClickOpen(c.courseName)} 
+                            style={{ cursor:'default' ,textDecoration: 'none', color: '#ff6700' }}>
+                              Click To Enroll
+                            </span>
+                          </Typography>
+                      </Grid>
+                    </Grid>
+
+                  </Grid>
+                  <ExpansionPanel expanded={expanded === i} onChange={handleChange(i)}>
+                    <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
+                      <Typography style={{ marginBottom: '12px', textAlign: 'center', color: 'grey' }}><b>Click to get syllabus</b></Typography>
+                      <ExpandMoreIcon />
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                      <Typography>
+                        {
+                          c.syllabus.map((c, i) => {
+                            return (
+                              <Typography key={i}>
+                                {c}
+                              </Typography>
+                            )
+                          })
+                        }
                       </Typography>
-                      )
-                    })
-                  }
-                </Typography>
-              </ExpansionPanelDetails>
-        </ExpansionPanel>
-      </Paper>
+                    </ExpansionPanelDetails>
+                  </ExpansionPanel>
+                </Paper>
+              </div>
+            )
+          })
+        }
       </div>
-        )
-      })
-      }
-    </div>
-  );
-}
+
+    );
+  }
 }

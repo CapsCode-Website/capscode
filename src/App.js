@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Home from './components/HomePage/Home'
 import Courses from './components/Courses/Courses'
-import {BrowserRouter, Route, HashRouter, Link} from 'react-router-dom'
+import {Route, HashRouter, Switch, Router, BrowserRouter} from 'react-router-dom'
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TopTab from './components/Toolbar/TopTab'
 import SideNavigation from './components/NavigationHandler/SideNavigation'
 import { Hidden } from '@material-ui/core';
 import Footer from './components/Footer/Footer'
 import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
-import ReactFullpage from "@fullpage/react-fullpage";
 import Aboutus from './components/AboutUs/Aboutus';
 import Contact from './components/ContactPage/Contact'
 import Career from './components/Career/Career'
-import { browserHistory } from 'react-router';
-
-// import BackgroundBlob from './components/BlobDesign/Blob'
+import Services from './components/Services/Services'
+import Tutorial from './components/Tutorial/Tutorial'
+import PageNotFound from './components/PageNotFound/PageNotFound'
 
 
 
@@ -37,16 +37,20 @@ class App extends React.Component {
       <div ><Hidden mdUp><SideNavigation/></Hidden></div>
       {/* I HAVE USED HashRouter THEN ONLY IT WORKED FINE HERE BELOW AND ASLO IN TOPTAB COMPONENT*/}
       
+      {/* <BrowserRouter> */}
       <HashRouter>
+        <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/course' component={Courses}/>
-        <Route exact path='/career' component={Career}/>
+        <Route exact path='/blog' component={Career}/>
         <Route exact path='/aboutus' component={Aboutus}/>
         <Route exact path='/contact' component={Contact}/>
-        {/* <Route exact path='/blog' component={Blog}/>
-        <Route exact path='/gallery' component={Gallery}/>
-        <Route exact path='/services' component={Services}/> */}
+        <Route exact path='/services' component={Services}/>
+        <Route exact path='/tutorials' component={Tutorial}/>
+        <Route component={PageNotFound}/>
+        </Switch>
       </HashRouter>
+      {/* </BrowserRouter> */}
       
       <Footer/>
       </>
@@ -82,10 +86,10 @@ class App extends React.Component {
                 {/* <div className="slide">
                   <h3>Slide 2.2</h3>
                 </div> */}
-                {/* <div className="slide">
+                /* <div className="slide">
                   <h3>Slide 2.3</h3>
-                </div> */}
-              {/* </div>
+                </div> */
+              /* </div>
               <div className="section">
                   <Footer />
                 <button onClick={() => fullpageApi.moveTo(1, 0)}>
@@ -97,7 +101,5 @@ class App extends React.Component {
         }}
       /> */
   
-  
-}
 
 export default App;

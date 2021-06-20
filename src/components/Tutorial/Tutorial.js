@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
   heroContent: {
     marginTop: '30px',  
-    padding: theme.spacing(8, 0, 6),    
+    padding: theme.spacing(8, 0, 6),
   },
   cardHeader: {
     backgroundColor:
@@ -34,9 +34,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:'20px',
     maxWidth: 304,
     margin: "auto",
+  
     boxShadow: "0 8px 40px -12px rgba(0,0,0,3.3)",
     "&:hover": {
-      boxShadow: "0 19px 70px -12.125px #FC824A"
+      boxShadow: "0 19px 70px -12.125px rgba(110,190,0,8.3)"
     },
   },
   cardPricing: {
@@ -45,11 +46,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
   },
+  cardContent: {
+    minHeight: 150,
+  }
 }));
 
 
 export default function Pricing() {
-    localStorage.setItem('currentTab', 2)
+  localStorage.setItem('currentTab', 6)
     
   const classes = useStyles();
 
@@ -61,8 +65,7 @@ export default function Pricing() {
   
   
     useEffect(() => {
-        window.scrollTo(0,0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
-        fetch("https://rahulnag.github.io/capscodefiles/Services.json")
+        fetch("https://rahulnag.github.io/capscodefiles/Tutorials.json")
           .then(res => res.json())
           .then(
             (result) => {
@@ -83,55 +86,30 @@ export default function Pricing() {
       if (error) {
         return <div style={{paddingTop:'40vh'}}><Loader/>Error : {error.message} (Check Internet Connection Once)</div>;
       } else if (!isLoaded) {
-        return <div style={{paddingTop:'40vh'}}><Loader/>Loading...Please wait</div>;
+        return <div style={{paddingTop:'40vh'}}><Loader/> Loading...Please wait</div>;
       } else {
   
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="md" component="main" className={classes.heroContent}>
-        
-        <Typography component="h1" variant="h4" align="center" color="textPrimary" gutterBottom>
-            Our Services
-        </Typography>
-        {/* <Typography variant="h6" align="center" color="textSecondary" component="p">
-            We teach CODE to your children so that they can build app or website for you. Else we have a wonderful development team to BUILD one for you.
-        </Typography> */}
-
-        <Typography variant="h6" align="center" component="p" style={{color:'#EA7773', backgroundColor:'rgb(245, 245, 245)', borderRadius:'20px'}}>
-            Offer Price (Ending on 30th April 2021)
-        </Typography>
-        
-
-      </Container>
-      {/* End hero unit */}
-      <Container maxWidth="md" component="main" style={{  minHeight: '130vh'}}>
+        </Container>
+      <Container maxWidth="lg" component="main" style={{  minHeight: '130vh',}}>
         <Grid container spacing={5} alignItems="flex-end">
           {MyServices.map((tier) => (
             // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={6} md={4}>
+            <Grid item key={tier.title} xs={12} sm={6} md={3}>
               <Card className={classes.serviceCard}> 
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Ultimate' ? <StarIcon /> : null}
+                  action={ <StarIcon /> }
                   className={classes.cardHeader}
                   color= 'dark'
                 />
-                <CardContent>
-                  <div className={classes.cardPricing}>
-                  <Typography variant="h5" color="textPrimary">
-                      INR 
-                    </Typography>
-                    <Typography component="h2" variant="h3" color="textPrimary">
-                     {tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /-
-                    </Typography>
-                  </div>
+                <CardContent className={classes.cardContent}>
                   <ul>
                     {tier.description.map((line) => (
                       <Typography component="li" variant="subtitle1" align="center" key={line}>
@@ -141,7 +119,7 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                <a href={tier.whatsapp} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', width:'100%'}}>
+                <a href={tier.link} target="parent" style={{textDecoration:'none', width:'100%'}}>
                   <Button color='default' fullWidth variant={tier.buttonVariant} style={{borderRadius:'20px'}}>
                     {tier.buttonText}
                   </Button>
@@ -152,12 +130,6 @@ export default function Pricing() {
           ))}
         </Grid>
       </Container>
-
-      
-      <Typography variant="h6" align="center" color="secondary" component="p" style={{marginTop:'50px'}}>
-            NOTE: All Charges are negotiable and upon custumization price may decrease as well.
-      </Typography>
-
     </React.Fragment>
   );
 }

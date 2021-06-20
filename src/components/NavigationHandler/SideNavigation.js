@@ -1,22 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import {Link,HashRouter,withRouter} from 'react-router-dom'
+import {Link,HashRouter} from 'react-router-dom'
 
 
 const drawerWidth = 240;
@@ -33,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    backgroundColor:'white',
+    backgroundColor:'#fcf3f2', 
+    boxShadow: 'none',
     borderBottomRightRadius: '70px',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -48,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     borderBottomRightRadius: '30px',
-    borderTopRightRadius: '30px'
+    borderTopRightRadius: '30px',
+    backgroundColor:'#fcf3f2',
   },
   content: {
     flexGrow: 1,
@@ -95,12 +90,12 @@ function SideNavigation(props) {
       <HashRouter>
           <ListItem selected={selected === 0} divider button component={Link} to='/'><ListItemText onClick={()=> setter(0)}>Home</ListItemText></ListItem> 
           <ListItem selected={selected === 1} divider button component={Link} to='/course'><ListItemText onClick={()=> setter(1)}>Courses</ListItemText></ListItem> 
-          <ListItem selected={selected === 2} divider button component={Link} to='/career'><ListItemText onClick={()=> setter(2)}>Career</ListItemText></ListItem>  
-          <ListItem selected={selected === 3} divider button component={Link} to='/aboutus'><ListItemText onClick={()=> setter(3)}>About Us</ListItemText></ListItem> 
-          <ListItem selected={selected === 4}  button component={Link} to='/contact'><ListItemText onClick={()=> setter(4)}>Contact</ListItemText></ListItem> 
-          {/* <ListItem selected={selected === 5} divider button component={Link} to='/blog'><ListItemText onClick={()=> setter(5)}>Blog</ListItemText></ListItem>
-          <ListItem selected={selected === 6} divider button component={Link} to='/gallery'><ListItemText onClick={()=> setter(6)}>Gallery</ListItemText></ListItem>
-          <ListItem selected={selected === 7} button component={Link} to='/services'><ListItemText onClick={()=> setter(7)}>Services</ListItemText></ListItem> */}
+          <ListItem selected={selected === 2} divider button component={Link} to='/services'><ListItemText onClick={()=> setter(2)}>Services</ListItemText></ListItem>
+          <ListItem selected={selected === 3} divider button component={Link} to='/blog'><ListItemText onClick={()=> setter(3)}>Blogs</ListItemText></ListItem>  
+          <ListItem selected={selected === 4} divider button component={Link} to='/aboutus'><ListItemText onClick={()=> setter(4)}>About Us</ListItemText></ListItem> 
+          <ListItem selected={selected === 5} divider button component={Link} to='/contact'><ListItemText onClick={()=> setter(5)}>Contact</ListItemText></ListItem> 
+          <ListItem selected={selected === 6} divider button component={Link} to='/tutorials'><ListItemText onClick={()=> setter(6)}>Tutorials</ListItemText></ListItem>
+          {/* <ListItem selected={selected === 6} divider button component={Link} to='/gallery'><ListItemText onClick={()=> setter(6)}>Gallery</ListItemText></ListItem> */}
         </HashRouter>
       </List>
     </div>

@@ -1,13 +1,14 @@
-import React , { useEffect, useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {Link,HashRouter,withRouter,useLocation } from 'react-router-dom'
-import Typography from '@material-ui/core/Typography';
+import {Link,HashRouter } from 'react-router-dom'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
+import PropTypes from 'prop-types';
+
 
 const useStyles = makeStyles({
   root: {
@@ -15,8 +16,30 @@ const useStyles = makeStyles({
   },
 });
 
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
-function TopTab() {
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+function TopTab(props) {
   const classes = useStyles();
 
   // console.log("mmmmmmmmmmmmmmm"+localStorage.getItem('currentTab'))
@@ -48,36 +71,39 @@ function TopTab() {
        {/* I HAVE USED HashRouter THEN ONLY IT WORKED FINE HERE BELOW AND ASLO IN APP.JS COMPONENT*/}
       <HashRouter>
       <CssBaseline />
-      <AppBar position="fixed"  style={{borderBottomRightRadius:'70px',backgroundColor:'white'}}>
+      <HideOnScroll {...props}>
+      <AppBar position="fixed"  style={{borderBottomRightRadius:'70px',backgroundColor:'#fef3f4', boxShadow: 'none', paddingTop:'0'}}>
       {/* <Typography variant="h6" noWrap style={{textShadow: '2px 2px 5px yellow',paddingLeft: '15px', paddingTop: '5px', color:'black'}}>
             {"< CapsCode />"}
       </Typography> */}
       <a href="https://www.capscode.in" target="_self" style={{textDecoration: 'none'}}>
-        <img style={{width:'5em', height:'2.5em', paddingLeft:'20px',paddingTop:'3px'}} src={require('./cap.png')} alt="capscode" />
+        <img style={{width:'5em', height:'2.5em', paddingLeft:'15px',paddingTop:'3px'}} src={require('./cap.png')} alt="capscode" />
       </a>
       <Tabs
         value={value}
         onChange={handleChange}
         indicatorColor="secondary"
-        textColor="primary"
-        // variant="scrollable" //this is commented as both varient:scrollable and centered will not work together
+        textColor= "secondary"
+        variant="scrollable" //this is commented as both varient:scrollable and centered will not work together
         scrollButtons="auto"  //on
         aria-label="scrollable auto tabs example"   
-        centered     
+        centered='true'    
+        
 
       >
         <Tab label="Home" component={Link} to='/' value={0} />
         <Tab label="Courses" component={Link} to='/course' value={1}/>
-        <Tab label="Career" component={Link} to='/career'value={2}/>
-        <Tab label="About Us" component={Link} to='/aboutus' value={3}/>
-        <Tab label="Contact" component={Link} to='/contact' value={4}/>
-        {/* <Tab label="Blog" component={Link} to='/blog' value={5}/>
-        <Tab label="Gallery" component={Link} to='/gallery' value={6}/>
-        <Tab label="Services" component={Link} to='/services' value={7}/> */}
+        <Tab label="Services" component={Link} to='/services' value={2}/>
+        <Tab label="Blogs" component={Link} to='/blog'value={3}/>
+        <Tab label="About Us" component={Link} to='/aboutus' value={4}/>
+        <Tab label="Contact" component={Link} to='/contact' value={5}/>
+        <Tab label="Tutorials" component={Link} to='/tutorials' value={6}/>
+        {/* <Tab label="Gallery" component={Link} to='/gallery' value={7}/> */}
+        
       </Tabs>
       
       </AppBar>
-
+      </HideOnScroll>
       </HashRouter>
     </div>
   );

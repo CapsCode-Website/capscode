@@ -1,25 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import { Divider } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-// import About from './About.json'
 import 'animate.css/animate.css' ;
-import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +84,8 @@ export default function Aboutus(){
 
 
   useEffect(() => {
+    window.scrollTo(0,0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
+
     fetch("https://rahulnag.github.io/capscodefiles/About.json")
       .then(res => res.json())
       .then(
@@ -113,7 +104,7 @@ export default function Aboutus(){
 
   
 
-  localStorage.setItem('currentTab', 3);
+  localStorage.setItem('currentTab', 4);
     const classes = useStyles();
 
 

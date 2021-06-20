@@ -9,6 +9,7 @@ import {
   faLinkedin,
   faGooglePlus,
   faGithub,
+  faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
 
   class Share extends React.Component{
@@ -20,6 +21,7 @@ import {
             <a
             href="https://www.facebook.com/capscode.in/"
             target="_blank"
+            rel="noopener noreferrer"
             className="facebook social"
           >
             <FontAwesomeIcon icon={faFacebook} size="2x" />
@@ -29,6 +31,7 @@ import {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=capscode.in@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
             className="gmail social"
           >
             <FontAwesomeIcon icon={faGooglePlus} size="2x" />
@@ -39,6 +42,7 @@ import {
           <a 
           href="https://www.twitter.com/capscodeindia" 
           target="_blank"
+          rel="noopener noreferrer"
           className="twitter social">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
@@ -46,23 +50,34 @@ import {
           <a
             href="https://www.linkedin.com/in/capscode"
             target="_blank"
+            rel="noopener noreferrer"
             className="linkedin social"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
 
           <a
-            href="https://www.instagram.com/capscode.in"
+            href="https://www.instagram.com/capscode"
             target="_blank"
+            rel="noopener noreferrer"
             className="instagram social"
           >
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
 
+          <a
+            href="https://telegram.me/capscode"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="telegram social"
+          >
+            <FontAwesomeIcon icon={faTelegram} size="2x" />
+          </a>
 
           <a
             href="https://github.com/capscode"
             target="_blank"
+            rel="noopener noreferrer"
             className="github social"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
@@ -72,6 +87,7 @@ import {
           <a
             href="https://chat.whatsapp.com/LkNgfPA8h4gBR6EFCHSUoY"
             target="_blank"
+            rel="noopener noreferrer"
             className="whatsapp social"
           >
             <FontAwesomeIcon icon={faWhatsapp} size="2x" />

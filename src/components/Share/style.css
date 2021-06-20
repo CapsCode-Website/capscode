@@ -25,6 +25,10 @@ a.social {
     color: rgb(170, 11, 136);
   }
 
+  a.telegram {
+    color: rgb(53, 100, 231);
+  }
+
   a.linkedin {
       color: #0e76a8;
   }
@@ -34,7 +38,7 @@ a.social {
   }
 
   a.github {
-    color: black;
+    color: white;
 }
 
   a.gmail {
