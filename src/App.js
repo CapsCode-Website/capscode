@@ -18,7 +18,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound'
 
 
 
-class App extends React.Component {
+function App()  {
 
   // onLeave(origin, destination, direction) {
   //   console.log("Leaving section " + origin.index);
@@ -29,19 +29,15 @@ class App extends React.Component {
 
 
 
-  render(){
     return(
       <>
       <CssBaseline/>
       <div ><Hidden smDown><TopTab/></Hidden></div>
       <div ><Hidden mdUp><SideNavigation/></Hidden></div>
       {/* I HAVE USED HashRouter THEN ONLY IT WORKED FINE HERE BELOW AND ASLO IN TOPTAB COMPONENT*/}
-      
-      {/* <BrowserRouter> */}
-      <HashRouter>
         <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/course' component={Courses}/>
+        <Route exact path='/course' component={Courses} />
         <Route exact path='/blog' component={Career}/>
         <Route exact path='/aboutus' component={Aboutus}/>
         <Route exact path='/contact' component={Contact}/>
@@ -49,12 +45,9 @@ class App extends React.Component {
         <Route exact path='/tutorials' component={Tutorial}/>
         <Route component={PageNotFound}/>
         </Switch>
-      </HashRouter>
-      {/* </BrowserRouter> */}
-      
       <Footer/>
       </>
-    )}
+    )
 
 
     // return(

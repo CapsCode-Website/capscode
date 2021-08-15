@@ -13,7 +13,7 @@ const encode = (data) => {
       .join("&");
 }
 
-function Contact(){
+const Contact=()=>{
   useEffect(()=>{
     localStorage.setItem('currentTab', 5);
   },[])
@@ -138,6 +138,5 @@ function Contact(){
     </Grid>
   )
   }
-
 
   export default Contact;

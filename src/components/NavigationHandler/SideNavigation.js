@@ -87,7 +87,7 @@ function SideNavigation(props) {
       <div className={classes.toolbar} />
       {/* added onClick to handle the drawwe as if it is open the close it  */}
       <List onClick={handleDrawerToggle}> 
-      <HashRouter>
+      {/* <HashRouter> */}
           <ListItem selected={selected === 0} divider button component={Link} to='/'><ListItemText onClick={()=> setter(0)}>Home</ListItemText></ListItem> 
           <ListItem selected={selected === 1} divider button component={Link} to='/course'><ListItemText onClick={()=> setter(1)}>Courses</ListItemText></ListItem> 
           <ListItem selected={selected === 2} divider button component={Link} to='/services'><ListItemText onClick={()=> setter(2)}>Services</ListItemText></ListItem>
@@ -96,7 +96,7 @@ function SideNavigation(props) {
           <ListItem selected={selected === 5} divider button component={Link} to='/contact'><ListItemText onClick={()=> setter(5)}>Contact</ListItemText></ListItem> 
           <ListItem selected={selected === 6} divider button component={Link} to='/tutorials'><ListItemText onClick={()=> setter(6)}>Tutorials</ListItemText></ListItem>
           {/* <ListItem selected={selected === 6} divider button component={Link} to='/gallery'><ListItemText onClick={()=> setter(6)}>Gallery</ListItemText></ListItem> */}
-        </HashRouter>
+        {/* </HashRouter> */}
       </List>
     </div>
   );

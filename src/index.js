@@ -5,16 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 AOS.init({
   duration : 1000
 })
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+    </BrowserRouter>,
+  // </React>,
+
   document.getElementById('root')
 );
 

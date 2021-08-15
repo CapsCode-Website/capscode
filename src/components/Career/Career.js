@@ -117,7 +117,7 @@ export default function Career(){
       data: JSON.stringify({ query }),
     })
     .then((response)=>{
-      console.log(response.data.data.user.publication.posts)
+      // console.log(response.data.data.user.publication.posts)
       setData([...data,...response.data.data.user.publication.posts])
     })
   },[page])

@@ -142,7 +142,7 @@ export default function Pricing() {
                 </CardContent>
                 <CardActions>
                 <a href={tier.whatsapp} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', width:'100%'}}>
-                  <Button color='default' fullWidth variant={tier.buttonVariant} style={{borderRadius:'20px'}}>
+                  <Button color='default' variant={tier.buttonVariant} style={{borderRadius:'20px', width:'100%'}}>
                     {tier.buttonText}
                   </Button>
                 </a>
