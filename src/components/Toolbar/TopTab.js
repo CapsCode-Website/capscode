@@ -78,7 +78,7 @@ function TopTab(props) {
             paddingTop: "0",
           }}
         >
-          <a
+          {/* <a
             href="https://www.capscode.in"
             target="_self"
             style={{ textDecoration: "none" }}
@@ -93,7 +93,7 @@ function TopTab(props) {
               src={require("./cap.png")}
               alt="capscode"
             />
-          </a>
+          </a> */}
           <Tabs
             value={value}
             // onChange={handleChange}
