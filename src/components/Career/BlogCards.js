@@ -55,7 +55,7 @@ export default function BlogCards({ data, page, setPage }) {
                         <Grid item lg={3} md={4} sm={6} xs={12}>
                         {(i==data.length-1 ? setPage(1): null)}
 
-                        <a href={`https://blog.capscode.in/${b.slug}`} target="_blank" style={{textDecoration:'none'}}>
+                        <a href={`https://capscode.hashnode.dev/${b.slug}`} target="_blank" style={{textDecoration:'none'}}>
                         <Card  className={classes.root}>
                         <CardHeader
                             style={{height:'70px', fontWeight:'300px'}}
