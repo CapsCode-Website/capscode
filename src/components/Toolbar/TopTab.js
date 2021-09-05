@@ -98,7 +98,7 @@ function TopTab(props) {
             value={value}
             // onChange={handleChange}
             indicatorColor="secondary"
-            textcolor="secondary"
+            textColor="secondary"
             variant="scrollable" //this is commented as both varient:scrollable and centered will not work together
             scrollButtons="auto" //on
             aria-label="scrollable auto tabs example"

@@ -133,7 +133,7 @@ const Contact=()=>{
       </Grid>
 
       <Grid item lg={5} md={5} sm={8} xs={8} >
-        <img alt='contact_us' style={{paddingTop: '10px',height: '70%', width:'70%' }} src={img} />
+        <img alt='contact_us' style={{paddingTop: '10px',height: '70%', width:'70%' }} src={img} alt="contact"/>
       </Grid>
     </Grid>
   )

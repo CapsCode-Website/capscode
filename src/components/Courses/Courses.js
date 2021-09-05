@@ -183,7 +183,7 @@ export default function Courses() {
               <img className={classes.img} alt="course image" src={require(`${c.image}`)} />
             </ButtonBase> */}
                       <ButtonBase className={classes.image}>
-                        <img className={classes.img} alt="course" src={c.image} />
+                        <img className={classes.img} alt="course" src={c.image} alt="course"/>
                       </ButtonBase>
                     </Grid>
                     <Grid item xs={12} sm={6} md={9} container>

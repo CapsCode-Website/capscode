@@ -218,7 +218,7 @@ function Home() {
             
       </Grid>
 
-      <Grid container lg={3} alignItems='center' justify='center' style={{ fontFamily: ['Nunito', 'sans-serif'], backgroundColor: '#F7DAE4', boxShadow: '6px 10px 21px -7px rgba(0,0,0,0.51)', borderRadius: '30px', textAlign: 'center', padding: '5px', color: '#535C68', marginTop: '190px' }}>
+      <Grid container alignItems='center' justify='center' style={{ fontFamily: ['Nunito', 'sans-serif'], backgroundColor: '#F7DAE4', boxShadow: '6px 10px 21px -7px rgba(0,0,0,0.51)', borderRadius: '30px', textAlign: 'center', padding: '5px', color: '#535C68', marginTop: '190px' }}>
         <Box fontWeight="fontWeightBold" m={1} fontSize={17}><b>UPCOMING & ONGOING EVENTS</b></Box>
       </Grid>
       <br/>

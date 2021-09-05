@@ -127,7 +127,7 @@ export default function Career(){
           <Grid container direction="row" justify='flex-start' alignItems='flex-start' className={classes.root} >
             <Grid item lg={4} md={4} sm={4} xs={12} className={classes.BlogCard}>
               <a className={classes.links} href='https://www.instagram.com/capscode/'><Paper className={classes.blogs} >
-                <img src={insta} alt="instagram" style={{height:'50px', width:'50px'}} />
+                <img src={insta} alt="instagram" style={{height:'50px', width:'50px'}} alt="instagram"/>
                 <div>
                   <h4 className={classes.text}>Instagram</h4>
                 </div>
@@ -137,7 +137,7 @@ export default function Career(){
             
            <Grid item lg={4} md={4} sm={4} xs={12} className={classes.BlogCard}>
               <a className={classes.links} href='https://capscode.hashnode.dev/'><Paper className={classes.blogs}>
-                <img src={hashnode} alt="hashnode" style={{height:'50px', width:'50px'}} />
+                <img src={hashnode} alt="hashnode" style={{height:'50px', width:'50px'}} alt="hashnode"/>
                 <div>
                   <h4 className={classes.text}>Hashnode</h4>
                 </div>
@@ -145,7 +145,7 @@ export default function Career(){
             </Grid>
            <Grid item lg={4} md={4} sm={4} xs={12} className={classes.BlogCard}>
                 <a className={classes.links} href='https://dev.to/capscode'><Paper className={classes.blogs}>
-                  <img src={devto} alt="dev.to" style={{height:'50px', width:'50px'}} />
+                  <img src={devto} alt="dev.to" style={{height:'50px', width:'50px'}} alt="dev.to" />
                 <div>
                   <h4 className={classes.text}>Dev.to</h4>
                 </div>
