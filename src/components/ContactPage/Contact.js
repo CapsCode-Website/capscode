@@ -2,7 +2,7 @@ import React ,{useEffect, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import * as style from './contact.css'
-import img from './contact.png'
+import img from './contact.gif'
 import { red } from '@material-ui/core/colors';
 import { useForm, ValidationError } from '@formspree/react';
 import { Paper } from '@material-ui/core';

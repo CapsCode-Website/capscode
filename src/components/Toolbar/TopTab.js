@@ -72,7 +72,7 @@ function TopTab(props) {
         <AppBar
           position="fixed"
           style={{
-            borderBottomRightRadius: "70px",
+            // borderBottomRightRadius: "70px",
             backgroundColor: "#fef3f4",
             boxShadow: "none",
             paddingTop: "0",
@@ -145,7 +145,7 @@ function TopTab(props) {
                 setValue(3);
               }}
             >
-              <Tab label="Blogs" />
+              <Tab label="Blog" />
             </Link>
 
             <Link
@@ -170,7 +170,7 @@ function TopTab(props) {
               <Tab label="Contact" />
             </Link>
 
-            <Link
+            {/* <Link
               to="/tutorials"
               style={{ textDecoration: "none", color: "black" }}
               onClick={() => {
@@ -179,7 +179,7 @@ function TopTab(props) {
               }}
             >
               <Tab label="Tutorials" />
-            </Link>
+            </Link> */}
           </Tabs>
         </AppBar>
       </HideOnScroll>
