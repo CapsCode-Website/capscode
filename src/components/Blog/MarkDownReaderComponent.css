@@ -31,7 +31,7 @@ a {
   width: 60%;
   align-items: center;
 }
-.markdown-body .octicon {
+/* .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
   vertical-align: text-bottom;
@@ -858,7 +858,7 @@ a {
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  background-color: #e9e9ee;
   border-radius: 3px;
 }
 
@@ -1017,4 +1017,4 @@ a {
 .markdown-body .task-list-item input {
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
-}
+} */

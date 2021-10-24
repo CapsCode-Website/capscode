@@ -39,7 +39,7 @@ function App() {
     axios({
       method: "GET",
       url:
-        "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/Blog.json",
+        "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/blog.json",
     })
       .then((response) => {
         setData(response.data);
