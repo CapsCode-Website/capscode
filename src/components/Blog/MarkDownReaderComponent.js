@@ -34,7 +34,12 @@ const MarkDownReaderComponent = ({ link, like, heart, title }) => {
       ) : (
         <>
           <h1
-            style={{ textAlign: "center", fontSize: "40px", padding: "15px" }}
+            style={{
+              textAlign: "center",
+              fontSize: "40px",
+              padding: "15px",
+              lineHeight: "46px",
+            }}
           >
             {title}
           </h1>
@@ -55,7 +60,15 @@ const MarkDownReaderComponent = ({ link, like, heart, title }) => {
                     {...props}
                   />
                 ) : (
-                  <code className={className} {...props}>
+                  <code
+                    className={className}
+                    {...props}
+                    style={{
+                      background: "lightgrey",
+                      padding: "2px",
+                      borderRadius: "2px",
+                    }}
+                  >
                     {children}
                   </code>
                 );

@@ -22,7 +22,7 @@ import { display } from "@mui/system";
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: '0vw',
-    height: "28vh",
+    minHeight: "28vh",
     margin: "20px",
     borderRadius: "10px",
     background: "linear-gradient(-121deg,  #fdfbfb 0%,#eaedee 100%)",

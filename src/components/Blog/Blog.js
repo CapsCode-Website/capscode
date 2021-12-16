@@ -19,6 +19,8 @@ import { CgMenuRight } from "react-icons/cg";
 import { FcHome } from "react-icons/fc";
 import axios from "axios";
 import BlogDataContext from "../../BlogDataContext";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import ExpandLess from "@material-ui/icons/ExpandLess";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+    // width: "100vw",
     // padding: theme.spacing(3),
     // overflowY: "scroll",
     marginTop: "30px",
@@ -70,7 +73,7 @@ function Blog(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState({ 1: true });
   const [selectedIndex, setSelectedIndex] = React.useState(
     props.history.location.pathname.split("/")[2]
   );
@@ -85,8 +88,8 @@ function Blog(props) {
     setSelectedIndex(props.history.location.pathname.split("/")[2]);
   }, [props.history.location.pathname.split("/")[2]]);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = (index) => {
+    setOpen({ [index]: true });
   };
 
   const handleDrawerToggle = (e) => {
@@ -99,7 +102,7 @@ function Blog(props) {
       <List>
         <h3 style={{ textAlign: "center" }}>CapsCode Blog</h3>
         {/* <Divider /> */}
-        {["Home"].map((text, index) => (
+        {["Blog Home"].map((text, index) => (
           <Link to={"/blog/home"} style={{ textDecoration: "none" }}>
             <ListItem
               style={{ color: "#151B54" }}
@@ -126,12 +129,15 @@ function Blog(props) {
           data.map((categoryData, categoryIndex) => (
             <>
               {/* <ListItemButton onClick={handleClick}> */}
-              <ListItemButton style={{ color: "grey" }}>
+              <ListItemButton
+                style={{ color: "grey" }}
+                // onClick={() => handleClick(categoryIndex)}
+              >
                 {/* <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon> */}
                 <ListItemText primary={categoryData.category} />
-                {/* {open ? <ExpandLess /> : <ExpandMore />} */}
+                {/* {open[categoryIndex] ? <ExpandLess /> : <ExpandMore />} */}
               </ListItemButton>
               {categoryData.children.map((blogdata, dataIndex) => (
                 <Collapse in={open} timeout="auto" unmountOnExit>
@@ -178,6 +184,7 @@ function Blog(props) {
 
   return (
     <>
+      {/* {console.log(open)} */}
       <div className={classes.root}>
         <nav className={classes.drawer} aria-label="mailbox folders">
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -202,8 +209,12 @@ function Blog(props) {
                   onClick={handleDrawerToggle}
                   // sx={{ mr: 2, display: { sm: "none" } }}
                 >
-                  {/* <small>Blog</small> */}
-                  <CgMenuRight />
+                  <div>
+                    <CgMenuRight />
+                    <small style={{ display: "block", fontSize: "8px" }}>
+                      Blog List
+                    </small>
+                  </div>
                 </IconButton>
               </Toolbar>
             </AppBar>
@@ -243,7 +254,10 @@ function Blog(props) {
         {props.link == "home" || props.link == "" ? (
           <Career setSelectedIndex={setSelectedIndex} />
         ) : (
-          <main className={classes.content}>
+          <main
+            className={classes.content}
+            style={{ fontSize: "1rem", lineHeight: " 26px" }}
+          >
             <MarkDownReaderComponent
               link={props.link}
               like={props.like}
@@ -260,4 +274,4 @@ function Blog(props) {
   );
 }
 
-export default Blog;
+export default React.memo(Blog);

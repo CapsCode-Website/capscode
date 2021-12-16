@@ -21,14 +21,21 @@ a {
 /* .markdown-body {
   background-color: white !important;
 } */
+.markdown-body code {
+  white-space: pre-wrap !important;
+}
 .markdown-body {
   padding: 15px;
-  max-width: 100vw;
+  padding-left: 20px;
+  max-width: 100vw !important;
 }
-
+/* .markdown-body pre div {
+  background-color: blueviolet !important;
+  width: 80vw !important;
+} */
 .markdown-body img {
-  height: 30%;
-  width: 60%;
+  height: 50%;
+  width: 70%;
   align-items: center;
 }
 /* .markdown-body .octicon {
