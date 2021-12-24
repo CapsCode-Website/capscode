@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     // boxShadow:"0 15px 50px rgba(0,0,0,0.4)",
     borderRadius: "10px",
-    background: "rgba(255,255,255,0.2)",
+    // background: "rgba(255,255,255,0.2)",
     backdropFilter: "blur(5px)",
     backfaceVisibility: "hidden",
     borderTop: "1.5px solid rgba(255,255,255,0.4)",
@@ -151,19 +151,21 @@ function Career({ setSelectedIndex }) {
         className={classes.root}
       >
         <Grid item lg={4} md={4} sm={4} xs={12} className={classes.BlogCard}>
-          <a
-            className={classes.links}
-            href="https://www.instagram.com/capscode/"
-          >
+          <a className={classes.links} href="https://dev.to/capscode">
             <Paper className={classes.blogs}>
               <img
-                src={insta}
-                alt="instagram"
+                src={devto}
+                alt="dev.to"
                 style={{ height: "50px", width: "50px" }}
-                alt="instagram"
+                alt="dev.to"
               />
               <div>
-                <h4 className={classes.text}>Instagram</h4>
+                <h4 className={classes.text}>
+                  Dev.to{" "}
+                  <span style={{ color: "darkgrey" }}>
+                    (Total View : 35 K+)
+                  </span>
+                </h4>
               </div>
             </Paper>
           </a>
@@ -179,22 +181,31 @@ function Career({ setSelectedIndex }) {
                 alt="hashnode"
               />
               <div>
-                <h4 className={classes.text}>Hashnode</h4>
+                <h4 className={classes.text}>
+                  Hashnode{" "}
+                  <span style={{ color: "darkgrey" }}>
+                    (Total Views: 1.5 K+)
+                  </span>
+                </h4>
               </div>
             </Paper>
           </a>
         </Grid>
+
         <Grid item lg={4} md={4} sm={4} xs={12} className={classes.BlogCard}>
-          <a className={classes.links} href="https://dev.to/capscode">
+          <a
+            className={classes.links}
+            href="https://www.instagram.com/capscode/"
+          >
             <Paper className={classes.blogs}>
               <img
-                src={devto}
-                alt="dev.to"
+                src={insta}
+                alt="instagram"
                 style={{ height: "50px", width: "50px" }}
-                alt="dev.to"
+                alt="instagram"
               />
               <div>
-                <h4 className={classes.text}>Dev.to</h4>
+                <h4 className={classes.text}>Instagram</h4>
               </div>
             </Paper>
           </a>

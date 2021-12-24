@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "28vh",
     margin: "20px",
     borderRadius: "10px",
-    background: "linear-gradient(-121deg,  #fdfbfb 0%,#eaedee 100%)",
+    background: "white",
+    // background: "linear-gradient(-121deg,  #fdfbfb 0%,#eaedee 100%)",
     opacity: "10px",
   },
   media: {
@@ -82,7 +83,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                   //     </IconButton>
                   // }
                   title={
-                    <span style={{ fontWeight: "600", fontSize: "1.3em" }}>
+                    <span style={{ fontWeight: "600", fontSize: "1.8em" }}>
                       {b.title}
                     </span>
                   }
