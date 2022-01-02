@@ -8,7 +8,7 @@ import { Link, HashRouter, BrowserRouter } from "react-router-dom";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import PropTypes from "prop-types";
-
+import "./TopTab.css";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -102,7 +102,7 @@ function TopTab(props) {
             variant="scrollable" //this is commented as both varient:scrollable and centered will not work together
             scrollButtons="auto" //on
             aria-label="scrollable auto tabs example"
-            // centered="true"
+            // centered="true",
           >
             <Link
               to="/"
@@ -112,7 +112,7 @@ function TopTab(props) {
                 setValue(0);
               }}
             >
-              <Tab label="Home" />
+              <Tab label="Home" style={{ fontWeight: "bolder" }} />
             </Link>
 
             <Link
@@ -123,7 +123,7 @@ function TopTab(props) {
                 setValue(1);
               }}
             >
-              <Tab label="Courses" />
+              <Tab label="Courses" style={{ fontWeight: "bolder" }} />
             </Link>
 
             <Link
@@ -134,7 +134,7 @@ function TopTab(props) {
                 setValue(2);
               }}
             >
-              <Tab label="Services" />
+              <Tab label="Services" style={{ fontWeight: "bolder" }} />
             </Link>
 
             <Link
@@ -145,7 +145,7 @@ function TopTab(props) {
                 setValue(3);
               }}
             >
-              <Tab label="Blog" />
+              <Tab label="Blog" style={{ fontWeight: "bolder" }} />
             </Link>
 
             <Link
@@ -156,7 +156,7 @@ function TopTab(props) {
                 setValue(4);
               }}
             >
-              <Tab label="About Us" />
+              <Tab label="About Us" style={{ fontWeight: "bolder" }} />
             </Link>
 
             <Link
@@ -167,7 +167,7 @@ function TopTab(props) {
                 setValue(5);
               }}
             >
-              <Tab label="Contact" />
+              <Tab label="Contact" style={{ fontWeight: "bolder" }} />
             </Link>
 
             {/* <Link

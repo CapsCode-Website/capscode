@@ -21,6 +21,7 @@ import axios from "axios";
 import BlogDataContext from "../../BlogDataContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
+import Loader from "../Loading/Loader";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -164,7 +165,12 @@ function Blog(props) {
                         //   );
                         // }}
                       >
-                        <ListItemText primary={blogdata.sidebarName} />
+                        <ListItemText
+                          primary={blogdata.sidebarName}
+                          style={{
+                            color: "black",
+                          }}
+                        />
                       </ListItem>
                     </Link>
                   </List>
@@ -173,7 +179,9 @@ function Blog(props) {
             </>
           ))
         ) : (
-          <h4>loading....</h4>
+          <h4>
+            <Loader />
+          </h4>
         )}
       </List>
     </div>

@@ -116,12 +116,13 @@ export default function Pricing() {
             align="center"
             component="p"
             style={{
-              color: "#EA7773",
+              color: "rgb(118 113 113)",
               backgroundColor: "rgb(245, 245, 245)",
               borderRadius: "20px",
+              fontWeight: "bolder",
             }}
           >
-            Offer Price (Ending on 30th Nov 2021)
+            NEW YEAR OFFER, GRAB IT SOON
           </Typography>
         </Container>
         {/* End hero unit */}

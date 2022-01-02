@@ -83,7 +83,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                   //     </IconButton>
                   // }
                   title={
-                    <span style={{ fontWeight: "600", fontSize: "1.8em" }}>
+                    <span style={{ fontWeight: "600", fontSize: "1.9em" }}>
                       {b.title}
                     </span>
                   }
@@ -111,8 +111,22 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                     <ShareIcon />
                   </IconButton>
                 </CardActions> */}
-                <div style={{ textAlign: "right", paddingRight: "10px" }}>
-                  Read More ➜
+                <div
+                  style={{
+                    textAlign: "right",
+                    paddingRight: "10px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <span
+                    style={{
+                      background: "#FEF3F4",
+                      padding: "4px 7px 4px 7px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Read More ➜{" "}
+                  </span>
                 </div>
               </Card>
               {/* </a> */}

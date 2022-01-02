@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import Loader from "../Loading/Loader";
 import "./MarkDownReaderComponent.css";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -30,7 +31,9 @@ const MarkDownReaderComponent = ({ link, like, heart, title }) => {
   return (
     <>
       {mdText == "" ? (
-        <p>loading.........</p>
+        <div style={{ marginTop: "90px" }}>
+          <Loader />
+        </div>
       ) : (
         <>
           <h1

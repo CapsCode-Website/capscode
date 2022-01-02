@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   fontHandler: {
     paddingLeft: "10px",
     fontFamily: ["Nunito", "sans-serif"],
+    color: "#2C3335",
     [theme.breakpoints.up("xs")]: {
       fontSize: "3.5em",
     },

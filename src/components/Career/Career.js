@@ -9,6 +9,7 @@ import hashnode from "./hashnode.png";
 import insta from "./insta.svg";
 import axios from "axios";
 import BlogCards from "./BlogCards";
+import Loader from "../Loading/Loader";
 // import { data_ } from "./allBlogdata";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -225,7 +226,9 @@ function Career({ setSelectedIndex }) {
             setSelectedIndex={setSelectedIndex}
           />
         ) : (
-          <h3>Loading...</h3>
+          <h3>
+            <Loader />
+          </h3>
         )}
       </Grid>
     </div>

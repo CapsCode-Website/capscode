@@ -156,8 +156,11 @@ export default function Courses() {
           subjectRequestedFor={subjectRequestedFor}
         />
         <CssBaseline />
-        <div style={{ color: "#535C68" }}>
-          <Typography variant="h4">WE TEACH YOU LIVE &#128994;</Typography>
+        <div style={{ color: "#535C68", textAlign: "center" }}>
+          <Typography variant="h4">
+            <span style={{ fontWeight: "bolder" }}> WE TEACH YOU LIVE</span>{" "}
+            &#128994;
+          </Typography>
           <Typography gutterBottom variant="subtitle1">
             ONCE YOU TOOK UP ANY OF THE BELOW COURSES OUR TEAM WILL CONTACT YOU
             TO CONFIRM YOU AVAILABILTY
@@ -185,7 +188,11 @@ export default function Courses() {
                   <Grid item xs={12} sm={6} md={9} container>
                     <Grid item xs container direction="column" spacing={2}>
                       <Grid item xs>
-                        <Typography gutterBottom variant="subtitle1">
+                        <Typography
+                          gutterBottom
+                          variant="subtitle1"
+                          style={{ fontWeight: "bolder", fontSize: "2em" }}
+                        >
                           {c.courseName}
                         </Typography>
                         <Typography variant="body2" gutterBottom>
@@ -202,14 +209,25 @@ export default function Courses() {
                       </Grid>
                     </Grid>
                     <Grid item>
-                      <Typography variant="subtitle1">
+                      <Typography
+                        variant="subtitle1"
+                        style={{ fontWeight: "bolder" }}
+                      >
                         {c.coursePrice}
                       </Typography>
-                      <Typography variant="subtitle1">
+                      <Typography
+                        variant="subtitle1"
+                        style={{
+                          background: "#fff6f6",
+                          padding: "1px 9px 1px 9px",
+                          borderRadius: "7px",
+                          cursor: "pointer",
+                        }}
+                      >
                         <span
                           onClick={() => handleClickOpen(c.courseName)}
                           style={{
-                            cursor: "default",
+                            cursor: "pointer",
                             textDecoration: "none",
                             color: "#ff6700",
                           }}
@@ -235,7 +253,7 @@ export default function Courses() {
                         color: "grey",
                       }}
                     >
-                      <b>Click to get syllabus</b>
+                      <b>Click To View Syllabus</b>
                     </Typography>
                     <ExpandMoreIcon />
                   </ExpansionPanelSummary>
