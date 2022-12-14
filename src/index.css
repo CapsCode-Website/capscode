@@ -1,6 +1,17 @@
 *{
   scroll-behavior: smooth;
 }
+:root{
+  /* --primary-color1: #ff9770; */
+  --primary-color1: #ff6b33;
+  --primary-color2: #ffd670;
+  --primary-color3: #e9ff70;
+  --primary-color4: #ff70a6;
+  --primary-color5: #70d6ff;
+  --primary-color6: #dba1fa;
+  --back-primary-color: #fef3f4;
+  --blackcolor:#4d5355;
+}
 html {
   height: 100%;
   margin: 0px;
@@ -11,7 +22,7 @@ html {
 body {
   margin: 0;
   padding: 0%;
-  height: 100%;
+  /* height: 100%; */
   background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,3 +35,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1, h2, h3, h4, h5, p, button, div, span,code{
+  font-family: "Nunito" !important;
+}
+

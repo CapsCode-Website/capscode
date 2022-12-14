@@ -13,6 +13,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Loader from "../Loading/Loader";
 import { Button } from "@material-ui/core";
 import CourseForm from "./CourseForm";
+import SEO from "../../SEO";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -149,127 +150,139 @@ export default function Courses() {
     );
   } else {
     return (
-      <div className={classes.root}>
-        <CourseForm
-          open={open}
-          setOpen={setOpen}
-          subjectRequestedFor={subjectRequestedFor}
+      <>
+        <SEO
+          title="CapsCode - Courses"
+          description="Courses provides by capscode | html, css, javascript, reactjs, nodejs, expressjs, mongodb, web development, programming etc."
+          name="CapsCode Courses"
+          type="website"
         />
-        <CssBaseline />
-        <div style={{ color: "#535C68", textAlign: "center" }}>
-          <Typography variant="h4">
-            <span style={{ fontWeight: "bolder" }}> WE TEACH YOU LIVE</span>{" "}
-            &#128994;
-          </Typography>
-          <Typography gutterBottom variant="subtitle1">
-            ONCE YOU TOOK UP ANY OF THE BELOW COURSES OUR TEAM WILL CONTACT YOU
-            TO CONFIRM YOU AVAILABILTY
-          </Typography>
-        </div>
-        {CourseFile.map((c, i) => {
-          return (
-            <div key={i} data-aos="zoom-in">
-              <Paper className={classes.paper}>
-                <Grid container spacing={1}>
-                  <Grid item xs={12} sm={6} md={3}>
-                    {/* below commented code is the one when the image was used locally */}
-                    {/* <ButtonBase className={classes.image}>
+
+        <div className={classes.root}>
+          <CourseForm
+            open={open}
+            setOpen={setOpen}
+            subjectRequestedFor={subjectRequestedFor}
+          />
+          <CssBaseline />
+          <div style={{ color: "#535C68", textAlign: "center" }}>
+            <Typography variant="h4">
+              <span style={{ fontWeight: "bolder" }}> WE TEACH YOU LIVE</span>{" "}
+              &#128994;
+            </Typography>
+            <Typography gutterBottom variant="subtitle1">
+              ONCE YOU TOOK UP ANY OF THE BELOW COURSES OUR TEAM WILL CONTACT
+              YOU TO CONFIRM YOU AVAILABILTY
+            </Typography>
+          </div>
+          {CourseFile.map((c, i) => {
+            return (
+              <div key={i} data-aos="zoom-in">
+                <Paper className={classes.paper}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12} sm={6} md={3}>
+                      {/* below commented code is the one when the image was used locally */}
+                      {/* <ButtonBase className={classes.image}>
               <img className={classes.img} alt="course image" src={require(`${c.image}`)} />
             </ButtonBase> */}
-                    <ButtonBase className={classes.image}>
-                      <img
-                        className={classes.img}
-                        alt="course"
-                        src={c.image}
-                        alt="course"
-                      />
-                    </ButtonBase>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={9} container>
-                    <Grid item xs container direction="column" spacing={2}>
-                      <Grid item xs>
-                        <Typography
-                          gutterBottom
-                          variant="subtitle1"
-                          style={{ fontWeight: "bolder", fontSize: "2em" }}
-                        >
-                          {c.courseName}
-                        </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          {c.courseDescrption}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          Course Duration: {c.courseDuration}
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
+                      <ButtonBase className={classes.image}>
+                        <img
+                          className={classes.img}
+                          alt="course"
+                          src={c.image}
+                        />
+                      </ButtonBase>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={9} container>
+                      <Grid item xs container direction="column" spacing={2}>
+                        <Grid item xs>
+                          <Typography
+                            gutterBottom
+                            variant="subtitle1"
+                            style={{ fontWeight: "bolder", fontSize: "2em" }}
+                          >
+                            {c.courseName}
+                          </Typography>
+                          <Typography variant="body2" gutterBottom>
+                            {c.courseDescrption}
+                          </Typography>
+                          <Typography variant="body2" color="textSecondary">
+                            Course Duration: {c.courseDuration}
+                          </Typography>
+                        </Grid>
+                        <Grid item>
+                          {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   Click to get syllabus
               </Typography> */}
+                        </Grid>
                       </Grid>
-                    </Grid>
-                    <Grid item>
-                      <Typography
-                        variant="subtitle1"
-                        style={{ fontWeight: "bolder" }}
-                      >
-                        {c.coursePrice}
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        style={{
-                          background: "#fff6f6",
-                          padding: "1px 9px 1px 9px",
-                          borderRadius: "7px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        <span
-                          onClick={() => handleClickOpen(c.courseName)}
+                      <Grid item>
+                        <Typography
+                          variant="subtitle1"
                           style={{
-                            cursor: "pointer",
-                            textDecoration: "none",
-                            color: "#ff6700",
+                            textAlign: "right",
+                            fontSize: "22px",
+                            fontWeight: "bolder",
                           }}
                         >
-                          Click To Enroll
-                        </span>
-                      </Typography>
+                          {c.coursePrice}
+                        </Typography>
+                        <Typography
+                          variant="subtitle1"
+                          style={{
+                            background: "#fff6f6",
+                            padding: "1px 9px 1px 9px",
+                            borderRadius: "7px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <span
+                            onClick={() => handleClickOpen(c.courseName)}
+                            style={{
+                              cursor: "pointer",
+                              textDecoration: "none",
+                              color: "#ff6700",
+                            }}
+                          >
+                            Click To Enroll
+                          </span>
+                        </Typography>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-                <ExpansionPanel
-                  expanded={expanded === i}
-                  onChange={handleChange(i)}
-                >
-                  <ExpansionPanelSummary
-                    aria-controls="panel1d-content"
-                    id="panel1d-header"
+                  <ExpansionPanel
+                    expanded={expanded === i}
+                    onChange={handleChange(i)}
                   >
-                    <Typography
-                      style={{
-                        marginBottom: "12px",
-                        textAlign: "center",
-                        color: "grey",
-                      }}
+                    <ExpansionPanelSummary
+                      aria-controls="panel1d-content"
+                      id="panel1d-header"
                     >
-                      <b>Click To View Syllabus</b>
-                    </Typography>
-                    <ExpandMoreIcon />
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography>
-                      {c.syllabus.map((c, i) => {
-                        return <Typography key={i}>{c}</Typography>;
-                      })}
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-              </Paper>
-            </div>
-          );
-        })}
-      </div>
+                      <Typography
+                        style={{
+                          marginBottom: "12px",
+                          textAlign: "center",
+                          color: "grey",
+                        }}
+                      >
+                        <b>Click To View Syllabus</b>
+                      </Typography>
+                      <ExpandMoreIcon />
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                      <Typography>
+                        {c.syllabus.map((c, i) => {
+                          return <Typography key={i}>{c}</Typography>;
+                        })}
+                      </Typography>
+                    </ExpansionPanelDetails>
+                  </ExpansionPanel>
+                </Paper>
+              </div>
+            );
+          })}
+        </div>
+      </>
     );
   }
 }

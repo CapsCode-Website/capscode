@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import "../PageNotFound/style.css";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import pageNotFound from "./pagenotfound.webp";
-import { Paper } from "@material-ui/core";
 import back from "./back.png";
 
 const styles = {

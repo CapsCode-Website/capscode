@@ -10,7 +10,7 @@ class Loader extends React.Component {
           size={90}
           thickness={78}
           speed={131}
-          color="rgba(139, 57, 172, 1)"
+          color="orange"
         />
       </div>
     );

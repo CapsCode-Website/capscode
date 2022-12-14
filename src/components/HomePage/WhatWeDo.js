@@ -10,19 +10,19 @@ const WhatWeDo = () => {
   return (
     <Grid container>
       <Grid item lg={4} md={12} sm={6} xs={6}>
-        <img />
+        {/* <img /> */}
         <h3>We teach code</h3>
         <p></p>
       </Grid>
 
       <Grid item lg={4} md={12} sm={6} xs={6}>
-        <img />
+        {/* <img /> */}
         <h3>We build website</h3>
         <p></p>
       </Grid>
 
       <Grid item lg={4} md={12} sm={6} xs={6}>
-        <img />
+        {/* <img /> */}
         <h3>We setup google business</h3>
         <p></p>
       </Grid>

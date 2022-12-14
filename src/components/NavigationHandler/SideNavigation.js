@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     // alignItems: "right",
     position: "absolute",
     left: 10,
+    paddingBottom: "30px",
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -88,7 +89,7 @@ function SideNavigation(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      {/* added onClick to handle the drawwe as if it is open the close it  */}
+      {/* added onClick to handle the drawer as if it is open the close it  */}
       <List onClick={handleDrawerToggle}>
         {/* <HashRouter> */}
         <ListItem
@@ -169,7 +170,16 @@ function SideNavigation(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar
+        position="fixed"
+        className={classes.appBar}
+        style={{
+          height: "40px",
+          background: "rgba(206, 72, 17, 0.1)",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(4.9px)",
+        }}
+      >
         <Toolbar>
           <IconButton
             color="secondary"
@@ -185,20 +195,21 @@ function SideNavigation(props) {
             target="_self"
             style={{
               textDecoration: "none",
-              width: "4.5em",
-              height: "3em",
+              width: "4em",
+              height: "4em",
               marginLeft: "25px",
+              paddingTop: "3px",
             }}
           >
             <img
+              alt="capscodeloadosidebar"
               style={{
                 width: "4em",
                 height: "2.5em",
                 paddingLeft: "15px",
                 alignItems: "center",
               }}
-              src={require("./cap.png")}
-              alt="capscode"
+              src={require("../Assets/capscode.png")}
             />
           </a>
           {/* <Typography style={{textShadow: '2px 2px 5px yellow'}} variant="h6" noWrap>
@@ -222,6 +233,11 @@ function SideNavigation(props) {
           }}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
+          }}
+          style={{
+            background: "rgba(206, 72, 17, 0.1)",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            backdropFilter: "blur(4.9px)",
           }}
         >
           {drawer}

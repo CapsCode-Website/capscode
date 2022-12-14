@@ -69,7 +69,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
   },
   text: {
-    margin: "20px",
+    // margin: "20px",
+    marginLeft: "8px",
   },
   links: {
     textDecoration: "none",
@@ -158,13 +159,12 @@ function Career({ setSelectedIndex }) {
                 src={devto}
                 alt="dev.to"
                 style={{ height: "50px", width: "50px" }}
-                alt="dev.to"
               />
               <div>
                 <h4 className={classes.text}>
                   Dev.to{" "}
                   <span style={{ color: "darkgrey" }}>
-                    (Total View : 35 K+)
+                    (Total View : 44 K+)
                   </span>
                 </h4>
               </div>
@@ -179,13 +179,12 @@ function Career({ setSelectedIndex }) {
                 src={hashnode}
                 alt="hashnode"
                 style={{ height: "50px", width: "50px" }}
-                alt="hashnode"
               />
               <div>
                 <h4 className={classes.text}>
                   Hashnode{" "}
                   <span style={{ color: "darkgrey" }}>
-                    (Total Views: 1.5 K+)
+                    (Total Views: 5.2 K+)
                   </span>
                 </h4>
               </div>
@@ -203,7 +202,6 @@ function Career({ setSelectedIndex }) {
                 src={insta}
                 alt="instagram"
                 style={{ height: "50px", width: "50px" }}
-                alt="instagram"
               />
               <div>
                 <h4 className={classes.text}>Instagram</h4>

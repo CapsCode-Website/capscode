@@ -3,45 +3,38 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { Card } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
-import backimage from "./wave.svg";
-import "animate.css/animate.css";
+import backimage from "./Assets/wave.svg";
+import whatwedosvg from "./Assets/whatwedosvg.svg";
+import whatwedosvg1 from "./Assets/whatwedosvg1.svg";
+import whatwedosvg2 from "./Assets/whatwedosvg2.svg";
+import whatwedosvg4 from "./Assets/whatwedosvg4.svg";
+import whatwedosvg5 from "./Assets/whatwedosvg5.svg";
+import whatwedosvg6 from "./Assets/whatwedosvg6.svg";
+import whatwedosvg7 from "./Assets/whatwedosvg7.svg";
+import whatwedosvg8 from "./Assets/whatwedosvg8.svg";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Paper from "@material-ui/core/Paper";
 import "./styles.css";
 import Loader from "../Loading/Loader";
-import { Link } from "react-router-dom";
+import SliderCards from "./SliderCards";
+import {
+  BsBarChartLineFill,
+  BsFillBrightnessHighFill,
+  BsFillMicFill,
+  BsBraces,
+} from "react-icons/bs";
+import { businessdata } from "./whycapscodebusinessdata";
+import { studentdata } from "./whycapscodestudentdata";
 
 var link;
 const useStyles = makeStyles((theme) => ({
-  root: {
-    [theme.breakpoints.down("xs")]: {
-      // backgroundColor: 'red',
-      paddingTop: "10px",
-    },
-    [theme.breakpoints.down("sm")]: {
-      // backgroundColor: 'red',
-      paddingTop: "40px",
-    },
-    [theme.breakpoints.down("md")]: {
-      // backgroundColor: 'green',
-      paddingTop: "90px",
-    },
-    [theme.breakpoints.down("lg")]: {
-      // backgroundColor: 'yellow',
-      paddingTop: "20px",
-    },
-  },
-
   fontHandler: {
     paddingLeft: "10px",
-    fontFamily: ["Nunito", "sans-serif"],
-    color: "#2C3335",
+    color: "var(--blackcolor)",
     [theme.breakpoints.up("xs")]: {
       fontSize: "3.5em",
     },
     [theme.breakpoints.up("sm")]: {
-      fontSize: "5em",
+      fontSize: "4em",
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "5.7em",
@@ -53,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   my_upcomings: {
-    // background:"rgba(255,255,255,0.4)",
     backdropFilter: "blur(5px)",
     backfaceVisibility: "hidden",
     borderTop: "1px solid rgba(255,255,255,0.4)",
@@ -85,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   window.scrollTo({
     top: 0,
-    behaviour: "smooth",
+    behavior: "smooth",
   }); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
 
   const classes = useStyles();
@@ -97,7 +89,6 @@ function Home() {
       .then((res) => res.json())
       .then(
         (result) => {
-          //console.log(".........."+result)
           setIsLoaded(true);
           setUpcoming(result);
         },
@@ -108,9 +99,6 @@ function Home() {
       );
   }, []);
 
-  {
-    /* recent editied 0905 start here*/
-  }
   const [q_error, q_setError] = useState(null);
   const [q_isLoaded, q_setIsLoaded] = useState(false);
   const [q_upcoming, q_setUpcoming] = useState([]);
@@ -119,7 +107,6 @@ function Home() {
       .then((q_res) => q_res.json())
       .then(
         (q_result) => {
-          //console.log(".........."+q_result)
           q_setIsLoaded(true);
           q_setUpcoming(q_result);
         },
@@ -133,317 +120,446 @@ function Home() {
   q_upcoming.map((v) => {
     link = v.quizLink;
   });
-  // console.log( link)
-  // console.log(typeof link)
-  {
-    /* recent editied 0905 -- end here*/
-  }
+
   localStorage.setItem("currentTab", 0); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
   return (
-    <div className={classes.root} style={{ backgroundColor: "white" }}>
-      <Grid
-        container
-        justify="space-between"
-        alignItems="flex-start"
-        style={{
-          // height: "100vh",
-          minHeight: "100vh",
-          backgroundImage: `url(${backimage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          // backgroundAttachment: "fixed",
-        }}
-      >
-        <Grid item xs={12} sm={4} md={7} lg={7}>
-          <h1 className={classes.fontHandler}>
-            WELCOME TO <p id="typingeffect">CAPSCODE</p>
-          </h1>
-        </Grid>
-
-        <Grid item xs={12} sm={7} md={5} lg={5} align="center">
-          <img
-            style={{
-              animation: "bounceInDown",
-              animationDuration: "1.5s",
-              width: "70%",
-              height: "70%",
-              paddingTop: "20%",
-            }}
-            src={require("./innovation.webp")}
-            alt="capscode.in"
-          />
-          {/* <Lottie options={defaultOptions} height={450} width={360} /> */}
-        </Grid>
-        <Grid item lg={12} xs={12} sm={12} md={12} align="center">
-          <img
-            style={{
-              height: "50px",
-              width: "60px",
-              alignItems: "center",
-              // background: "black",
-              // color: "red",
-            }}
-            src={require("./AnguishedGroundedHagfish-max-1mb.gif")}
-          />
-        </Grid>
-      </Grid>
-
-      {/* <Grid container style={{ height: "100vh" }}> */}
-      {/* <WhatWeDo /> */}
-      {/* </Grid> */}
-
-      <Grid
-        container
-        style={{
-          minHeight: "100vh",
-          textAlign: "center",
-          background: "rgb(230 232 250 / 27%)",
-          // backgroundImage: `url(${wave2})`,
-          // backgroundSize: "cover",
-          // backgroundPosition: "bottom",
-        }}
-      >
-        <Grid item lg={6} md={6} sm={12} xs={12}>
-          {/* <Paper
-            elevation={0}
-            style={{
-              background: "transparent",
-              height: "400px",
-              width: "500px",
-              borderRadius: "30px",
-              backgroundImage: `url(${webimage})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></Paper> */}
-          <img
-            style={{
-              animation: "bounceInDown",
-              animationDuration: "1.5s",
-              width: "70%",
-              height: "70%",
-              paddingTop: "30px",
-            }}
-            src={require("./webnew.png")}
-            alt="capscode.in"
-          />
-        </Grid>
-
-        <Grid item lg={6} md={6} sm={12} xs={12}>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            style={{ padding: "10px", fontFamily: ["Nunito", "sans-serif"] }}
-          >
-            <Typography
-              fontWeight="fontWeightBold"
-              style={{ paddingTop: "2px", fontSize: "35px" }}
-            >
-              📌 DO YOU NEED A WEBSITE WITH FREE HOSTING ?
-            </Typography>
-
-            <Grid item style={{ textAlign: "left" }}>
-              <Typography>➥ WE PROVIDE BUSINESS SOLUTION TO STARTUP</Typography>
-              <Typography>➥ ONE STOP SOLUTION FOR YOU BUSINESS</Typography>
-              <Typography>➥ WE MAKE WEBSITE</Typography>
-              <Typography>➥ WE MAKE APPS</Typography>
-              <Typography>➥ WE WILL LIST YOU BUSINESS IN GOOGLE</Typography>
-              <Typography>
-                ➥ WE PROMISE THAT WE GIVE WONDERFUL RESULT AT VERY REASONABLE
-                PRICE
-              </Typography>
-            </Grid>
-
-            <Grid item>
-              <Link to="/services" style={{ textDecoration: "none" }}>
-                <div
-                  style={{
-                    fontWeight: "700",
-                    padding: "12px",
-                    boxShadow: "6px 10px 21px -7px rgba(0,0,0,0.51)",
-                    textAlign: "center",
-                    borderRadius: "30px",
-                    background: "#F7DAE4",
-                    color: "#535C68",
-                  }}
-                >
-                  CLICK HERE TO QUICK LAUNCH YOUR BUSINESS
-                </div>
-              </Link>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid
-        container
-        style={{
-          minHeight: "80vh",
-          textAlign: "center",
-          background: "rgb(202 250 254 / 31%)",
-        }}
-      >
-        <Grid item lg={6} md={6} sm={12} xs={12}>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            style={{ padding: "10px", fontFamily: ["Nunito", "sans-serif"] }}
-          >
-            <Typography
-              fontWeight="fontWeightBold"
-              style={{ paddingTop: "2px", fontSize: "35px" }}
-            >
-              📌 NEED A WEBSITE MAINTENANCE ?
-            </Typography>
-            <Grid item>
-              <Link to="/services" style={{ textDecoration: "none" }}>
-                <div
-                  style={{
-                    fontWeight: "700",
-                    padding: "12px",
-                    boxShadow: "6px 10px 21px -7px rgba(0,0,0,0.51)",
-                    textAlign: "center",
-                    borderRadius: "30px",
-                    background: "rgb(201 255 229 / 43%)",
-                    color: "#535C68",
-                  }}
-                >
-                  CLICK HERE TO TAKE SERVICE
-                </div>
-              </Link>
-            </Grid>
-          </Grid>
-        </Grid>
-
+    <>
+      <div className={classes.root} style={{ backgroundColor: "white" }}>
+        {/* THE LANDING PART OF THE HOME PAGE -- WELCOME TO CAPSCODE */}
         <Grid
-          item
-          lg={6}
-          md={6}
-          sm={12}
-          xs={12}
-          style={{ width: "100%", height: "100%" }}
+          container
+          justify="space-between"
+          alignItems="flex-start"
+          style={{
+            minHeight: "100vh",
+            backgroundImage: `url(${backimage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
-          {/* <Paper
-            elevation={0}
-            style={{
-              height: "100%",
-              width: "100%",
-              backgroundImage: `url(${webmain})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></Paper> */}
-          <img
-            style={{
-              animation: "bounceInDown",
-              animationDuration: "1.5s",
-              width: "70%",
-              height: "80%",
-              paddingTop: "30px",
-            }}
-            src={require("./maintain.png")}
-            alt="capscode.in"
-          />
-        </Grid>
-      </Grid>
+          {/* THE WELCOME TO CAPSCODE TEXT PART */}
+          <Grid item xs={12} sm={4} md={7} lg={7}>
+            <h1 className={classes.fontHandler}>
+              WELCOME TO <p id="typingeffect">CAPSCODE</p>
+            </h1>
+            <h3
+              style={{
+                textAlign: "center",
+                fontStyle: "italic",
+                color: "grey",
+              }}
+            >
+              We are Coders
+            </h3>
 
+            <span style={{ lineHeight: "10px" }}>
+              <h3 className="Slogans">We teach Code👨‍💻| We build Website💻</h3>
+              <h3 className="Slogans">
+                We provide IT Support🦽| We help grow Business🚀
+              </h3>
+              <h3 className="Slogans">We provide FREE Consultation☎️</h3>
+            </span>
+          </Grid>
+
+          {/* HOME PAGE IMAGE */}
+          <Grid item xs={12} sm={7} md={5} lg={5} align="center">
+            <img
+              alt="homepageimage"
+              style={{
+                width: "100%",
+                height: "100%",
+                paddingTop: "20%",
+              }}
+              src={require("./Assets/home.png")}
+            />
+            {/* <Lottie options={defaultOptions} height={450} width={360} /> */}
+          </Grid>
+
+          {/* HOME PAGE DOWN ARROW ANIMATION */}
+          <Grid item lg={12} xs={12} sm={12} md={12} align="center">
+            <img
+              alt="serviceimage"
+              style={{
+                height: "50px",
+                width: "60px",
+                alignItems: "center",
+              }}
+              src={require("./Assets/AnguishedGroundedHagfish-max-1mb.gif")}
+            />
+          </Grid>
+        </Grid>
+        {/* LANDING PART ENDS */}
+
+        {/* WHAT WE DO AT CAPSCODE */}
+        <Typography
+          className="HomeHeadings"
+          variant="h3"
+          fontWeight="fontWeightBold"
+          style={{
+            paddingTop: "2px",
+            color: "var(--primary-color1)",
+            fontWeight: "bolder",
+            marginBottom: "30px",
+          }}
+        >
+          <BsBarChartLineFill />
+          What we do at CapsCode ?
+        </Typography>
+        <Grid
+          container
+          style={{
+            minHeight: "70vh",
+            textAlign: "center",
+            backgroundImage: `url(${whatwedosvg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <Grid
+            item
+            lg={6}
+            md={6}
+            sm={6}
+            xs={12}
+            style={{
+              backgroundImage: `url(${whatwedosvg1})`,
+              backgroundRepeat: "no-repeat",
+              textAlign: "center",
+            }}
+            className="WhatWeDoCardHolder"
+          >
+            <div className="WhatWeDoCards">
+              <figure>
+                <img
+                  alt="CapsCode-For Student"
+                  src={require("./Assets/student.JPG")}
+                />
+              </figure>
+              <Typography variant="h4" className="WhatWeDoCardHeading">
+                If you are Student
+              </Typography>
+
+              <div className="WhatWeDoCardText">
+                <p>
+                  High quality industry level course by an industry experts at
+                  affordable price
+                </p>
+                <p>We teach latest technologies</p>
+                <p>24/7 Support in understanding concepts</p>
+                <p>Industry level use cases and projects with full support</p>
+                <p>Free consultation</p>
+                <div>
+                  <button
+                    className="RouteButton"
+                    style={{ margin: "20px", minWidth: "90px" }}
+                  >
+                    Read Blogs ▶︎
+                  </button>
+                  <button
+                    className="RouteButton"
+                    style={{ margin: "20px", minWidth: "90px" }}
+                  >
+                    Courses ▶︎
+                  </button>
+                </div>
+              </div>
+            </div>
+          </Grid>
+          <Grid
+            item
+            lg={6}
+            md={6}
+            sm={6}
+            xs={12}
+            style={{
+              backgroundImage: `url(${whatwedosvg2})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+            className="WhatWeDoCardHolder"
+          >
+            <div className="WhatWeDoCards">
+              <figure>
+                <img
+                  alt="A rather marvellous macaw, opening one of its wings to support the cause."
+                  src={require("./Assets/business.JPG")}
+                />
+              </figure>
+              <Typography variant="h4" className="WhatWeDoCardHeading">
+                If you are Business
+              </Typography>
+
+              <div className="WhatWeDoCardText">
+                <p>
+                  Help taking your business online in very affordable pricing.
+                </p>
+                <p>We build, host websites with 90%+ SEO</p>
+                <p>Complete lifetime support</p>
+                <p>High quality result by our Dedicated team</p>
+                <p>24/7 Support & Fast implementation</p>
+                <p>Free consultation</p>
+                <div>
+                  <button className="RouteButton" style={{ minWidth: "90px" }}>
+                    Services ▶︎
+                  </button>
+                </div>
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+        {/* WHAT WE DO ENDS */}
+
+        {/* TESTIMONIALS START */}
+        {/* <Grid
+        container
+        direction="column"
+        style={{
+          minHeight: "70vh",
+          textAlign: "center",
+          background: "rgb(230 232 250 / 57%)",
+          backgroundImage: `url(${whatwedosvg3})`,
+          backgroundSize: "",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Typography
+          className="HomeHeadings"
+          variant="h3"
+          fontWeight="fontWeightBold"
+          style={{
+            paddingTop: "2px",
+            color: "var(--primary-color1)",
+            fontWeight: "bolder",
+            textAlign: "start",
+          }}
+        >
+          📌 TESTIMONIAL
+        </Typography>
+        <TestimonialCards />
+      </Grid> */}
+        {/* TESTIMONIAL END */}
+
+        {/* WHY CAPSCODE */}
+        <Typography
+          className="HomeHeadings"
+          variant="h3"
+          fontWeight="fontWeightBold"
+          style={{
+            paddingTop: "2px",
+            color: "var(--primary-color1)",
+            fontWeight: "bolder",
+            background: "#fef3f4",
+            backgroundImage: `url(${whatwedosvg5})`,
+            backgroundSize: "cover",
+            backgroundPosition: "bottom",
+            height: "125px",
+            marginBottom: "-5px",
+          }}
+        >
+          <BsFillBrightnessHighFill /> Why CapsCode ?
+        </Typography>
+        <Grid
+          container
+          style={{
+            minHeight: "100vh",
+            textAlign: "center",
+            background: "rgb(255, 255, 247)",
+            backgroundImage: `url(${whatwedosvg4})`,
+            backgroundSize: "cover",
+            backgroundPosition: "bottom",
+          }}
+        >
+          <Grid item lg={11} md={10} sm={10} xs={12}>
+            <h2 style={{ float: "left", paddingLeft: "30px" }}>For Students</h2>
+            <div style={{ marginLeft: "20%" }}>
+              <SliderCards data={studentdata} />
+            </div>
+          </Grid>
+
+          <Grid item lg={11} md={10} sm={10} xs={12}>
+            <h2 style={{ float: "left", paddingLeft: "30px" }}>For Business</h2>
+            <div style={{ marginLeft: "20%" }}>
+              <SliderCards data={businessdata} />
+            </div>
+          </Grid>
+        </Grid>
+        {/* WHY CAPSCODE ENDS*/}
+
+        {/* INVITE US TO YOUR COLLEGE/SCHOOL */}
+        <Typography
+          className="HomeHeadings"
+          variant="h3"
+          fontWeight="fontWeightBold"
+          fontSize="2rem"
+          style={{
+            paddingTop: "2px",
+            color: "var(--primary-color1)",
+            fontWeight: "bolder",
+            backgroundImage: `url(${whatwedosvg7})`,
+            backgroundSize: "cover",
+            height: "100px",
+          }}
+        >
+          <BsBraces /> Invite us to your School/ College
+        </Typography>
+        <Grid
+          container
+          style={{
+            minHeight: "70vh",
+            textAlign: "center",
+            backgroundImage: `url(${whatwedosvg6})`,
+            backgroundSize: "cover",
+          }}
+        >
+          <Grid item lg={6} md={6} sm={6} xs={12}>
+            <button className="RouteButton">
+              Fill a small form and we will contact soon ▶︎
+            </button>
+            <div
+              style={{
+                textAlign: "left",
+                padding: "30px",
+                fontSize: "0.8rem",
+                background: "rgba(255, 255, 255, 0.09)",
+                boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                backdropFilter: "blur(1.7px)",
+                border: "1px solid rgba(255, 255, 255, 0.36) ",
+                margin: "30px",
+              }}
+            >
+              <h3>
+                👨‍💻 For Frontend Web Development (html5, css3, JavaScript,
+                ReactJS) workshop
+              </h3>
+              <h3>📁 For Backend Development(NodeJS, MongoDB) workshop</h3>
+              <h3>🎤 For technical speech</h3>
+              <h3>📞 For career consultation</h3>
+              <h3>💎 Any many more tech related stuffs...</h3>
+            </div>
+          </Grid>
+          <Grid item lg={6} md={6} sm={6} xs={12}>
+            <img
+              style={{
+                height: "90%",
+                width: "80%",
+                alignItems: "center",
+              }}
+              src={require("./Assets/inviteus2.png")}
+            />
+          </Grid>
+        </Grid>
+        {/* INVITE US TO YOUR COLLEGE/SCHOOL ENDS*/}
+
+        {/* HAVE A BUSINESS IDEA */}
+        {/* <Typography
+        variant="h3"
+        fontWeight="fontWeightBold"
+        style={{
+          // paddingTop: "2px",
+          color: "var(--primary-color1)",
+          backgroundColor: "rgb(201 255 229 / 43%)",
+          fontWeight: "bolder",
+          backgroundImage: `url(${whatwedosvg7})`,
+          backgroundSize: "cover",
+          height: "100px",
+        }}
+      >
+        📌 Have a Business Idea ?
+      </Typography>
       <Grid
         container
         alignItems="center"
         justify="center"
         style={{
           backgroundColor: "rgb(201 255 229 / 43%)",
+          minHeight: "70vh",
         }}
-      >
-        <Box
+      ></Grid> */}
+        {/* HAVE A BUSINESS IDEA ENDS*/}
+
+        {/* EVENTS AT CAPSCODE */}
+        <Typography
+          className="HomeHeadings"
+          variant="h3"
           fontWeight="fontWeightBold"
-          m={1}
-          fontSize={17}
           style={{
-            boxShadow: "6px 10px 21px -7px rgba(0,0,0,0.51)",
-            borderRadius: "30px",
-            textAlign: "center",
-            color: "#535C68",
-            padding: "10px",
-            background: "#F7DAE4",
+            paddingTop: "2px",
+            color: "var(--primary-color1)",
+            fontWeight: "bolder",
+            backgroundColor: "rgb(255, 255, 243)",
           }}
         >
-          <b>UPCOMING & ONGOING EVENTS</b>
-        </Box>
-      </Grid>
-
-      <Grid
-        container
-        style={{
-          flexGrow: "1",
-          minHeight: "70vh",
-          background: "rgb(201 255 229 / 43%)",
-          fontFamily: ["Nunito", "sans-serif"],
-        }}
-      >
-        {upcoming.length > 0 ? (
-          upcoming.map((e, i) => {
-            return (
-              <Grid
-                key={i}
-                item
-                xs={12}
-                sm={6}
-                lg={3}
-                md={3}
-                style={{ padding: "10px" }}
-              >
-                <div
-                // data-aos="zoom-in"
+          <BsFillMicFill /> Events at CapsCode ?
+        </Typography>
+        <Grid
+          container
+          style={{
+            flexGrow: "1",
+            minHeight: "70vh",
+            background: "rgb(201 255 229 / 43%)",
+            backgroundImage: `url(${whatwedosvg8})`,
+            backgroundSize: "cover",
+          }}
+        >
+          {upcoming.length > 0 ? (
+            upcoming.map((e, i) => {
+              return (
+                <Grid
+                  key={i}
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={3}
+                  md={3}
+                  style={{ padding: "10px" }}
                 >
-                  <Card
-                    className={classes.my_upcomings}
-                    style={{
-                      width: "auto",
-                      backgroundImage: `${e.cardColor}`,
-                      padding: "15px",
-                      borderRadius: "15px",
-                      boxShadow: "0 17px 15px 0 rgba(0,0,0,0.2)",
-                    }}
-                  >
-                    <Typography
-                      varient="subtitle2"
-                      style={{ fontWeight: "600" }}
-                    >
-                      {e.eventName}
-                    </Typography>
-                    <Divider />
-                    <Typography
-                      style={{ marginTop: "10px" }}
-                    >{`Duration: ${e.duration}`}</Typography>
-                    <Typography>{`When: ${e.date_time}`}</Typography>
-                    <Typography>{`Platform: ${e.platform}`}</Typography>
-                    <Typography>{`Mode: ${e.type}`}</Typography>
-                    <a
-                      href={e.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", fontWeight: "60px" }}
+                  <div>
+                    <Card
+                      className={classes.my_upcomings}
+                      style={{
+                        width: "auto",
+                        backgroundColor: `${e.cardColor}`,
+                        padding: "15px",
+                        borderRadius: "15px",
+                        boxShadow: "0 17px 15px 0 rgba(0,0,0,0.2)",
+                      }}
                     >
                       <Typography
-                        style={{ fontWeight: "900", textAlign: "center" }}
-                      >{`Click to register`}</Typography>
-                    </a>
-                  </Card>
-                </div>
-              </Grid>
-            );
-          })
-        ) : (
-          <Loader />
-        )}
-      </Grid>
-    </div>
+                        variant="subtitle2"
+                        style={{ fontWeight: "600" }}
+                      >
+                        {e.eventName}
+                      </Typography>
+                      <Divider />
+                      <Typography
+                        style={{ marginTop: "10px" }}
+                      >{`Duration: ${e.duration}`}</Typography>
+                      <Typography>{`When: ${e.date_time}`}</Typography>
+                      <Typography>{`Platform: ${e.platform}`}</Typography>
+                      <Typography>{`Mode: ${e.type}`}</Typography>
+                      <a
+                        href={e.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none", fontWeight: "60px" }}
+                      >
+                        <Typography
+                          style={{ fontWeight: "900", textAlign: "center" }}
+                        >{`Click to register`}</Typography>
+                      </a>
+                    </Card>
+                  </div>
+                </Grid>
+              );
+            })
+          ) : (
+            <Loader />
+          )}
+        </Grid>
+        {/* EVENTS ENDS */}
+      </div>
+    </>
   );
 }
 

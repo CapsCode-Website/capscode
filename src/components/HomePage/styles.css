@@ -78,3 +78,131 @@
     border-color: #ffa812;
   }
 }
+
+.Slogans{
+  padding-left: 8px;
+  font-style: normal;
+  color: rgb(125, 125, 125);
+  font-weight: 100;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.WhatWeDoCardHolder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+
+
+.WhatWeDoCards {
+  border: 1px solid var(--primary-color4);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: hsl(0, 0%, 100%);
+  line-height: 2;
+  border-radius: 10px;
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 0 5px -2px hsla(0, 0%, 0%, 0.1);
+  min-height: 70vh;
+}
+
+.WhatWeDoCards figure {
+  /* limit the width and height of the figure to show the image in a circle */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* specify negative margin matching half the height of the element */
+  margin-top: -60px;
+  /* position relative for the pseudo element */
+  position: relative;
+  
+}
+.WhatWeDoCards figure:before {
+  /* add a border around the figure matching the color of the background, faking the clip */
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border: 1rem solid var(--back-primary-color);
+  box-shadow: 0 1px hsla(0, 0%, 0%, 0.1);
+}
+.WhatWeDoCards figure img {
+  /* stretch the image to cover the size of the wrapping container */
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  /* object fit to maintain the aspect ratio and fit the width/height */
+  object-fit: cover;
+}
+
+.WhatWeDoCards div {
+  /* center the text in the div container */
+  text-align: center;
+  margin: 0.8rem;
+}
+.WhatWeDoCards div p {
+  color: hsl(250, 5%, 45%);
+  font-weight: 400;
+  font-style: italic;
+  /* margin: 1rem 0 3rem; */
+  font-family: "Noticia Text", serif;
+  /* position relative for the pseudo element */
+  position: relative;
+  z-index: 5;
+}
+.WhatWeDoCards div h1 {
+  /* considerably reduce the size of the heading */
+  color: hsl(260, 5%, 55%);
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
+  text-align: left;
+}
+
+
+.RouteButton{
+  background-color: transparent;
+  border-radius: 5px;
+  padding:5px;
+  border:1px solid var(--primary-color4) ;
+}
+.RouteButton:hover{
+  color:white;
+  background-color: var(--primary-color4);
+}
+
+
+.HomeHeadings{
+  padding:13px;
+}
+.WhatWeDoCardText p{
+  line-height: 16px;
+  text-align: left;
+}
+.WhatWeDoCardHeading{
+  color:"var(--blackcolor)"
+}
+@media screen and (max-width: 625px) {
+  .HomeHeadings{
+    font-size: 1.875rem !important;
+  }
+  .WhatWeDoCardHeading{
+    font-size: 1.2rem !important;
+  }
+  .WhatWeDoCardText{
+    line-height: 16px;
+  }
+}

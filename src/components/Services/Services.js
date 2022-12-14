@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Loader from "../Loading/Loader";
+import SEO from "../../SEO";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -92,6 +93,12 @@ export default function Pricing() {
   } else {
     return (
       <React.Fragment>
+        <SEO
+          title="CapsCode - Services"
+          description="Web Development in Ranchi Jharkhand, Hire web developer if you need a website"
+          name="Services | CapsCode"
+          type="website"
+        />
         <CssBaseline />
         <Container
           maxWidth="md"
@@ -122,7 +129,8 @@ export default function Pricing() {
               fontWeight: "bolder",
             }}
           >
-            NEW YEAR OFFER, GRAB IT SOON
+            JAW DROPPING DEAL, GRAB IT SOON
+            <p>Look like an expert and professional from day 1</p>
           </Typography>
         </Container>
         {/* End hero unit */}

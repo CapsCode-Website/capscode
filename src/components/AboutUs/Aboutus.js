@@ -8,12 +8,14 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
-import "animate.css/animate.css";
 import Loader from "../Loading/Loader";
+import { textAlign } from "@mui/system";
+import SEO from "../../SEO";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    padding: "20px",
     [theme.breakpoints.down("sm")]: {
       // backgroundColor: 'red',
       marginTop: "60px",
@@ -30,14 +32,10 @@ const useStyles = makeStyles((theme) => ({
 
   about: {
     paddingLeft: "30px",
-    animation: "headShake",
-    animationDuration: "2s",
     color: "#4a148c",
   },
   eachAbout: {
     paddingBottom: "20px",
-    animation: "headShake",
-    animationDuration: "3s",
   },
 
   team: {
@@ -109,13 +107,19 @@ export default function Aboutus() {
   } else {
     return (
       <>
+        <SEO
+          title="CapsCode - About Us"
+          description="CapsCode - Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MERN, HTML, CSS, Read CapsCode Blogs by Rahul Nag"
+          name="About CapsCode"
+          type="website"
+        />
         <Grid
           className={classes.root}
           container
           style={{
-            backgroundColor: "white",
+            // backgroundColor: "white",
             padding: "20px",
-            minHeight: "91.5vh",
+            // minHeight: "91.5vh",
           }}
         >
           <Grid
@@ -126,8 +130,64 @@ export default function Aboutus() {
             lg={12}
             className={classes.eachAbout}
           >
+            <Typography>
+              CapsCode was founded in 3rd Aug, 2020 with a great vision to make
+              India ready for future. CapsCode is a Ranchi, Jharkhand based Web
+              Development and Technology Consulting Company who
+              <li>Teaches coding</li>
+              <li>
+                Develop websites,SEO, FREE web hosting & service, logo
+                designing, graphics designing and a lot more
+              </li>
+              <li>Provide consultation</li>
+              <li>24/7 availability to solve your queries</li>
+              <li>Provide 1:1 consultation</li>
+              <li>Mentorship</li>
+            </Typography>
+            <Typography>
+              At CapsCode we have highly qualified with 6+ yrs IT Industrial
+              experienced developers who are specialized in Website Design &
+              Development, Web technologies, Web Security etc. At CapsCode we
+              understand your requirements and get back to you with complete
+              idea and solutions.
+            </Typography>
+
+            {/* <Typography>Why CapsCode</Typography>
+            <Typography
+              align="left"
+              variant="subtitle2"
+              className={classes.about}
+            >
+              1. We comprehensively understand your require to ensure that we
+              move ahead in the right direction
+            </Typography>
+            <Typography
+              align="left"
+              variant="subtitle2"
+              className={classes.about}
+            >
+              2. We always keep you in the loop, seek your feedback and report
+              to you with regular updates.
+            </Typography>
+            <Typography
+              align="left"
+              variant="subtitle2"
+              className={classes.about}
+            >
+              3. We ensure to provide responsive user friendly and smooth
+              website with 90+ SEO and also to make it appear in the first page
+              of Google
+            </Typography>
+            <Typography
+              align="left"
+              variant="subtitle2"
+              className={classes.about}
+            >
+              4. We provide any FREE services for 90 days and free Hosting for 1
+              year
+            </Typography>
             <Typography align="left" variant="h5">
-              1: Our Vision and misssion !
+              1: Our Vision and mission !
             </Typography>
             <Typography
               align="left"
@@ -163,8 +223,8 @@ export default function Aboutus() {
               variant="subtitle2"
               className={classes.about}
             >
-              We are a group of professionals with emmense working experience
-              and knowledge in terns of technical and non- technical terms.
+              We are a group of professionals with immense working experience
+              and knowledge in terms of technical and non- technical field.
             </Typography>
           </Grid>
 
@@ -299,17 +359,19 @@ export default function Aboutus() {
               to coding, future, mentorship etc. Just shootout the question,
               query, concern in whats app or email and we will be happy to reply
               you back withing 1 hr.
+            </Typography> */}
+            <br />
+            <Typography>
+              If you have any query, just shootout your question, query, concern
+              in whats app or email and we will be happy to reply you back
+              withing 1 hr.
             </Typography>
           </Grid>
         </Grid>
 
         <Divider />
-        <h2 style={{ textAlign: "center" }}>TEAM</h2>
-        <Grid
-          container
-          className={classes.team}
-          style={{ backgroundColor: "white" }}
-        >
+        <h2 style={{ textAlign: "center" }}>OUR TEAM</h2>
+        <Grid container className={classes.team}>
           {About.map((a, i) => {
             return (
               <Grid

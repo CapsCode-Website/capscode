@@ -22,7 +22,9 @@ import BlogDataContext from "../../BlogDataContext";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import Loader from "../Loading/Loader";
-const drawerWidth = 240;
+import SEO from "../../SEO";
+
+const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,11 +35,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       width: drawerWidth,
       flexShrink: 0,
+      paddingTop: 0,
     },
   },
   appBar: {
     zIndex: "-1",
-
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -57,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     zIndex: 0,
+    paddingTop: "50px",
   },
   content: {
     flexGrow: 1,
@@ -98,8 +101,6 @@ function Blog(props) {
   };
   const drawer = (
     <div>
-      {/* <div className={classes.toolbar} /> */}
-      {/* <Divider /> */}
       <List>
         <h3 style={{ textAlign: "center" }}>CapsCode Blog</h3>
         {/* <Divider /> */}
@@ -109,36 +110,19 @@ function Blog(props) {
               style={{ color: "#151B54" }}
               key={text}
               selected={selectedIndex == "home"}
-              // onClick={() => {
-              //   setSelectedIndex("home");
-              //   sessionStorage.setItem("currentClickedIndex", "home");
-              // }}
             >
-              {/* <FcHome style={{ paddingLeft: "5px" }} /> */}
               <ListItemText primary={text} />
             </ListItem>
           </Link>
         ))}
       </List>
       <Divider />
-      <List
-        dense={true}
-        disablePadding={true}
-        // onClick={(e) => handleDrawerToggle(e)}
-      >
+      <List dense={true} disablePadding={true}>
         {data.length > 0 ? (
           data.map((categoryData, categoryIndex) => (
             <>
-              {/* <ListItemButton onClick={handleClick}> */}
-              <ListItemButton
-                style={{ color: "grey" }}
-                // onClick={() => handleClick(categoryIndex)}
-              >
-                {/* <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon> */}
+              <ListItemButton style={{ color: "grey" }}>
                 <ListItemText primary={categoryData.category} />
-                {/* {open[categoryIndex] ? <ExpandLess /> : <ExpandMore />} */}
               </ListItemButton>
               {categoryData.children.map((blogdata, dataIndex) => (
                 <Collapse in={open} timeout="auto" unmountOnExit>
@@ -155,15 +139,6 @@ function Blog(props) {
                         key={blogdata.sidebarName}
                         style={{ color: "#151B54" }}
                         selected={selectedIndex == blogdata.routeName}
-                        // onClick={() => {
-                        //   setSelectedIndex(
-                        //     props.history.location.pathname.split("/")[2]
-                        //   );
-                        //   sessionStorage.setItem(
-                        //     "currentClickedIndex",
-                        //     props.history.location.pathname.split("/")[2]
-                        //   );
-                        // }}
                       >
                         <ListItemText
                           primary={blogdata.sidebarName}
@@ -192,11 +167,24 @@ function Blog(props) {
 
   return (
     <>
-      {/* {console.log(open)} */}
+      {props.link == "home" || props.link == "" ? (
+        <SEO
+          title="CapsCode Blogs"
+          description="CapsCode Blogs"
+          name="CapsCode Blogs"
+          type="article"
+        />
+      ) : (
+        <SEO
+          title={props.history.location.pathname.split("/")[2]}
+          description={`CapsCode Blog | ${props.shortTitle}`}
+          name="CapsCode Blogs"
+          type="article"
+        />
+      )}
       <div className={classes.root}>
         <nav className={classes.drawer} aria-label="mailbox folders">
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          {/* <CssBaseline /> */}
           <Hidden mdUp implementation="css">
             <AppBar
               position="sticky"
@@ -215,7 +203,6 @@ function Blog(props) {
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
-                  // sx={{ mr: 2, display: { sm: "none" } }}
                 >
                   <div>
                     <CgMenuRight />
@@ -256,9 +243,6 @@ function Blog(props) {
             </SwipeableDrawer>
           </Hidden>
         </nav>
-        {/* {props.match.params.content == "home" ? (
-          <Career />
-        ) : ( */}
         {props.link == "home" || props.link == "" ? (
           <Career setSelectedIndex={setSelectedIndex} />
         ) : (
@@ -271,12 +255,11 @@ function Blog(props) {
               like={props.like}
               heart={props.heart}
               title={props.title}
+              shortTitle={props.shortTitle}
+              blogLink={props.match.url}
             />
           </main>
         )}
-
-        {/* )
-        } */}
       </div>
     </>
   );

@@ -71,7 +71,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
             >
               <Card className={classes.root}>
                 <CardHeader
-                  style={{ height: "70px", fontWeight: "300px" }}
+                  style={{ minHeight: "70px", fontWeight: "300px" }}
                   avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
                       {Array.from(b.title)[0]}
@@ -83,7 +83,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                   //     </IconButton>
                   // }
                   title={
-                    <span style={{ fontWeight: "600", fontSize: "1.9em" }}>
+                    <span style={{ fontWeight: "600", fontSize: "25px" }}>
                       {b.title}
                     </span>
                   }
