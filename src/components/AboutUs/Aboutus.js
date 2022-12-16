@@ -151,215 +151,6 @@ export default function Aboutus() {
               understand your requirements and get back to you with complete
               idea and solutions.
             </Typography>
-
-            {/* <Typography>Why CapsCode</Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              1. We comprehensively understand your require to ensure that we
-              move ahead in the right direction
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              2. We always keep you in the loop, seek your feedback and report
-              to you with regular updates.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              3. We ensure to provide responsive user friendly and smooth
-              website with 90+ SEO and also to make it appear in the first page
-              of Google
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              4. We provide any FREE services for 90 days and free Hosting for 1
-              year
-            </Typography>
-            <Typography align="left" variant="h5">
-              1: Our Vision and mission !
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              a) Make INDIA future ready by providing best skills and creative
-              brains.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              b) We provide mentorship, 24/7/365 support in choosing correct
-              path for your future.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className={classes.eachAbout}
-          >
-            <Typography align="left" variant="h5">
-              2: Who we are ?
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              We are a group of professionals with immense working experience
-              and knowledge in terms of technical and non- technical field.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className={classes.eachAbout}
-          >
-            <Typography align="left" variant="h5">
-              3: What we do ?
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              a) We teach CODE and makae you ready for future with the power to
-              build your websites, Apps, VR's, AI, ML, etc.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              b) we conduxt seminars, webinars, workshops in different regions
-              of Ranchi and other places too.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              c) We teach and guide the students of Rural areas for free of
-              cost, as each child is GOD GIFTED with differnt brain power So
-              money should not be the constraint.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              d) We provide scholarship to the deserving students.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className={classes.eachAbout}
-          >
-            <Typography align="left" variant="h5">
-              4: More Info !
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              a) We conduct online as well as offline classes with live projects
-              and on completion you will earn a CERTIFICATE
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              b) We build SEO enabled websites for out clients/ Customers and
-              also provide maintainence to them.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className={classes.eachAbout}
-          >
-            <Typography align="left" variant="h5">
-              5: Who can join CapsCode?
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              a) Anyone having interest in learning code, website building, app
-              building, AI, ML, Python, SQL, DataStructure, Algorithm, learning
-              new technologies in market and many more can join us.
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              (no minimum and maximum age criteria)
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              b) Anyone who wants to learn Digital Marketting, SWO, MS Office,
-              SAP etc can also join us.
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            className={classes.eachAbout}
-          >
-            <Typography align="left" variant="h5">
-              6: Our Availability !
-            </Typography>
-            <Typography
-              align="left"
-              variant="subtitle2"
-              className={classes.about}
-            >
-              We are available 24/7 to support you with all your doubt related
-              to coding, future, mentorship etc. Just shootout the question,
-              query, concern in whats app or email and we will be happy to reply
-              you back withing 1 hr.
-            </Typography> */}
             <br />
             <Typography>
               If you have any query, just shootout your question, query, concern
@@ -395,7 +186,6 @@ export default function Aboutus() {
                 <CardMedia
                   className={classes.media}
                   title="CAPSCODE Team Member"
-                  // image={require(`${a.teamMemberImage}`)}
                   image={a.teamMemberImage}
                 />
 
@@ -409,7 +199,6 @@ export default function Aboutus() {
                   </Typography>
                   <br />
 
-                  {/* <Divider/> */}
                   <Typography
                     variant="body2"
                     color="textSecondary"
@@ -418,15 +207,6 @@ export default function Aboutus() {
                     <b>{`Expert IN: ${a.expertIn}`}</b>
                   </Typography>
                 </CardContent>
-
-                {/* <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-              </CardActions> */}
               </Grid>
             );
           })}

@@ -153,7 +153,7 @@ export default function Courses() {
       <>
         <SEO
           title="CapsCode - Courses"
-          description="Courses provides by capscode | html, css, javascript, reactjs, nodejs, expressjs, mongodb, web development, programming etc."
+          description="Courses provided by capscode - html, css, javascript, reactjs, nodejs, expressjs, mongodb, web development, programming etc."
           name="CapsCode Courses"
           type="website"
         />
@@ -188,7 +188,7 @@ export default function Courses() {
                       <ButtonBase className={classes.image}>
                         <img
                           className={classes.img}
-                          alt="course"
+                          alt={c.courseName}
                           src={c.image}
                         />
                       </ButtonBase>

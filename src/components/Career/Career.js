@@ -89,8 +89,7 @@ function Career({ setSelectedIndex }) {
   useEffect(() => {
     axios({
       method: "GET",
-      url:
-        "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/allblog.json",
+      url: "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/allblog.json",
     })
       .then((response) => {
         setData(response.data);
@@ -100,48 +99,10 @@ function Career({ setSelectedIndex }) {
       });
   }, []);
 
-  // let query = `{
-  //   user(username: "capscode") {
-  //     publication {
-  //       posts(page:${page}){
-  //         slug
-  //         title
-  //         brief
-  //         coverImage
-  //       }
-  //     }
-  //   }
-  // }`;
-
-  // useEffect(()=>{
-  //   axios({
-  //     method: 'post',
-  //     url: 'https://api.hashnode.com/',
-  //     headers: {
-  //       'Content-type': 'application/json',
-  //     },
-  //     data: JSON.stringify({ query }),
-  //   })
-  //   .then((response)=>{
-  //     // console.log(response.data.data.user.publication.posts)
-  //     setData([...data,...response.data.data.user.publication.posts])
-  //   })
-  // },[page])
-
-  // useEffect(() => {
-  //   axios({
-  //     method: "GET",
-  //     url:
-  //       "https://gist.githubusercontent.com/rahulnag/dad725b9c2f8bcbdaa1e3c4f4234df73/raw/8f5b87b8589da496ea08a7939a67385fa4884f75/capscode-blog-home-list",
-  //   })
-  //     .then((response) => setData(response.data))
-  //     .catch((error) => console.log(error));
-  // }, []);
   const classes = useStyles();
   return (
     <div
       style={{
-        // backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
         width: "100vw",
       }}
     >

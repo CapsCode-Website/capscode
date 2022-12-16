@@ -59,12 +59,11 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
           paddingTop: "30px",
         }}
       >
-        CapsCode Blog's
+        CapsCode Blogs
       </div>
       {data.map((b, i) => {
         return (
           <Grid item lg={12} md={12} sm={12} xs={12}>
-            {/* {i == data.length - 1 ? setPage(1) : null} */}
             <NavLink
               to={`/blog/${b.routeName}`}
               style={{ textDecoration: "none" }}
@@ -77,23 +76,12 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                       {Array.from(b.title)[0]}
                     </Avatar>
                   }
-                  // action={
-                  //     <IconButton aria-label="settings">
-                  //         <MoreVertIcon />
-                  //     </IconButton>
-                  // }
                   title={
                     <span style={{ fontWeight: "600", fontSize: "25px" }}>
                       {b.title}
                     </span>
                   }
-                  // subheader="September 14, 2016"
                 />
-                {/* <CardMedia
-                  className={classes.media}
-                  image={b.coverImage}
-                  title="CapsCode Blog"
-                /> */}
                 <CardContent>
                   <Typography
                     variant="body2"
@@ -103,14 +91,6 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                     {b.smallTextHint}
                   </Typography>
                 </CardContent>
-                {/* <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                  </IconButton>
-                  <IconButton aria-label="share">
-                    <ShareIcon />
-                  </IconButton>
-                </CardActions> */}
                 <div
                   style={{
                     textAlign: "right",
@@ -129,7 +109,6 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                   </span>
                 </div>
               </Card>
-              {/* </a> */}
             </NavLink>
           </Grid>
         );

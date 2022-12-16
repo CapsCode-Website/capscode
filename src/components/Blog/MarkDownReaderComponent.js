@@ -36,7 +36,6 @@ const MarkDownReaderComponent = ({
   blogLink,
 }) => {
   const [mdText, setMdText] = useState("");
-  const [pageLocation, setPageLoation] = useState(0);
   // The back-to-top button is hidden at the beginning
   const [showButton, setShowButton] = useState(false);
 
@@ -79,7 +78,6 @@ const MarkDownReaderComponent = ({
       })
       .then((text) => {
         setMdText(text);
-        // console.log(mdText);
         CopyCodeToClipboard();
       })
       .catch((error) => console.error(error));
@@ -154,13 +152,6 @@ const MarkDownReaderComponent = ({
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-
-            {/* <FacebookMessengerShareButton
-              url={"https://www.capscode.in" + blogLink}
-              quote={shortTitle}
-            >
-              <FacebookMessengerIcon size={32} round />
-            </FacebookMessengerShareButton> */}
             <TelegramShareButton
               url={"https://www.capscode.in" + blogLink}
               title={shortTitle}
@@ -238,21 +229,6 @@ const MarkDownReaderComponent = ({
           )}
         </>
       )}
-
-      {/* <div
-        style={{
-          height: "130px",
-          background: "red",
-          width: "50px",
-          position: "fixed",
-          top: 150,
-          right: 0,
-        }}
-      >
-        <button>Like</button>
-        <span>{like}</span>
-        <button>Love</button>
-      </div> */}
     </>
   );
 };

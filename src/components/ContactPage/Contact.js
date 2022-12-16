@@ -27,7 +27,7 @@ const Contact = () => {
       <>
         <SEO
           title="CapsCode - Contact Us"
-          description="Contact us for web development in Ranchi, Jharkhand"
+          description="Contact for web development in Ranchi, Jharkhand"
           name="Contact Us | CapsCode"
           type="website"
         />

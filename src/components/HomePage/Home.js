@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { Card } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
+import { useHistory } from "react-router-dom";
 import backimage from "./Assets/wave.svg";
 import whatwedosvg from "./Assets/whatwedosvg.svg";
 import whatwedosvg1 from "./Assets/whatwedosvg1.svg";
@@ -24,7 +25,7 @@ import {
 } from "react-icons/bs";
 import { businessdata } from "./whycapscodebusinessdata";
 import { studentdata } from "./whycapscodestudentdata";
-
+import SEO from "../../SEO";
 var link;
 const useStyles = makeStyles((theme) => ({
   fontHandler: {
@@ -84,6 +85,7 @@ function Home() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [upcoming, setUpcoming] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     fetch("https://rahulnag.github.io/capscodefiles/Upcoming.json")
       .then((res) => res.json())
@@ -125,6 +127,13 @@ function Home() {
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
   return (
     <>
+      {/* the below SEO details needs to be same as /public/index.html */}
+      <SEO
+        title="<CapsCode/>"
+        description="CapsCode - Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MERN, HTML, CSS, Read CapsCode Blogs by Rahul Nag"
+        name="CapsCode"
+        type="website"
+      />
       <div className={classes.root} style={{ backgroundColor: "white" }}>
         {/* THE LANDING PART OF THE HOME PAGE -- WELCOME TO CAPSCODE */}
         <Grid
@@ -253,12 +262,14 @@ function Home() {
                   <button
                     className="RouteButton"
                     style={{ margin: "20px", minWidth: "90px" }}
+                    onClick={() => history.push("/blog/home")}
                   >
                     Read Blogs ▶︎
                   </button>
                   <button
                     className="RouteButton"
                     style={{ margin: "20px", minWidth: "90px" }}
+                    onClick={() => history.push("/course")}
                   >
                     Courses ▶︎
                   </button>
@@ -300,7 +311,11 @@ function Home() {
                 <p>24/7 Support & Fast implementation</p>
                 <p>Free consultation</p>
                 <div>
-                  <button className="RouteButton" style={{ minWidth: "90px" }}>
+                  <button
+                    className="RouteButton"
+                    style={{ minWidth: "90px" }}
+                    onClick={() => history.push("/services")}
+                  >
                     Services ▶︎
                   </button>
                 </div>

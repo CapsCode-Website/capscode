@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     zIndex: 0,
-    paddingTop: "50px",
+    paddingTop: "40px",
   },
   content: {
     flexGrow: 1,
@@ -103,7 +103,6 @@ function Blog(props) {
     <div>
       <List>
         <h3 style={{ textAlign: "center" }}>CapsCode Blog</h3>
-        {/* <Divider /> */}
         {["Blog Home"].map((text, index) => (
           <Link to={"/blog/home"} style={{ textDecoration: "none" }}>
             <ListItem
@@ -177,7 +176,7 @@ function Blog(props) {
       ) : (
         <SEO
           title={props.history.location.pathname.split("/")[2]}
-          description={`CapsCode Blog | ${props.shortTitle}`}
+          description={`${props.shortTitle}`}
           name="CapsCode Blogs"
           type="article"
         />
