@@ -95,7 +95,7 @@ export default function Pricing() {
       <React.Fragment>
         <SEO
           title="CapsCode - Services"
-          description="Web Development in Ranchi Jharkhand, Hire web developer if you need a website"
+          description="Web Development & Web Hosting in Ranchi Jharkhand, Hire web developer if you need a website"
           name="Services | CapsCode"
           type="website"
         />

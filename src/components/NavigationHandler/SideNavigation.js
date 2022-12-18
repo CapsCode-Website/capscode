@@ -1,16 +1,14 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Link, HashRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CgMenuGridO } from "react-icons/cg";
 const drawerWidth = 240;
 
@@ -209,7 +207,7 @@ function SideNavigation(props) {
                 paddingLeft: "15px",
                 alignItems: "center",
               }}
-              src={require("../Assets/capscode.png")}
+              src={require("../Assets/capscode1200.webp")}
             />
           </a>
           {/* <Typography style={{textShadow: '2px 2px 5px yellow'}} variant="h6" noWrap>

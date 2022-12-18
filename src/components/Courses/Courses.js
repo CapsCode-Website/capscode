@@ -11,7 +11,6 @@ import MuiExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Loader from "../Loading/Loader";
-import { Button } from "@material-ui/core";
 import CourseForm from "./CourseForm";
 import SEO from "../../SEO";
 
@@ -153,7 +152,7 @@ export default function Courses() {
       <>
         <SEO
           title="CapsCode - Courses"
-          description="Courses provided by capscode - html, css, javascript, reactjs, nodejs, expressjs, mongodb, web development, programming etc."
+          description="Learn html, css, javascript, reactjs, nodejs, expressjs, mongodb, docker, github, web development, programming etc."
           name="CapsCode Courses"
           type="website"
         />

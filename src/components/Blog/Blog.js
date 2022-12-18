@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
@@ -16,11 +16,7 @@ import Career from "../Career/Career";
 import Collapse from "@mui/material/Collapse";
 import ListItemButton from "@mui/material/ListItemButton";
 import { CgMenuRight } from "react-icons/cg";
-import { FcHome } from "react-icons/fc";
-import axios from "axios";
 import BlogDataContext from "../../BlogDataContext";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import ExpandLess from "@material-ui/icons/ExpandLess";
 import Loader from "../Loading/Loader";
 import SEO from "../../SEO";
 
@@ -52,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  // toolbar: theme.mixins.toolbar,
   toolbar: {
     overflowY: "scroll",
   },
@@ -63,12 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    // width: "100vw",
-    // padding: theme.spacing(3),
-    // overflowY: "scroll",
     marginTop: "30px",
-    // paddingRight: "20px",
-    // backgroundColor: "white",
   },
 }));
 
@@ -77,7 +68,7 @@ function Blog(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [open, setOpen] = React.useState({ 1: true });
+  const open = { 1: true };
   const [selectedIndex, setSelectedIndex] = React.useState(
     props.history.location.pathname.split("/")[2]
   );
@@ -90,11 +81,7 @@ function Blog(props) {
   }, []);
   useEffect(() => {
     setSelectedIndex(props.history.location.pathname.split("/")[2]);
-  }, [props.history.location.pathname.split("/")[2]]);
-
-  const handleClick = (index) => {
-    setOpen({ [index]: true });
-  };
+  }, [props.history.location.pathname]);
 
   const handleDrawerToggle = (e) => {
     setMobileOpen(!mobileOpen);
@@ -108,7 +95,7 @@ function Blog(props) {
             <ListItem
               style={{ color: "#151B54" }}
               key={text}
-              selected={selectedIndex == "home"}
+              selected={selectedIndex === "home"}
             >
               <ListItemText primary={text} />
             </ListItem>
@@ -137,7 +124,7 @@ function Blog(props) {
                       <ListItem
                         key={blogdata.sidebarName}
                         style={{ color: "#151B54" }}
-                        selected={selectedIndex == blogdata.routeName}
+                        selected={selectedIndex === blogdata.routeName}
                       >
                         <ListItemText
                           primary={blogdata.sidebarName}
@@ -166,7 +153,7 @@ function Blog(props) {
 
   return (
     <>
-      {props.link == "home" || props.link == "" ? (
+      {props.link === "home" || props.link === "" ? (
         <SEO
           title="CapsCode Blogs"
           description="CapsCode Blogs"
@@ -182,7 +169,7 @@ function Blog(props) {
         />
       )}
       <div className={classes.root}>
-        <nav className={classes.drawer} aria-label="mailbox folders">
+        <nav className={classes.drawer} aria-label="capscode-blog-nav">
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden mdUp implementation="css">
             <AppBar
@@ -199,7 +186,7 @@ function Blog(props) {
               <Toolbar>
                 <IconButton
                   color="inherit"
-                  aria-label="open drawer"
+                  aria-label="capscode drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
                 >
@@ -242,7 +229,7 @@ function Blog(props) {
             </SwipeableDrawer>
           </Hidden>
         </nav>
-        {props.link == "home" || props.link == "" ? (
+        {props.link === "home" || props.link === "" ? (
           <Career setSelectedIndex={setSelectedIndex} />
         ) : (
           <main

@@ -88,7 +88,7 @@ export default function Footer() {
           <a
             href="https://play.google.com/store/apps/details?id=com.capscode.in&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer preconnect"
           >
             <img
               alt="Get it on Google Play"

@@ -9,7 +9,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
 import Loader from "../Loading/Loader";
-import { textAlign } from "@mui/system";
 import SEO from "../../SEO";
 
 const useStyles = makeStyles((theme) => ({
@@ -109,7 +108,7 @@ export default function Aboutus() {
       <>
         <SEO
           title="CapsCode - About Us"
-          description="CapsCode - Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MERN, HTML, CSS, Read CapsCode Blogs by Rahul Nag"
+          description="Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MongoDB, MERN, HTML, CSS, GitHub, Docker, Web Development Blog"
           name="About CapsCode"
           type="website"
         />
@@ -176,7 +175,10 @@ export default function Aboutus() {
               >
                 <CardHeader
                   avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
+                    <Avatar
+                      aria-label="capscode team avatar"
+                      className={classes.avatar}
+                    >
                       {a.avatarShortName}
                     </Avatar>
                   }

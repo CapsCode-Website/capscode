@@ -26,7 +26,7 @@ import {
 import { businessdata } from "./whycapscodebusinessdata";
 import { studentdata } from "./whycapscodestudentdata";
 import SEO from "../../SEO";
-var link;
+
 const useStyles = makeStyles((theme) => ({
   fontHandler: {
     paddingLeft: "10px",
@@ -82,46 +82,16 @@ function Home() {
   }); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
 
   const classes = useStyles();
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [upcoming, setUpcoming] = useState([]);
   const history = useHistory();
   useEffect(() => {
     fetch("https://rahulnag.github.io/capscodefiles/Upcoming.json")
       .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setUpcoming(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+      .then((result) => {
+        setUpcoming(result);
+      })
+      .catch((e) => console.error(e));
   }, []);
-
-  const [q_error, q_setError] = useState(null);
-  const [q_isLoaded, q_setIsLoaded] = useState(false);
-  const [q_upcoming, q_setUpcoming] = useState([]);
-  useEffect(() => {
-    fetch("https://rahulnag.github.io/capscodefiles/QuizLink.json")
-      .then((q_res) => q_res.json())
-      .then(
-        (q_result) => {
-          q_setIsLoaded(true);
-          q_setUpcoming(q_result);
-        },
-        (q_error) => {
-          q_setIsLoaded(true);
-          q_setError(q_error);
-        }
-      );
-  }, []);
-
-  q_upcoming.map((v) => {
-    link = v.quizLink;
-  });
 
   localStorage.setItem("currentTab", 0); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
@@ -129,8 +99,8 @@ function Home() {
     <>
       {/* the below SEO details needs to be same as /public/index.html */}
       <SEO
-        title="<CapsCode/>"
-        description="CapsCode - Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MERN, HTML, CSS, Read CapsCode Blogs by Rahul Nag"
+        title="CapsCode"
+        description="Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MongoDB, MERN, HTML, CSS, GitHub, Docker, Web Development Blog"
         name="CapsCode"
         type="website"
       />
@@ -163,11 +133,32 @@ function Home() {
             </h3>
 
             <span style={{ lineHeight: "10px" }}>
-              <h3 className="Slogans">We teach Code👨‍💻| We build Website💻</h3>
               <h3 className="Slogans">
-                We provide IT Support🦽| We help grow Business🚀
+                We teach Code{" "}
+                <span role="img" aria-labelledby="coding">
+                  👨‍💻
+                </span>
+                | We build Website{" "}
+                <span role="img" aria-labelledby="laptop">
+                  💻
+                </span>
               </h3>
-              <h3 className="Slogans">We provide FREE Consultation☎️</h3>
+              <h3 className="Slogans">
+                We provide IT Support
+                <span role="img" aria-labelledby="support">
+                  🦽
+                </span>
+                | We help grow Business{" "}
+                <span role="img" aria-labelledby="launch">
+                  🚀
+                </span>
+              </h3>
+              <h3 className="Slogans">
+                We provide FREE Consultation
+                <span role="img" aria-labelledby="phone">
+                  ☎️
+                </span>
+              </h3>
             </span>
           </Grid>
 
@@ -180,7 +171,7 @@ function Home() {
                 height: "100%",
                 paddingTop: "20%",
               }}
-              src={require("./Assets/home.png")}
+              src={require("./Assets/home.webp")}
             />
             {/* <Lottie options={defaultOptions} height={450} width={360} /> */}
           </Grid>
@@ -242,7 +233,7 @@ function Home() {
               <figure>
                 <img
                   alt="CapsCode-For Student"
-                  src={require("./Assets/student.JPG")}
+                  src={require("./Assets/student.webp")}
                 />
               </figure>
               <Typography variant="h4" className="WhatWeDoCardHeading">
@@ -294,7 +285,7 @@ function Home() {
               <figure>
                 <img
                   alt="A rather marvellous macaw, opening one of its wings to support the cause."
-                  src={require("./Assets/business.JPG")}
+                  src={require("./Assets/business.webp")}
                 />
               </figure>
               <Typography variant="h4" className="WhatWeDoCardHeading">
@@ -444,13 +435,37 @@ function Home() {
               }}
             >
               <h3>
-                👨‍💻 For Frontend Web Development (html5, css3, JavaScript,
-                ReactJS) workshop
+                <span role="img" aria-labelledby="coding">
+                  👨‍💻
+                </span>{" "}
+                For Frontend Web Development (HTML5, CSS3, JavaScript, ReactJS,
+                Docker, Azure, Hosting etc.) workshop
               </h3>
-              <h3>📁 For Backend Development(NodeJS, MongoDB) workshop</h3>
-              <h3>🎤 For technical speech</h3>
-              <h3>📞 For career consultation</h3>
-              <h3>💎 Any many more tech related stuffs...</h3>
+              <h3>
+                <span role="img" aria-labelledby="folder">
+                  📁
+                </span>{" "}
+                For Backend Web Development(NodeJS, ExpressJS, MongoDB, Redis
+                etc.) workshop
+              </h3>
+              <h3>
+                <span role="img" aria-labelledby="mic">
+                  🎤
+                </span>{" "}
+                For technical speech
+              </h3>
+              <h3>
+                <span role="img" aria-labelledby="phone">
+                  📞
+                </span>{" "}
+                For career consultation
+              </h3>
+              <h3>
+                <span role="img" aria-labelledby="gem">
+                  💎
+                </span>{" "}
+                Any many more tech related stuffs...
+              </h3>
             </div>
           </Grid>
           <Grid item lg={6} md={6} sm={6} xs={12}>
@@ -460,7 +475,8 @@ function Home() {
                 width: "80%",
                 alignItems: "center",
               }}
-              src={require("./Assets/inviteus2.png")}
+              src={require("./Assets/inviteus2.webp")}
+              alt="Invite CapsCode to school/college"
             />
           </Grid>
         </Grid>
@@ -541,8 +557,7 @@ function Home() {
                       }}
                     >
                       <Typography
-                        variant="subtitle2"
-                        style={{ fontWeight: "600" }}
+                        style={{ fontWeight: "bolder", fontSize: "1rem" }}
                       >
                         {e.eventName}
                       </Typography>

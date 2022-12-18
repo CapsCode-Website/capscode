@@ -1,12 +1,10 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Divider from "@material-ui/core/Divider";
-import { Typography } from "@material-ui/core";
 import devto from "./devto.svg";
-import hashnode from "./hashnode.png";
-import insta from "./insta.svg";
+import hashnode from "./hashnode.webp";
+import insta from "./instagram.webp";
 import axios from "axios";
 import BlogCards from "./BlogCards";
 import Loader from "../Loading/Loader";

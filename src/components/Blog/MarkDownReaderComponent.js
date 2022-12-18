@@ -5,20 +5,12 @@ import "./MarkDownReaderComponent.css";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import {
-  a11yDark,
-  a11yLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   FacebookShareButton,
-  FacebookMessengerShareButton,
-  FacebookMessengerIcon,
   FacebookIcon,
   LinkedinShareButton,
   LinkedinIcon,
-  InstapaperShareButton,
-  InstapaperIcon,
   TwitterIcon,
   TwitterShareButton,
   TelegramShareButton,
@@ -98,7 +90,7 @@ const MarkDownReaderComponent = ({
 
   return (
     <>
-      {mdText == "" ? (
+      {mdText === "" ? (
         <div style={{ marginTop: "90px" }}>
           <Loader />
         </div>
@@ -110,7 +102,7 @@ const MarkDownReaderComponent = ({
               fontSize: "40px",
               padding: "15px",
               lineHeight: "46px",
-              margin: "10px 0px 0px 0px",
+              margin: "14px 0px 0px 0px",
             }}
           >
             {title}
@@ -146,6 +138,7 @@ const MarkDownReaderComponent = ({
                 "reactjs",
                 "coding",
                 "frontend",
+                "backend",
                 "webdevelopment",
                 "htmlcss",
               ]}
@@ -206,7 +199,6 @@ const MarkDownReaderComponent = ({
                 bottom: 10,
                 float: "right",
                 margin: "12px",
-                borderRadius: "0.3em",
                 height: "40px",
                 width: "40px",
                 fontSize: "2rem",

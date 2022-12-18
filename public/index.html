@@ -5,24 +5,49 @@
   <meta name="google-site-verification" content="VBnot9jL2D_rsaAzgtZoCrdfjdan3LvPyTy_QUVEyW8" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JVY8EYLJ3"></script>
-  <script>
+  <script defer>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'G-0JVY8EYLJ3');
+    gtag("config", "G-0JVY8EYLJ3");
   </script>
-  <title>
-    <CapsCode />
-  </title>
-  <meta name="description"
-    content="CapsCode - Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MERN, HTML, CSS, Read CapsCode Blogs by Rahul Nag"
+  <title>CapsCode</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
+  <meta data-rh="true" name="title" content="CapsCode" />
+  <meta data-rh="true" name="description"
+    content="Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MongoDB, MERN, HTML, CSS, GitHub, Docker, Web Development Blog"
     data-rh="true" />
   <meta charset="utf-8" />
-  <meta name="keywords" content="HTML, CSS, JavaScript">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="black" />
-  <meta name="author" content="Rahul Nag">
+  <meta name="keywords" content="HTML, CSS, JavaScript, ReactJS, NodeJS, MongoDB, MERN, Docker, Web Development Blog" />
+  <meta data-rh="true" name="viewport" content="width=device-width, initial-scale=1" />
+  <meta data-rh="true" name="theme-color" content="black" />
+  <meta data-rh="true" name="author" content="Rahul Nag" />
+  <!-- Facebook tags -->
+  <meta data-rh="true" property="og:type" content="website" />
+  <meta data-rh="true" property="og:title" content="CapsCode" />
+  <meta data-rh="true" property="og:description"
+    content="Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MongoDB, MERN, HTML, CSS, GitHub, Docker, Web Development Blog" />
+  <meta data-rh="true" property="og:url" content="https://www.capscode.in" />
+  <meta data-rh="true" property="og:image:url" content="https://www.capscode.in/capscode_og_image.png" />
+  <meta data-rh="true" property="og:image:secure_url" content="https://www.capscode.in/capscode_og_image.png" />
+  <meta data-rh="true" property="og:image:width" content="1200" />
+  <meta data-rh="true" property="og:image:height" content="627" />
+  <meta data-rh="true" property="og:image:type" content="image/png" />
+  <meta data-rh="true" property="og:image:alt" content="CapsCode" />
+  <meta data-rh="true" name="publish_date" property="og:publish_date" content="" />
+  <!-- End Facebook tags -->
+  <!-- Twitter tags -->
+  <meta data-rh="true" name="twitter:creator" content="CapsCode" />
+  <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+  <meta data-rh="true" name="twitter:title" content="CapsCode" />
+  <meta data-rh="true" name="twitter:description"
+    content="Website development in Ranchi, Jharkhand, Learn web development, JavaScript, ReactJS, NodeJS, MongoDB, MERN, HTML, CSS, GitHub, Docker, Web Development Blog" />
+  <meta data-rh="true" property="twitter:url" content="https://www.capscode.in" />
+  <meta data-rh="true" property="twitter:image" content="https://www.capscode.in/capscode_og_image.png" />
+  <!-- End Twitter tags -->
 
   <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
@@ -32,12 +57,8 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -57,7 +78,7 @@
       bottom: 25px;
       right: 10px;
       background-color: orange;
-      color: #FFF;
+      color: #fff;
       border-radius: 50px;
       text-align: center;
       font-size: 30px;
@@ -92,107 +113,22 @@
       border: 2px solid rgb(250, 174, 123);
     }
   </style>
-
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
 
-
-
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-
-
-
-
-
-
-
-  <!-- 
-    <script language="JavaScript">
-      window.onload = function() {
-        document.addEventListener("contextmenu", function(e){
-          e.preventDefault();
-        }, false);
-        document.addEventListener("keydown", function(e) {
-        //document.onkeydown = function(e) {
-          // "I" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-            disabledEvent(e);
-          }
-          // "J" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            disabledEvent(e);
-          }
-          // "S" key + macOS
-          if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-            disabledEvent(e);
-          }
-          // "U" key
-          if (e.ctrlKey && e.keyCode == 85) {
-            disabledEvent(e);
-          }
-          // "F12" key
-          if (event.keyCode == 123) {
-            disabledEvent(e);
-          }
-        }, false);
-        function disabledEvent(e){
-          if (e.stopPropagation){
-            e.stopPropagation();
-          } else if (window.event){
-            window.event.cancelBubble = true;
-          }
-          e.preventDefault();
-          return false;
-        }
-      };
-    </script> -->
-
-
-  <!--Start of Tawk.to Script-->
-  <!-- <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5ef6df474a7c6258179b6eb8/default';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script> -->
-  <!--End of Tawk.to Script-->
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet preconnect"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
   <a id="whatsappbutton" rel="noreferrer"
     href="https://api.whatsapp.com/send?phone=918986774801&text=Hello%21%20CapsCode.in%20Hope%20you%20are%20doing%20well. Can%20you%20please%20help%20me ?"
     class="float" target="_blank">
     <i class="fa fa-whatsapp my-float"></i>
-    <p style="font-size: small; color: orange;"><b>Live Chat</b></p>
+    <p style="font-size: small; color: orange"><b>Live Chat</b></p>
   </a>
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>

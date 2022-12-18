@@ -3,7 +3,7 @@ import "../PageNotFound/style.css";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import pageNotFound from "./pagenotfound.webp";
-import back from "./back.png";
+import back from "./back.webp";
 
 const styles = {
   resources: {

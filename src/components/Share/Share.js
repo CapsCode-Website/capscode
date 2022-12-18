@@ -21,6 +21,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="facebook social"
+          aria-label="facebook"
         >
           <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
@@ -30,6 +31,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="gmail social"
+          aria-label="google"
         >
           <FontAwesomeIcon icon={faGooglePlus} size="2x" />
         </a>
@@ -39,6 +41,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="twitter social"
+          aria-label="twitter"
         >
           <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
@@ -48,6 +51,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="linkedin social"
+          aria-label="linkedin"
         >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
@@ -57,6 +61,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="instagram social"
+          aria-label="instagram"
         >
           <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
@@ -66,6 +71,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="telegram social"
+          aria-label="telegram"
         >
           <FontAwesomeIcon icon={faTelegram} size="2x" />
         </a>
@@ -75,6 +81,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="github social"
+          aria-label="github"
         >
           <FontAwesomeIcon icon={faGithub} size="2x" color="black" />
         </a>
@@ -84,6 +91,7 @@ class Share extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp social"
+          aria-label="whatsapp"
         >
           <FontAwesomeIcon icon={faWhatsapp} size="2x" />
         </a>

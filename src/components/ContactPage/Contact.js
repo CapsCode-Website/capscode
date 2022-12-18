@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import "./contact.css";
-import contactus from "./contactus.png";
+import contactus from "./contactus.webp";
 import { useForm, ValidationError } from "@formspree/react";
 import { Link } from "react-router-dom";
 import SEO from "../../SEO";
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
 
 const Contact = () => {
   useEffect(() => {

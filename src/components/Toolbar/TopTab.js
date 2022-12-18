@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Link, HashRouter, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import PropTypes from "prop-types";
@@ -76,7 +76,7 @@ function TopTab(props) {
                   paddingLeft: "6px",
                   paddingTop: "5px",
                 }}
-                src={require("../Assets/capscode.png")}
+                src={require("../Assets/capscode1200.webp")}
               />
             </a>
           </div>
