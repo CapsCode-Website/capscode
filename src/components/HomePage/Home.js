@@ -93,7 +93,7 @@ function Home() {
       .catch((e) => console.error(e));
   }, []);
 
-  localStorage.setItem("currentTab", 0); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
+  sessionStorage.setItem("currentTab", 0); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
   return (
     <>
@@ -120,7 +120,8 @@ function Home() {
           {/* THE WELCOME TO CAPSCODE TEXT PART */}
           <Grid item xs={12} sm={4} md={7} lg={7}>
             <h1 className={classes.fontHandler}>
-              WELCOME TO <p id="typingeffect">CAPSCODE</p>
+              WELCOME TO
+              <p id="typingeffect">CAPSCODE</p>
             </h1>
             <h3
               style={{

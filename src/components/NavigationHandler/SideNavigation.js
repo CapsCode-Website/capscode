@@ -57,31 +57,31 @@ function SideNavigation(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  //initialised with localstorage value so that the topnav and sidenav will in sync
+  //initialised with sessionStorage value so that the topnav and sidenav will in sync
   const [selected, setSelected] = React.useState(
-    Number(localStorage.getItem("currentTab"))
+    Number(sessionStorage.getItem("currentTab"))
   );
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-    setSelected(Number(localStorage.getItem("currentTab")));
+    setSelected(Number(sessionStorage.getItem("currentTab")));
   };
 
   const setter = (v) => {
     setSelected(v);
-    localStorage.setItem("currentTab", v);
+    sessionStorage.setItem("currentTab", v);
   };
 
   // UNABLE TO ADD THIS ONE LIKE TOPTAB AS WINDOW OBJECT IS ALREADY IN USE...TO DETETCT THE DRAWER OPEN OR NOT
   // AND MOREOVER IT IS NOT REQUIRED ALSO.
   // window.addEventListener("storage",(e) => {
   //   console.log("rahullllllllllllllllll........."+e.newValue)
-  //   // localStorage.setItem('currentTab', e.newValue);
+  //   // sessionStorage.setItem('currentTab', e.newValue);
   // //  handleChange(null, e.newValue);
-  //   // localStorage.setItem('currentTab', e.newValue);
-  //   // setValue(Number(localStorage.getItem('currentTab')));
+  //   // sessionStorage.setItem('currentTab', e.newValue);
+  //   // setValue(Number(sessionStorage.getItem('currentTab')));
   //   //TODO: just read the local storage value and change the tabs
-  //   setSelected(Number(localStorage.getItem('currentTab')))
+  //   setSelected(Number(sessionStorage.getItem('currentTab')))
   // });
 
   const drawer = (

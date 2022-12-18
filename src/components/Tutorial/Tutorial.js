@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Pricing() {
-  localStorage.setItem("currentTab", 6);
+  sessionStorage.setItem("currentTab", 6);
 
   const classes = useStyles();
 

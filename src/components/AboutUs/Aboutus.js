@@ -91,7 +91,7 @@ export default function Aboutus() {
       );
   }, []);
 
-  localStorage.setItem("currentTab", 4);
+  sessionStorage.setItem("currentTab", 4);
   const classes = useStyles();
 
   if (error) {

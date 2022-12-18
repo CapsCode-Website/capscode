@@ -8,7 +8,7 @@ import SEO from "../../SEO";
 
 const Contact = () => {
   useEffect(() => {
-    localStorage.setItem("currentTab", 5);
+    sessionStorage.setItem("currentTab", 5);
   }, []);
   // super(props)
 

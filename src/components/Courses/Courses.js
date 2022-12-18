@@ -119,7 +119,7 @@ export default function Courses() {
       );
   }, []);
 
-  localStorage.setItem("currentTab", 1);
+  sessionStorage.setItem("currentTab", 1);
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState("panel1");

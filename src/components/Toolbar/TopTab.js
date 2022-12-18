@@ -40,7 +40,7 @@ HideOnScroll.propTypes = {
 function TopTab(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(
-    Number(localStorage.getItem("currentTab"))
+    Number(sessionStorage.getItem("currentTab"))
   );
 
   return (
@@ -95,7 +95,7 @@ function TopTab(props) {
                 to="/"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 0);
+                  sessionStorage.setItem("currentTab", 0);
                   setValue(0);
                 }}
               >
@@ -108,7 +108,7 @@ function TopTab(props) {
                 to="/course"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 1);
+                  sessionStorage.setItem("currentTab", 1);
                   setValue(1);
                 }}
               >
@@ -121,7 +121,7 @@ function TopTab(props) {
                 to="/services"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 2);
+                  sessionStorage.setItem("currentTab", 2);
                   setValue(2);
                 }}
               >
@@ -134,7 +134,7 @@ function TopTab(props) {
                 to="/blog"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 3);
+                  sessionStorage.setItem("currentTab", 3);
                   setValue(3);
                 }}
               >
@@ -147,7 +147,7 @@ function TopTab(props) {
                 to="/aboutus"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 4);
+                  sessionStorage.setItem("currentTab", 4);
                   setValue(4);
                 }}
               >
@@ -160,7 +160,7 @@ function TopTab(props) {
                 to="/contact"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  localStorage.setItem("currentTab", 5);
+                  sessionStorage.setItem("currentTab", 5);
                   setValue(5);
                 }}
               >

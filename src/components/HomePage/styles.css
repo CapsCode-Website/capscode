@@ -168,8 +168,11 @@
 }
 
 
-.alice-carousel__prev-btn, .alice-carousel__next-btn{
-  text-align: left;
+.alice-carousel__prev-btn{
+  text-align: right;
+}
+.alice-carousel__next-btn{
+text-align: left;
 }
 
 
