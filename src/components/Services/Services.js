@@ -65,7 +65,6 @@ export default function Pricing() {
       .then((res) => res.json())
       .then(
         (result) => {
-          // console.log(".........."+result)
           setIsLoaded(true);
           setMyServices(result);
         },

@@ -75,7 +75,6 @@ function SideNavigation(props) {
   // UNABLE TO ADD THIS ONE LIKE TOPTAB AS WINDOW OBJECT IS ALREADY IN USE...TO DETETCT THE DRAWER OPEN OR NOT
   // AND MOREOVER IT IS NOT REQUIRED ALSO.
   // window.addEventListener("storage",(e) => {
-  //   console.log("rahullllllllllllllllll........."+e.newValue)
   //   // sessionStorage.setItem('currentTab', e.newValue);
   // //  handleChange(null, e.newValue);
   //   // sessionStorage.setItem('currentTab', e.newValue);
