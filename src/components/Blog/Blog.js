@@ -73,6 +73,7 @@ function Blog(props) {
     props.history.location.pathname.split("/")[2]
   );
   const data = useContext(BlogDataContext);
+  sessionStorage.setItem("currentTab", 3); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   useEffect(() => {
     document.getElementById("whatsappbutton").style.display = "none";
     return () => {

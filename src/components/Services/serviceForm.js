@@ -8,22 +8,23 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import TextField from "@material-ui/core/TextField";
-import { writeCourseFormData } from "../../formDataHandler/courseFormHandler";
+import { writeServiceFormData } from "../../formDataHandler/servicesHandler";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
+export default function ServiceForm({ open, setOpen, selectedService }) {
   const [data, setData] = React.useState({
     submitting: false,
     succeeded: false,
     errors: false,
   });
   const [snackOpen, setSnackOpen] = React.useState(true);
+  const [name, setName] = React.useState("");
+  const [country, setCountry] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [country, setCountry] = React.useState("");
-  const [name, setName] = React.useState("");
+
   const handleSnakbarClose = (event, reason) => {
     if (reason === "clickaway") {
       return false;
@@ -33,30 +34,30 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
   };
 
   const handleClose = () => {
-    setPhone("");
-    setEmail("");
-    setCountry("");
-    setName("");
     setData({
       submitting: false,
       succeeded: false,
       errors: false,
     });
+    setName("");
+    setPhone("");
+    setEmail("");
+    setCountry("");
     setOpen(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || phone === "" || country === "") {
+    if (name === "" || email === "" || phone === "") {
       setData({ ...data, errors: true });
     } else {
       setData({ ...data, submitting: true, errors: false });
-      const returnedPromiseByFirebase = writeCourseFormData({
+      const returnedPromiseByFirebase = writeServiceFormData({
         name: name,
+        country: country,
         email: email,
         phone: phone,
-        country: country,
-        subject: subjectRequestedFor,
+        service_requested_name: selectedService,
       });
 
       returnedPromiseByFirebase
@@ -96,29 +97,29 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">{`${subjectRequestedFor}`}</DialogTitle>
+        <DialogTitle id="form-dialog-title">{`${selectedService}`}</DialogTitle>
         <DialogContent>
-          <DialogContentText>Request a callback</DialogContentText>
+          <DialogContentText>We will reach out to you soon</DialogContentText>
           <form validate>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <TextField
                 className="formTextField"
                 onChange={(e) => setName(e.target.value)}
-                label="Name"
+                label={`Name`}
                 required
               />
-
               <TextField
                 className="formTextField"
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email"
+                required
               />
 
               <TextField
                 className="formTextField"
                 onChange={(e) => setPhone(e.target.value)}
                 label="Phone"
-                required
+                required={true}
               />
               <TextField
                 className="formTextField"
@@ -127,7 +128,7 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
                 required
               />
               {data.errors && (
-                <p style={{ color: "red" }}>Fill all mandatory feilds</p>
+                <p style={{ color: "red" }}>Fill all mandatory fields</p>
               )}
               <button
                 style={{

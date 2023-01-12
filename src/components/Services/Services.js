@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Loader from "../Loading/Loader";
 import SEO from "../../SEO";
+import ServiceForm from "./serviceForm";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -58,7 +59,8 @@ export default function Pricing() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [MyServices, setMyServices] = useState([]);
-
+  const [open, setOpen] = React.useState(false);
+  const [selectedService, setSelectedService] = React.useState("");
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
     fetch("https://rahulnag.github.io/capscodefiles/Services.json")
@@ -99,6 +101,11 @@ export default function Pricing() {
           type="website"
         />
         <CssBaseline />
+        <ServiceForm
+          open={open}
+          setOpen={setOpen}
+          selectedService={selectedService}
+        />
         <Container
           maxWidth="md"
           component="main"
@@ -182,20 +189,19 @@ export default function Pricing() {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <a
-                      href={tier.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", width: "100%" }}
+                    <Button
+                      color="default"
+                      variant={tier.buttonVariant}
+                      style={{ borderRadius: "20px", width: "100%" }}
+                      onClick={() => {
+                        if (tier.buttonText === "I Want This") {
+                          setSelectedService(tier.title);
+                          setOpen(true);
+                        }
+                      }}
                     >
-                      <Button
-                        color="default"
-                        variant={tier.buttonVariant}
-                        style={{ borderRadius: "20px", width: "100%" }}
-                      >
-                        {tier.buttonText}
-                      </Button>
-                    </a>
+                      {tier.buttonText}
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>
@@ -210,8 +216,8 @@ export default function Pricing() {
           component="p"
           style={{ marginTop: "50px" }}
         >
-          NOTE: All Charges are negotiable and upon custumization price may
-          decrease as well.
+          NOTE: All Charges are negotiable and upon customization price may
+          change.
         </Typography>
       </React.Fragment>
     );

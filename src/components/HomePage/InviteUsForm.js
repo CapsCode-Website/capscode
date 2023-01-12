@@ -8,22 +8,23 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import TextField from "@material-ui/core/TextField";
-import { writeCourseFormData } from "../../formDataHandler/courseFormHandler";
+import { writeInviteUsFormData } from "../../formDataHandler/inviteUsHandler";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
+export default function InviteUsForm({ open, setOpen }) {
   const [data, setData] = React.useState({
     submitting: false,
     succeeded: false,
     errors: false,
   });
   const [snackOpen, setSnackOpen] = React.useState(true);
+  const [orgType, setOrgType] = React.useState("College");
+  const [orgName, setOrgName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [country, setCountry] = React.useState("");
-  const [name, setName] = React.useState("");
+
   const handleSnakbarClose = (event, reason) => {
     if (reason === "clickaway") {
       return false;
@@ -33,10 +34,10 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
   };
 
   const handleClose = () => {
+    setOrgType("College");
+    setOrgName("");
     setPhone("");
     setEmail("");
-    setCountry("");
-    setName("");
     setData({
       submitting: false,
       succeeded: false,
@@ -47,16 +48,15 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || phone === "" || country === "") {
+    if (orgType === "" || orgName === "" || email === "" || phone === "") {
       setData({ ...data, errors: true });
     } else {
       setData({ ...data, submitting: true, errors: false });
-      const returnedPromiseByFirebase = writeCourseFormData({
-        name: name,
+      const returnedPromiseByFirebase = writeInviteUsFormData({
+        organization_name: orgName,
+        organization_type: orgType,
         email: email,
         phone: phone,
-        country: country,
-        subject: subjectRequestedFor,
       });
 
       returnedPromiseByFirebase
@@ -96,34 +96,52 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">{`${subjectRequestedFor}`}</DialogTitle>
+        <DialogTitle id="form-dialog-title">{`Invite us to your school/college`}</DialogTitle>
         <DialogContent>
           <DialogContentText>Request a callback</DialogContentText>
           <form validate>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <TextField
                 className="formTextField"
-                onChange={(e) => setName(e.target.value)}
-                label="Name"
+                select
+                label="You are ?"
+                value={orgType}
+                // defaultValue={""}
+                onChange={(e) => setOrgType(e.target.value)}
+                SelectProps={{
+                  native: true,
+                }}
+              >
+                {["School", "College", "Institute"].map((option, index) => (
+                  <option key={option + index} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </TextField>
+              <TextField
+                className="formTextField"
+                onChange={(e) => setOrgName(e.target.value)}
+                label={`Name of ${orgType} with address`}
                 required
               />
-
               <TextField
                 className="formTextField"
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email"
+                required
               />
 
               <TextField
                 className="formTextField"
                 onChange={(e) => setPhone(e.target.value)}
                 label="Phone"
-                required
+                required={true}
               />
               <TextField
                 className="formTextField"
                 label="Country"
-                onChange={(e) => setCountry(e.target.value)}
+                defaultValue={"India"}
+                disabled
                 required
               />
               {data.errors && (

@@ -209,3 +209,7 @@ text-align: left;
     line-height: 16px;
   }
 }
+
+.formTextField{
+  margin-top: 1rem;
+}

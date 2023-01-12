@@ -2,37 +2,61 @@ import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import "./contact.css";
 import contactus from "./contactus.webp";
-import { useForm, ValidationError } from "@formspree/react";
 import { Link } from "react-router-dom";
 import SEO from "../../SEO";
+import TextField from "@material-ui/core/TextField";
+import { writeContactusFormData } from "../../formDataHandler/contactusHandler";
 
 const Contact = () => {
+  const [data, setData] = React.useState({
+    submitting: false,
+    succeeded: false,
+    errors: false,
+  });
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [message, setMessage] = React.useState("");
   useEffect(() => {
     sessionStorage.setItem("currentTab", 5);
   }, []);
-  // super(props)
 
-  // this.focusRef = React.createRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || message === "") {
+      setData({ ...data, errors: true });
+    } else {
+      setData({ ...data, submitting: true, errors: false });
+      const returnedPromiseByFirebase = writeContactusFormData({
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      });
 
-  const [state, handleSubmit] = useForm("xknkjlyr");
-  if (state.succeeded) {
+      returnedPromiseByFirebase
+        .then((e) => {
+          setData({
+            ...data,
+            submitting: false,
+            succeeded: true,
+            errors: false,
+          });
+        })
+        .catch((e) => console.log("failed:" + e));
+    }
+  };
+
+  if (data.succeeded) {
     return (
       <>
-        <SEO
-          title="CapsCode - Contact Us"
-          description="Contact for web development in Ranchi, Jharkhand"
-          name="Contact Us | CapsCode"
-          type="website"
-        />
         <Grid
           container
           justify="center"
           alignItems="center"
           style={{ height: "100vh", width: "100vw" }}
         >
-          {/* <Paper style={{height:"30%", width:"50%"}}> */}
           <h3>Thanks for the submission</h3>
-          {/* </Paper> */}
           <br />
           <Grid item>
             <Link to="/" style={{ textDecoration: "none" }}>
@@ -56,10 +80,6 @@ const Contact = () => {
     );
   }
 
-  // componentDidUpdate(){
-  //   window.scrollTo(0,0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
-  // }
-
   return (
     <Grid
       container
@@ -70,8 +90,13 @@ const Contact = () => {
         backgroundColor: "var(--back-primary-color)",
       }}
     >
+      <SEO
+        title="CapsCode - Contact Us"
+        description="Contact for web development in Ranchi, Jharkhand"
+        name="Contact Us | CapsCode"
+        type="website"
+      />
       <Grid
-        id="formpage"
         item
         lg={7}
         md={7}
@@ -82,92 +107,52 @@ const Contact = () => {
         justify="center"
         alignItems="center"
       >
-        {/* {this.state.success && (
-          <p style={{ color: "green" }}>Thanks for your message! </p>
-        )} */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <TextField
+            className="formTextField"
+            onChange={(e) => setName(e.target.value)}
+            label={"Name"}
+            required
+          />
+          <TextField
+            className="formTextField"
+            onChange={(e) => setEmail(e.target.value)}
+            label="Email"
+            required
+          />
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">
-            Name:*
-            <br />
-            <input
-              id="name"
-              placeholder="Enter your name"
-              required={true}
-              type="name"
-              name="name"
-              size="40"
-            />
-          </label>
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
-          <br />
-          <br />
-          <label>
-            EmailID:*
-            <br />
-            <input
-              id="email"
-              placeholder="Enter your email id"
-              required={true}
-              type="text"
-              name="email"
-              size="40"
-            />
-          </label>
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-          <br />
-          <br />
-          <label>
-            Phone No.:
-            <br />
-            <input
-              id="phone"
-              placeholder="Enter your phone number"
-              type="text"
-              name="phone"
-              size="40"
-            />
-          </label>
-          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
-          <br />
-          <br />
-          <label>
-            Message:*
-            <br />
-            <textarea
-              id="message"
-              placeholder="Enter your message here"
-              type="text"
-              required={true}
-              rows="8"
-              // cols="38"
-              name="msg"
-            />
-            <ValidationError
-              prefix="Phone"
-              field="phone"
-              errors={state.errors}
-            />
-          </label>
-          <br />
-          <label>(All * fields are mandatory)</label>
-          <br />
-          <br />
-
+          <TextField
+            className="formTextField"
+            onChange={(e) => setPhone(e.target.value)}
+            label="Phone"
+          />
+          <TextField
+            className="formTextField"
+            margin="dense"
+            label="Message/Query"
+            multiline
+            rows={4}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          {data.errors && (
+            <p style={{ color: "red" }}>Fill all mandatory fields</p>
+          )}
           <button
-            type="submit"
-            disabled={state.submitting}
             style={{
-              borderRadius: "50px",
-              height: "40px",
-              width: "80px",
-              backgroundColor: "#ff9889",
-              border: "0.1px solid red",
+              background: "#fea051",
+              border: 0,
+              outline: "none",
+              marginTop: "10px",
+              padding: "12px",
+              borderRadius: "5px",
             }}
+            type={"submit"}
+            onClick={handleSubmit}
+            disabled={data.submitting}
           >
-            SUBMIT
+            {data.submitting ? "Sending" : "Send"}
           </button>
-        </form>
+        </div>
       </Grid>
 
       <Grid item lg={5} md={5} sm={8} xs={8}>

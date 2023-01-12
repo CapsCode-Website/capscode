@@ -26,6 +26,7 @@ import {
 import { businessdata } from "./whycapscodebusinessdata";
 import { studentdata } from "./whycapscodestudentdata";
 import SEO from "../../SEO";
+import InviteUsForm from "./InviteUsForm";
 
 const useStyles = makeStyles((theme) => ({
   fontHandler: {
@@ -83,6 +84,8 @@ function Home() {
 
   const classes = useStyles();
   const [upcoming, setUpcoming] = useState([]);
+  const [open, setOpen] = React.useState(false);
+
   const history = useHistory();
   useEffect(() => {
     fetch("https://rahulnag.github.io/capscodefiles/Upcoming.json")
@@ -420,9 +423,11 @@ function Home() {
           }}
         >
           <Grid item lg={6} md={6} sm={6} xs={12}>
-            <button className="RouteButton">
+            <button className="RouteButton" onClick={() => setOpen(true)}>
               Fill a small form and we will contact soon ▶︎
             </button>
+            <InviteUsForm open={open} setOpen={setOpen} />
+
             <div
               style={{
                 textAlign: "left",
