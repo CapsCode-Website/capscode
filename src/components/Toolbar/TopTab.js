@@ -9,6 +9,7 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import PropTypes from "prop-types";
 import "./TopTab.css";
+import TabContext from "../../contexts/TabContext";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -39,13 +40,10 @@ HideOnScroll.propTypes = {
 
 function TopTab(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(
-    Number(sessionStorage.getItem("currentTab"))
-  );
-
+  const TabContextConsumer = React.useContext(TabContext);
   return (
     <div className={classes.root}>
-      {/* I HAVE USED HashRouter THEN ONLY IT WORKED FINE HERE BELOW AND ASLO IN APP.JS COMPONENT*/}
+      {/* I HAVE USED HashRouter THEN ONLY IT WORKED FINE HERE BELOW AND ALSO IN APP.JS COMPONENT*/}
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar
@@ -81,22 +79,21 @@ function TopTab(props) {
             </a>
           </div>
           <Tabs
-            value={value}
+            value={TabContextConsumer.value}
             // onChange={handleChange}
             indicatorColor="secondary"
             // textColor="secondary"
             variant="scrollable" //this is commented as both varient:scrollable and centered will not work together
             scrollButtons="auto" //on
             aria-label="scrollable auto tabs example"
-            // centered="true",
+            centered="true"
           >
             <div>
               <Link
                 to="/"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 0);
-                  setValue(0);
+                  TabContextConsumer.setValue(0);
                 }}
               >
                 <Tab label="Home" style={{ fontWeight: "bolder" }} />
@@ -108,8 +105,7 @@ function TopTab(props) {
                 to="/course"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 1);
-                  setValue(1);
+                  TabContextConsumer.setValue(1);
                 }}
               >
                 <Tab label="Courses" style={{ fontWeight: "bolder" }} />
@@ -121,8 +117,7 @@ function TopTab(props) {
                 to="/services"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 2);
-                  setValue(2);
+                  TabContextConsumer.setValue(2);
                 }}
               >
                 <Tab label="Services" style={{ fontWeight: "bolder" }} />
@@ -134,8 +129,7 @@ function TopTab(props) {
                 to="/blog"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 3);
-                  setValue(3);
+                  TabContextConsumer.setValue(3);
                 }}
               >
                 <Tab label="Blog" style={{ fontWeight: "bolder" }} />
@@ -147,8 +141,7 @@ function TopTab(props) {
                 to="/aboutus"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 4);
-                  setValue(4);
+                  TabContextConsumer.setValue(4);
                 }}
               >
                 <Tab label="About Us" style={{ fontWeight: "bolder" }} />
@@ -160,8 +153,7 @@ function TopTab(props) {
                 to="/contact"
                 style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
-                  sessionStorage.setItem("currentTab", 5);
-                  setValue(5);
+                  TabContextConsumer.setValue(5);
                 }}
               >
                 <Tab label="Contact" style={{ fontWeight: "bolder" }} />

@@ -19,6 +19,7 @@ import { CgMenuRight } from "react-icons/cg";
 import BlogDataContext from "../../BlogDataContext";
 import Loader from "../Loading/Loader";
 import SEO from "../../SEO";
+import TabContext from "../../contexts/TabContext";
 
 const drawerWidth = 320;
 
@@ -73,7 +74,12 @@ function Blog(props) {
     props.history.location.pathname.split("/")[2]
   );
   const data = useContext(BlogDataContext);
-  sessionStorage.setItem("currentTab", 3); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
+  const TabContextConsumer = useContext(TabContext);
+
+  useEffect(() => {
+    TabContextConsumer.setValue(3);
+  }, []);
+
   useEffect(() => {
     document.getElementById("whatsappbutton").style.display = "none";
     return () => {

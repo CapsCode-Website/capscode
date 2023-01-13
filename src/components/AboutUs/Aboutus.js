@@ -10,7 +10,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
 import Loader from "../Loading/Loader";
 import SEO from "../../SEO";
-
+import TabContext from "../../contexts/TabContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -70,9 +70,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Aboutus() {
+  const TabContextConsumer = React.useContext(TabContext);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [About, setAbout] = useState([]);
+
+  useEffect(() => {
+    TabContextConsumer.setValue(4);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
@@ -91,7 +96,6 @@ export default function Aboutus() {
       );
   }, []);
 
-  sessionStorage.setItem("currentTab", 4);
   const classes = useStyles();
 
   if (error) {

@@ -10,6 +10,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { CgMenuGridO } from "react-icons/cg";
+import TabContext from "../../contexts/TabContext";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -56,31 +57,22 @@ function SideNavigation(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
+  const TabContextConsumer = React.useContext(TabContext);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  //initialised with sessionStorage value so that the topnav and sidenav will in sync
-  const [selected, setSelected] = React.useState(
-    Number(sessionStorage.getItem("currentTab"))
-  );
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-    setSelected(Number(sessionStorage.getItem("currentTab")));
   };
 
   const setter = (v) => {
-    setSelected(v);
-    sessionStorage.setItem("currentTab", v);
+    TabContextConsumer.setValue(v);
   };
 
   // UNABLE TO ADD THIS ONE LIKE TOPTAB AS WINDOW OBJECT IS ALREADY IN USE...TO DETETCT THE DRAWER OPEN OR NOT
   // AND MOREOVER IT IS NOT REQUIRED ALSO.
   // window.addEventListener("storage",(e) => {
-  //   // sessionStorage.setItem('currentTab', e.newValue);
   // //  handleChange(null, e.newValue);
-  //   // sessionStorage.setItem('currentTab', e.newValue);
-  //   // setValue(Number(sessionStorage.getItem('currentTab')));
   //   //TODO: just read the local storage value and change the tabs
-  //   setSelected(Number(sessionStorage.getItem('currentTab')))
   // });
 
   const drawer = (
@@ -90,7 +82,7 @@ function SideNavigation(props) {
       <List onClick={handleDrawerToggle}>
         {/* <HashRouter> */}
         <ListItem
-          selected={selected === 0}
+          selected={TabContextConsumer.value === 0}
           divider
           button
           component={Link}
@@ -99,7 +91,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(0)}>Home</ListItemText>
         </ListItem>
         <ListItem
-          selected={selected === 1}
+          selected={TabContextConsumer.value === 1}
           divider
           button
           component={Link}
@@ -108,7 +100,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(1)}>Courses</ListItemText>
         </ListItem>
         <ListItem
-          selected={selected === 2}
+          selected={TabContextConsumer.value === 2}
           divider
           button
           component={Link}
@@ -117,7 +109,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(2)}>Services</ListItemText>
         </ListItem>
         <ListItem
-          selected={selected === 3}
+          selected={TabContextConsumer.value === 3}
           divider
           button
           component={Link}
@@ -126,7 +118,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(3)}>Blogs</ListItemText>
         </ListItem>
         <ListItem
-          selected={selected === 4}
+          selected={TabContextConsumer.value === 4}
           divider
           button
           component={Link}
@@ -135,7 +127,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(4)}>About Us</ListItemText>
         </ListItem>
         <ListItem
-          selected={selected === 5}
+          selected={TabContextConsumer.value === 5}
           divider
           button
           component={Link}
@@ -144,7 +136,7 @@ function SideNavigation(props) {
           <ListItemText onClick={() => setter(5)}>Contact</ListItemText>
         </ListItem>
         {/* <ListItem
-          selected={selected === 6}
+          selected={TabContextConsumer.value === 6}
           divider
           button
           component={Link}
@@ -152,7 +144,7 @@ function SideNavigation(props) {
         >
           <ListItemText onClick={() => setter(6)}>Tutorials</ListItemText>
         </ListItem> */}
-        {/* <ListItem selected={selected === 6} divider button component={Link} to='/gallery'><ListItemText onClick={()=> setter(6)}>Gallery</ListItemText></ListItem> */}
+        {/* <ListItem selected={TabContextConsumer.value === 6} divider button component={Link} to='/gallery'><ListItemText onClick={()=> setter(6)}>Gallery</ListItemText></ListItem> */}
         {/* </HashRouter> */}
       </List>
     </div>

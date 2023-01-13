@@ -13,7 +13,7 @@ import Container from "@material-ui/core/Container";
 import Loader from "../Loading/Loader";
 import SEO from "../../SEO";
 import ServiceForm from "./serviceForm";
-
+import TabContext from "../../contexts/TabContext";
 const useStyles = makeStyles((theme) => ({
   "@global": {
     ul: {
@@ -52,15 +52,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Pricing() {
-  sessionStorage.setItem("currentTab", 2);
-
+  const TabContextConsumer = React.useContext(TabContext);
   const classes = useStyles();
-
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [MyServices, setMyServices] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [selectedService, setSelectedService] = React.useState("");
+
+  useEffect(() => {
+    TabContextConsumer.setValue(2);
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
     fetch("https://rahulnag.github.io/capscodefiles/Services.json")

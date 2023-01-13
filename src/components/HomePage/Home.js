@@ -27,6 +27,7 @@ import { businessdata } from "./whycapscodebusinessdata";
 import { studentdata } from "./whycapscodestudentdata";
 import SEO from "../../SEO";
 import InviteUsForm from "./InviteUsForm";
+import TabContext from "../../contexts/TabContext";
 
 const useStyles = makeStyles((theme) => ({
   fontHandler: {
@@ -82,11 +83,16 @@ function Home() {
     behavior: "smooth",
   }); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
 
+  const TabContextConsumer = React.useContext(TabContext);
   const classes = useStyles();
   const [upcoming, setUpcoming] = useState([]);
   const [open, setOpen] = React.useState(false);
 
   const history = useHistory();
+  useEffect(() => {
+    TabContextConsumer.setValue(0);
+  }, []);
+
   useEffect(() => {
     fetch("https://rahulnag.github.io/capscodefiles/Upcoming.json")
       .then((res) => res.json())
@@ -96,7 +102,6 @@ function Home() {
       .catch((e) => console.error(e));
   }, []);
 
-  sessionStorage.setItem("currentTab", 0); //initializing to 0 so that we can be able to handle the tab highlighting navigation on page refresh or going to home page
   //if you have any doubt then comment this line and see the issue, issue will not be much just there is conflict between the higlighted tab and the rendered page
   return (
     <>
@@ -257,14 +262,20 @@ function Home() {
                   <button
                     className="RouteButton"
                     style={{ margin: "20px", minWidth: "90px" }}
-                    onClick={() => history.push("/blog/home")}
+                    onClick={() => {
+                      history.push("/blog/home");
+                      TabContextConsumer.setValue(3);
+                    }}
                   >
                     Read Blogs ▶︎
                   </button>
                   <button
                     className="RouteButton"
                     style={{ margin: "20px", minWidth: "90px" }}
-                    onClick={() => history.push("/course")}
+                    onClick={() => {
+                      history.push("/course");
+                      TabContextConsumer.setValue(1);
+                    }}
                   >
                     Courses ▶︎
                   </button>
@@ -309,7 +320,10 @@ function Home() {
                   <button
                     className="RouteButton"
                     style={{ minWidth: "90px" }}
-                    onClick={() => history.push("/services")}
+                    onClick={() => {
+                      history.push("/services");
+                      TabContextConsumer.setValue(2);
+                    }}
                   >
                     Services ▶︎
                   </button>

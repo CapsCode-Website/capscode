@@ -13,6 +13,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Loader from "../Loading/Loader";
 import CourseForm from "./CourseForm";
 import SEO from "../../SEO";
+import TabContext from "../../contexts/TabContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -95,11 +96,16 @@ const ExpansionPanelDetails = withStyles((theme) => ({
 
 export default function Courses() {
   //added on 05th July:
+  const TabContextConsumer = React.useContext(TabContext);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [CourseFile, setCourseFile] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [subjectRequestedFor, setSubjectRequestedFor] = React.useState("");
+
+  useEffect(() => {
+    TabContextConsumer.setValue(1);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
@@ -118,7 +124,6 @@ export default function Courses() {
       );
   }, []);
 
-  sessionStorage.setItem("currentTab", 1);
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState("panel1");

@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import SEO from "../../SEO";
 import TextField from "@material-ui/core/TextField";
 import { writeContactusFormData } from "../../formDataHandler/contactusHandler";
-
+import TabContext from "../../contexts/TabContext";
 const Contact = () => {
+  const TabContextConsumer = React.useContext(TabContext);
   const [data, setData] = React.useState({
     submitting: false,
     succeeded: false,
@@ -18,7 +19,7 @@ const Contact = () => {
   const [phone, setPhone] = React.useState("");
   const [message, setMessage] = React.useState("");
   useEffect(() => {
-    sessionStorage.setItem("currentTab", 5);
+    TabContextConsumer.setValue(5);
   }, []);
 
   const handleSubmit = (e) => {
@@ -131,6 +132,7 @@ const Contact = () => {
             margin="dense"
             label="Message/Query"
             multiline
+            required
             rows={4}
             onChange={(e) => setMessage(e.target.value)}
           />

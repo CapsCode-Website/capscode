@@ -79,7 +79,6 @@ const useStyles = makeStyles((theme) => ({
 function Career({ setSelectedIndex }) {
   const [data, setData] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  sessionStorage.setItem("currentTab", 3);
 
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
