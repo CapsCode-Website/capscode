@@ -101,7 +101,7 @@ export default function Footer() {
             small="true"
             style={{ textAlign: "center", fontColor: "#ffffff" }}
           >
-            Version: 1.1
+            Version: 1.2
           </Typography>
         </Container>
       </footer>
