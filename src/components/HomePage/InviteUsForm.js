@@ -33,7 +33,8 @@ export default function InviteUsForm({ open, setOpen }) {
     handleClose();
   };
 
-  const handleClose = () => {
+  const handleClose = (event, reason) => {
+    if (reason && reason === "backdropClick") return;
     setOrgType("College");
     setOrgName("");
     setPhone("");

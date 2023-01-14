@@ -33,7 +33,8 @@ export default function ServiceForm({ open, setOpen, selectedService }) {
     handleClose();
   };
 
-  const handleClose = () => {
+  const handleClose = (event, reason) => {
+    if (reason && reason === "backdropClick") return;
     setData({
       submitting: false,
       succeeded: false,

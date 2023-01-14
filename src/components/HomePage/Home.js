@@ -124,6 +124,7 @@ function Home() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
+          rel="preload"
         >
           {/* THE WELCOME TO CAPSCODE TEXT PART */}
           <Grid item xs={12} sm={4} md={7} lg={7}>

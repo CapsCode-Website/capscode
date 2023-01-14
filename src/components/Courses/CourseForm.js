@@ -32,7 +32,8 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
     handleClose();
   };
 
-  const handleClose = () => {
+  const handleClose = (event, reason) => {
+    if (reason && reason === "backdropClick") return;
     setPhone("");
     setEmail("");
     setCountry("");
