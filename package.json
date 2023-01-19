@@ -42,11 +42,14 @@
     "start": "react-scripts start",
     "prebuild": "echo I run before the build script",
     "build": "react-scripts build",
-    "postbuild": "echo I run after the build script",
+    "postbuild": "react-snap",
     "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "linBuild": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -62,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-snap": "1.10.0"
   }
 }
