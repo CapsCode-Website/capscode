@@ -62,18 +62,41 @@ const MarkDownReaderComponent = ({
       }, 1000);
     }
   };
+
   useEffect(() => {
-    fetch(link)
-      .then((response) => {
-        if (response.ok) return response.text();
-        else return Promise.reject("Didn't fetch text correctly");
+    import(`../../${link}`)
+      .then((res) => {
+        fetch(res.default)
+          .then((res) => res.text())
+          .then((res) => {
+            console.log(res);
+            setMdText(res);
+            CopyCodeToClipboard();
+          })
+          .catch((err) => console.log(err));
       })
-      .then((text) => {
-        setMdText(text);
-        CopyCodeToClipboard();
-      })
-      .catch((error) => console.error(error));
+      .catch((err) => console.log(err));
   }, [link]);
+
+  //commenetd before making md file local and written above use effect insted of this commeneted one
+  // useEffect(() => {
+  // import("../../blogfiles/html-css/variable-in-css/index.md")
+  //   .then((module) => {
+  //     console.log(module.default);
+  //   })
+  //   .catch(console.log);
+  // CopyCodeToClipboard();
+  // fetch(link)
+  //   .then((response) => {
+  //     if (response.ok) return response.text();
+  //     else return Promise.reject("Didn't fetch text correctly");
+  //   })
+  //   .then((text) => {
+  //     setMdText(text);
+  //     CopyCodeToClipboard();
+  //   })
+  //   .catch((error) => console.error(error));
+  // }, [link]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
