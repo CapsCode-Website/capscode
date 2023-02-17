@@ -7,6 +7,7 @@ import BlogDataContext from "./BlogDataContext";
 import TopTab from "./components/Toolbar/TopTab";
 import SideNavigation from "./components/NavigationHandler/SideNavigation";
 import TabContext from "./contexts/TabContext";
+import blogdata from "./blogfiles/blog.json";
 const Home = lazy(() => import("./components/HomePage/Home"));
 const Courses = lazy(() => import("./components/Courses/Courses"));
 const Footer = lazy(() => import("./components/Footer/Footer"));
@@ -22,22 +23,23 @@ const Blog = lazy(() => import("./components/Blog/Blog"));
 function App() {
   const helmetContext = {};
   //for blog.json api data
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(blogdata);
   const [value, setValue] = React.useState(0); //for tabs
 
+  //commented before making md file local
   //calling blog.json api so that we can make the route based on the data and urls.
-  useEffect(() => {
-    axios({
-      method: "GET",
-      url: "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/blog.json",
-    })
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios({
+  //     method: "GET",
+  //     url: "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/blog.json",
+  //   })
+  //     .then((response) => {
+  //       setData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
   return (
     <HelmetProvider context={helmetContext}>
       {/* HelmetProvider component needs to be only imported in the root component */}

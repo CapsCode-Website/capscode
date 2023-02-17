@@ -8,7 +8,7 @@ import insta from "./instagram.webp";
 import axios from "axios";
 import BlogCards from "./BlogCards";
 import Loader from "../Loading/Loader";
-// import { data_ } from "./allBlogdata";
+import allblogdata from "../../blogfiles/allblog.json";
 const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
@@ -77,24 +77,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Career({ setSelectedIndex }) {
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState(allblogdata);
   const [page, setPage] = React.useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
   }, []);
-  useEffect(() => {
-    axios({
-      method: "GET",
-      url: "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/allblog.json",
-    })
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+
+  //commeneted before making md file local
+  // useEffect(() => {
+  //   axios({
+  //     method: "GET",
+  //     url: "https://raw.githubusercontent.com/CapsCode-Website/blogfiles/master/allblog.json",
+  //   })
+  //     .then((response) => {
+  //       setData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
 
   const classes = useStyles();
   return (
