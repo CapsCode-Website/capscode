@@ -94,7 +94,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("https://rahulnag.github.io/capscodefiles/Upcoming.json")
+    fetch("https://capscode-website.github.io/capscodefiles/Upcoming.json")
       .then((res) => res.json())
       .then((result) => {
         setUpcoming(result);

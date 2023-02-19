@@ -61,7 +61,7 @@ export default function Pricing() {
   const [MyServices, setMyServices] = useState([]);
 
   useEffect(() => {
-    fetch("https://rahulnag.github.io/capscodefiles/Tutorials.json")
+    fetch("https://capscode-website.github.io/capscodefiles/Tutorials.json")
       .then((res) => res.json())
       .then(
         (result) => {

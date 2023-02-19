@@ -66,7 +66,7 @@ export default function Pricing() {
 
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
-    fetch("https://rahulnag.github.io/capscodefiles/Services.json")
+    fetch("https://capscode-website.github.io/capscodefiles/Services.json")
       .then((res) => res.json())
       .then(
         (result) => {

@@ -110,7 +110,7 @@ export default function Courses() {
   useEffect(() => {
     window.scrollTo(0, 0); //if we remove this then -- if we are in home page bottom and suddenly we moved to servoces page then services page will also start from bottom
 
-    fetch("https://rahulnag.github.io/capscodefiles/Courses.json")
+    fetch("https://capscode-website.github.io/capscodefiles/Courses.json")
       .then((res) => res.json())
       .then(
         (result) => {
