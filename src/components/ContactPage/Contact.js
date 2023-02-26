@@ -44,7 +44,7 @@ const Contact = () => {
             errors: false,
           });
         })
-        .catch((e) => console.log("failed:" + e));
+        .catch((e) => console.error("failed:" + e));
     }
   };
 

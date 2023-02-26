@@ -70,7 +70,7 @@ export default function CourseForm({ open, setOpen, subjectRequestedFor }) {
           });
           setSnackOpen(true);
         })
-        .catch((e) => console.log("failed:" + e));
+        .catch((e) => console.error("failed:" + e));
     }
   };
 
