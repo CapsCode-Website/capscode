@@ -70,7 +70,7 @@ export default function InviteUsForm({ open, setOpen }) {
           });
           setSnackOpen(true);
         })
-        .catch((e) => console.log("failed:" + e));
+        .catch((e) => console.error("failed:" + e));
     }
   };
 

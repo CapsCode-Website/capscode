@@ -54,7 +54,7 @@ function TopTab(props) {
             float: "right",
             boxShadow: "none",
             borderRadius: "50px",
-            margin: "12px 12px 0px 12px",
+            margin: "4px 12px 0px 12px",
             width: "97vw",
             background: "rgba(206, 72, 17, 0.1)",
             backdropFilter: "blur(4.9px)",

@@ -71,7 +71,7 @@ export default function ServiceForm({ open, setOpen, selectedService }) {
           });
           setSnackOpen(true);
         })
-        .catch((e) => console.log("failed:" + e));
+        .catch((e) => console.error("failed:" + e));
     }
   };
 

@@ -18,7 +18,7 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
 } from "react-share";
-
+import { BsArrowUpCircleFill } from "react-icons/bs";
 const MarkDownReaderComponent = ({
   link,
   like,
@@ -69,13 +69,12 @@ const MarkDownReaderComponent = ({
         fetch(res.default)
           .then((res) => res.text())
           .then((res) => {
-            console.log(res);
             setMdText(res);
             CopyCodeToClipboard();
           })
-          .catch((err) => console.log(err));
+          .catch((err) => console.error(err));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, [link]);
 
   //commenetd before making md file local and written above use effect insted of this commeneted one
@@ -138,14 +137,14 @@ const MarkDownReaderComponent = ({
             }}
           >
             <FacebookShareButton
-              url={"https://www.capscode.in" + blogLink}
+              url={"https://www.capscode.in/" + blogLink}
               quote={shortTitle}
               hashtag="#webdevelopment"
             >
               <FacebookIcon size={32} round />
             </FacebookShareButton>
             <LinkedinShareButton
-              url={"https://www.capscode.in" + blogLink}
+              url={"https://www.capscode.in/" + blogLink}
               title={title}
               summary={shortTitle}
               source="https://www.capscode.in"
@@ -169,14 +168,14 @@ const MarkDownReaderComponent = ({
               <TwitterIcon size={32} round />
             </TwitterShareButton>
             <TelegramShareButton
-              url={"https://www.capscode.in" + blogLink}
+              url={"https://www.capscode.in/" + blogLink}
               title={shortTitle}
             >
               <TelegramIcon size={32} round />
             </TelegramShareButton>
 
             <WhatsappShareButton
-              url={"https://www.capscode.in" + blogLink}
+              url={"https://www.capscode.in/" + blogLink}
               title={shortTitle}
             >
               <WhatsappIcon size={32} round />
@@ -221,16 +220,18 @@ const MarkDownReaderComponent = ({
                 position: "sticky",
                 bottom: 10,
                 float: "right",
-                margin: "12px",
-                height: "40px",
-                width: "40px",
+                // margin: "12px",
+                // height: "40px",
+                // width: "40px",
                 fontSize: "2rem",
                 color: "darkgrey",
-                background: "rgba( 255, 255, 255, 0.2 )",
-                boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                backdropFilter: "blur( 2px )",
-                borderRadius: "10px",
-                border: "1px solid rgba( 255, 255, 255, 0.18 )",
+                // background: "rgba( 255, 255, 255, 0.2 )",
+                // boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                // backdropFilter: "blur( 2px )",
+                // borderRadius: "50%",
+                // border: "1px solid rgba( 255, 255, 255, 0.18 )",
+                border: "none",
+                background: "transparent",
               }}
               onClick={() => {
                 window.scrollTo({
@@ -239,7 +240,7 @@ const MarkDownReaderComponent = ({
                 });
               }}
             >
-              &#8679;
+              <BsArrowUpCircleFill />
             </button>
           )}
         </>

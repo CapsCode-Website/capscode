@@ -64,7 +64,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                     </Avatar>
                   }
                   title={
-                    <span style={{ fontWeight: "600", fontSize: "25px" }}>
+                    <span style={{ fontWeight: "bolder", fontSize: "25px" }}>
                       {b.title}
                     </span>
                   }

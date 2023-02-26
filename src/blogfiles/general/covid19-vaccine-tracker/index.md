@@ -24,7 +24,7 @@ If you have any Queries or Suggestions, feel free to reach out to me in the Comm
 
 ## Thanks for reading !
 
-## Feedbacks and comments are welcome !
+## Feedbacks and comments are welcome!
 
 ## Thank You,\
 ## CapsCode
