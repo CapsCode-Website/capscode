@@ -1,6 +1,6 @@
 Hello Devs,
 
-In this article let's discuss about one of the most amazing features introduced in `ECMAScript21` (12th edition) i.e., Numeric Separator. 
+In this article let's discuss about one of the most amazing features introduced in `ECMAScript21` (12th edition) i.e., the Numeric Separator. 
 
 
 ## Table of content
@@ -20,7 +20,7 @@ How?
 ```js
 let num = 1000000000000
 ```
-if someone is reading the value of num verbally, then in the first sight one cannot be able to read it. So **numeric separator** help developers make it readable in the first sight.
+if someone is reading the value of num verbally, then at the first sight one cannot be able to read it. So **numeric separator** help developers make it readable at the first sight.
 
 Let's see how it helps.
 
@@ -29,13 +29,13 @@ Let's see how it helps.
 let num = 100_000_000_000 
 ```
 
-### **Did you found it little easier to read than the first one? If YES let me know**
+### **Did you find it a little easier to read than the first one? If YES let me know**
 
 ---
 
 
 ## 2. Examples <a name="examples"></a>
-Let see some examples,
+Let's see some examples,
 1. equality & strict equality
 
 ```js
@@ -47,7 +47,7 @@ console.log(num1===num2) //true
 ```
 
 
-2. What is the output in console for number with underscore in it?
+2. What is the output in the console for a number with an underscore in it?
 
 ```js
 let num = 100_000_000_000
@@ -78,11 +78,11 @@ console.log(str2) //hello_capscode
 
 ## 3. Conclusion <a name="conclusion"></a>
 
-Awesome! Now you have learnt 1 new feature of JavaScript, I hope you have now a very clear idea regarding underscore between digits in numeric literals.
+Awesome! Now you have learned 1 new feature of JavaScript, I hope you have now a very clear idea regarding the underscore between digits in numeric literals.
 
-Thank you for reading this far. This is a brief introduction of **Numeric Separator In JavaScript**.
+Thank you for reading this far. This is a brief introduction to **Numeric Separator In JavaScript**.
 
-If you find this article useful, share this article. Someone could find it useful too. If you find anything technically inaccurate, please feel free to create a [issue](https://github.com/CapsCode-Website/blogfiles/issues).
+If you find this article useful, share this article. Someone could find it useful too. If you find anything technically inaccurate, please feel free to create an [issue](https://github.com/CapsCode-Website/blogfiles/issues).
 
 Hope it's a nice and informative read for you.
 VISIT https://www.capscode.in/blog TO LEARN MORE...

@@ -1,5 +1,14 @@
 [
   {
+    "routeName": "split-in-javascript",
+    "sidebarName": "split() in JavaScript",
+    "title": "split() in JavaScript",
+    "link": "blogfiles/javascript/split-in-javascript/index.md",
+    "smallTextHint": "Learn how  JavaScript split() method works and some of its use cases",
+    "like": 100,
+    "heart": 300
+  },
+  {
     "routeName": "why-we-need-http-methods",
     "sidebarName": "Why we need http methods",
     "title": "Why we need http methods",
