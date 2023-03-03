@@ -60,7 +60,7 @@ export default function BlogCards({ data, page, setPage, setSelectedIndex }) {
                       aria-label="capscode-team-avatar"
                       className={classes.avatar}
                     >
-                      {Array.from(b.title)[0]}
+                      {Array.from(b.title)[0].toUpperCase()}
                     </Avatar>
                   }
                   title={
