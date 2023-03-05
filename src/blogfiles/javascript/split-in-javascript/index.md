@@ -2,8 +2,9 @@ Hello Devs,
 
 If you have landed here then I must say that you have used the JavaScript `split()` method in your dev journey and if you haven't then do not worry, be with me and let's dive deep into `split()` method.
 
-##Introduction
-`split()` method is used to split/break the string at the breakpoint/separator defined and return the remaining characters or string as an element of an array based on the separator (character or string or regex) passed as a first argument in `split()` method. 🤷‍♂️
+## Introduction
+
+The `split()` method is used to split/break the string at the breakpoint/separator defined and return the remaining characters or string as an element of an array based on the separator (character or string or regex) passed as a first argument in `split()` method. 🤷‍♂️
 
 ![split in javascript](https://capscode-website.github.io/blogfiles/javascript/split-in-javascript/split-in-javascript.png)
 
@@ -83,7 +84,7 @@ paragraph.split(/[.,!,?]/)
 //['You are a developer', 'Do you know JavaScript', "If you don't then you can learn it from CapsCode", 'I hope you love to have a cup of coffee', '']
 ```
 
-## Some additional experiments
+## Some key points to remember
 ```js
 let str="learn with capscode"
 str.split(" ","1") //['learn']
