@@ -121,9 +121,10 @@ const MarkDownReaderComponent = ({
           <h1
             style={{
               textAlign: "center",
-              fontSize: "40px",
+              fontSize: "3rem",
+              fontWeight: "900",
               padding: "15px",
-              lineHeight: "46px",
+              lineHeight: "50px",
               margin: "14px 0px 0px 0px",
             }}
           >

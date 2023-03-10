@@ -114,8 +114,26 @@ function Blog(props) {
         {data.length > 0 ? (
           data.map((categoryData, categoryIndex) => (
             <>
-              <ListItemButton style={{ color: "grey" }}>
-                <ListItemText primary={categoryData.category} />
+              <ListItemButton>
+                {/* <ListItemText
+                  primary={categoryData.category}
+                  style={{
+                    color: "darkgrey",
+                    fontSize: "3rem",
+                    fontWeight: "900 !important",
+                  }}
+                /> */}
+                <p
+                  style={{
+                    color: "#333333",
+                    fontSize: "1.2rem",
+                    fontWeight: "900",
+                    margin: 0,
+                    padding: 0,
+                  }}
+                >
+                  {categoryData.category}
+                </p>
               </ListItemButton>
               {categoryData.children.map((blogdata, dataIndex) => (
                 <Collapse in={open} timeout="auto" unmountOnExit>

@@ -48,7 +48,7 @@ console.log(str) //'learn with capscode'
 
 
 
-## 2. Examples with separators & limits.
+### 2. Examples with separators & limits.
 
 ```js
 let str = 'learn with capscode'
@@ -68,15 +68,15 @@ str.split(" ") //['learn', 'with', 'capscode']
 
 ```
 
-## 3. Example with separator as regex
+### 3. Example with separator as regex
 
-### 3.1. split on multiple keywords
+#### 3.1. split on multiple keywords
 ```js
 let str = 'CapsCode is a website where you can learn web development';
 str.split(/\s+(?:is|can|where)\s+/); //['CapsCode', 'a website', 'you', 'learn web development']
 ```
 
-### 3.2. split the string to count the number of sentences in a paragraph
+#### 3.2. split the string to count the number of sentences in a paragraph
 
 ```js
 let paragraph="You are a developer.Do you know JavaScript?If you don't then you can learn it from CapsCode.I hope you love to have a cup of coffee!"
