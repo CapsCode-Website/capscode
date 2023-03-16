@@ -53,7 +53,7 @@ console.log(str) //'learn with capscode'
 ```js
 let str = 'learn with capscode'
 
-str.split('',2) //['l', 'e']
+str.split("",2) //['l', 'e']
 //separator is empty string so it will get split after each character and the split number (limit) is 2 so it will split 2 times and the rest will be ignored also the length of returned array will be 2.
 
 str.split(" ",2) //['learn', 'with']
