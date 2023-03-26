@@ -19,14 +19,14 @@ export default function SEO({ title, description, name, type, link }) {
       {/* if og:image url is https, then use :secure_url else dont */}
       <meta
         property="og:image:url"
-        content={`https://capscode-website.github.io/${link.replaceAll(
+        content={`https://capscode-website.github.io/${link?.replaceAll(
           "/index.md",
           ""
         )}/og_image.png`}
       />
       <meta
         property="og:image:secure_url"
-        content={`https://capscode-website.github.io/${link.replaceAll(
+        content={`https://capscode-website.github.io/${link?.replaceAll(
           "/index.md",
           ""
         )}/og_image.png`}
