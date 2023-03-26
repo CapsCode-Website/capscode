@@ -45,7 +45,7 @@ export default function SEO({ title, description, name, type, link }) {
       <meta property="twitter:url" content={window.location.href} />
       <meta
         property="twitter:image"
-        content={`https://capscode-website.github.io/${link.replaceAll(
+        content={`https://capscode-website.github.io/${link?.replaceAll(
           "/index.md",
           ""
         )}/og_image.png`}
