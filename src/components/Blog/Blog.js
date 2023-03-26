@@ -191,6 +191,7 @@ function Blog(props) {
           description={`${props.shortTitle}`}
           name="CapsCode Blogs"
           type="article"
+          link={props.link}
         />
       )}
       <div className={classes.root}>
@@ -268,6 +269,7 @@ function Blog(props) {
               title={props.title}
               shortTitle={props.shortTitle}
               blogLink={props.match.url}
+              ogimage={props.match.url}
             />
           </main>
         )}

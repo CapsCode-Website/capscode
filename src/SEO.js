@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-export default function SEO({ title, description, name, type }) {
+export default function SEO({ title, description, name, type, link }) {
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -19,11 +19,17 @@ export default function SEO({ title, description, name, type }) {
       {/* if og:image url is https, then use :secure_url else dont */}
       <meta
         property="og:image:url"
-        content="https://www.capscode.in/capscode_og_image.png"
+        content={`https://capscode-website.github.io/${link.replaceAll(
+          "/index.md",
+          ""
+        )}/og_image.png`}
       />
       <meta
         property="og:image:secure_url"
-        content="https://www.capscode.in/capscode_og_image.png"
+        content={`https://capscode-website.github.io/${link.replaceAll(
+          "/index.md",
+          ""
+        )}/og_image.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="627" />
@@ -39,7 +45,10 @@ export default function SEO({ title, description, name, type }) {
       <meta property="twitter:url" content={window.location.href} />
       <meta
         property="twitter:image"
-        content="https://www.capscode.in/capscode_og_image.png"
+        content={`https://capscode-website.github.io/${link.replaceAll(
+          "/index.md",
+          ""
+        )}/og_image.png`}
       />
       {/* End Twitter tags */}
     </Helmet>
