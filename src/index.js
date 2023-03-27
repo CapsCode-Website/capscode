@@ -23,7 +23,7 @@ import { BrowserRouter } from "react-router-dom";
 //     rootElement
 //   );
 // }
-ReactDOM.render(
+ReactDOM.hydrate(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
