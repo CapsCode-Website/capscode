@@ -80,6 +80,15 @@
     "category": "JavaScript",
     "children": [
       {
+        "routeName": "valid-identifier-in-js",
+        "sidebarName": "Valid Identifier in JavaScript",
+        "title": "Valid Identifier in JavaScript",
+        "link": "blogfiles/javascript/valid-identifier-in-js/index.md",
+        "smallTextHint": "What is Identifier in JavaScript",
+        "like": 100,
+        "heart": 300
+      },
+      {
         "routeName": "split-in-javascript",
         "sidebarName": "split() in JavaScript",
         "title": "split() in JavaScript",
