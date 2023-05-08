@@ -561,11 +561,9 @@ While writing code, you often felt to highlight a specific code block so that yo
 
 ## 57. JavaScript Booster
 
-This extension boost your productivity with advanced JavaScript/TypeScript refactoring and commands
+This extension boosts your productivity with advanced JavaScript/TypeScript refactoring and commands
 
-
-
-JavaScript Booster comes with whole lot of below features, \
+JavaScript Booster comes with a whole lot of below features, \
 >**Conditions:**
 Flip if-else, Remove redundant else, Replace if-else with, Simplify if-else, Flip, Simplify, Merge nested if statements (new)
 
@@ -601,6 +599,16 @@ Wrap function into useCallback() hook (new), React: Wrap component function with
 ![javascript_booster](https://capscode-website.github.io/blogfiles/general/useful-vs-code-extensions/images/javascript_booster.JPG)
 
 
+
+## 58. Live Preview
+
+This extension hosts your website on a local server and runs your website locally in VS Code (side by side). This extension is most useful for projects where a server is not already created (e.g. not for apps using React, Angular, etc.).
+
+this is very useful when we are developing some web applications and need to have a live preview side by side without switching between VS Code and browser.
+
+[https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
+
+![live_preview](https://capscode-website.github.io/blogfiles/general/useful-vs-code-extensions/images/livepreview.JPG)
 
 
 # Conclusion <a name="conclusion"></a>
