@@ -27,17 +27,17 @@ let _name="john" //can start with underscore
 
 let first_name = "john" //can contain underscore
 
-let name_="john" //can ends with underscore
+let name_="john" //can end with underscore
 
-let $name = "john" //can start with doller
+let $name = "john" //can start with dollar
 
-let first$name = "john" //can contain doller
+let first$name = "john" //can contain dollar
 
-let name$ = "john" //can ends with doller
+let name$ = "john" //can end with dollar
 
 let first123name = "john" //can contain number
 
-let name123 = "john" //can ends with number
+let name123 = "john" //can end with number
 ```
 
 
@@ -74,7 +74,7 @@ let new = "john" //SyntaxError
 ```
 
 ## Conclusion
-This is a brief introduction to what an identifier is and the various ways to define/ crete a valid identifier in JavaScript.
+This is a brief introduction to what an identifier is and the various ways to define/ create a valid identifier in JavaScript.
 
 If you find this article useful, share this article. Someone could find it useful too. If you find anything technically inaccurate, please feel free to create an [issue](https://github.com/CapsCode-Website/blogfiles/issues).
 
