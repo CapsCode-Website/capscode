@@ -80,6 +80,15 @@
     "category": "JavaScript",
     "children": [
       {
+        "routeName": "you-should-not-use-fetch-api",
+        "sidebarName": "You should not use Fetch API",
+        "title": "You should not use Fetch API",
+        "link": "blogfiles/javascript/you-should-not-use-fetch-api/index.md",
+        "smallTextHint": "Why we should not use fetch() API to call an API in JavaScript",
+        "like": 100,
+        "heart": 300
+      },
+      {
         "routeName": "valid-identifier-in-js",
         "sidebarName": "Valid Identifier in JavaScript",
         "title": "Valid Identifier in JavaScript",
