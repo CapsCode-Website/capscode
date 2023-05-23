@@ -69,8 +69,10 @@ as the base URL is valid, only the requested resource, i.e `myusers` is invalid 
 
 But that is not fair and may lead to major bugs/breakdown in your code.
 
-`NOTE: fetch API only rejects into catch if the request fails due to a network error, or in other words - the request never gets to your server. If you get any response, even an HTTP 500, then the promise resolves into `.then()` method. 
+NOTE: fetch API only rejects into catch if the request fails due to a network error, or in other words - the request never gets to your server. If you get any response, even an HTTP 500, then the promise resolves into `.then()` method.
+
 [Ref.- MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful)
+
 ```js
 fetch("https://api.mygithub.com/myusers") //invalid api base URL
   .then((response) => {
