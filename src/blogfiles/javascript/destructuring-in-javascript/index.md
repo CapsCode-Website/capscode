@@ -95,7 +95,8 @@ let admin = "Pete";
 ## 3. we can also assign default values using destructuring assignment <a name="three"></a>
 
 ```js
-let [firstName, surname] = [];
+let arr = []
+let [firstName, surname] = arr;
 alert(firstName); // undefined
 alert(surname); // undefined
 
@@ -105,6 +106,7 @@ let [name = "Guest", surname = "Anonymous"] = ["Julius"];
 alert(name);    // Julius (from array)
 alert(surname); // Anonymous (default used)
 
+//Make sure to handle the error when the values of arr is an non iterable value like undefined, null, true, false,  
 ```
 
 ## 4. Destructuring of nested array <a name="four"></a>
@@ -139,6 +141,10 @@ let { fname, ...others } = person;
 console.log(others);
 console.log(others.lname);
 console.log(others.company);
+
+//how to assing a new name to the variable along wiht the default value
+let { fname:myname=" ", lname, company } = person;
+console.log(myname) //John
 ```
 
 what if we will use Destructuring assignment without declaration?
