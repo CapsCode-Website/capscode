@@ -40,8 +40,8 @@ pre {
   /* width: 80vw !important; */
 }
 .markdown-body img {
-  height: 50%;
-  width: 70%;
+  /* height: 0%; */
+  width: 90vw;
   align-items: center;
 }
 
