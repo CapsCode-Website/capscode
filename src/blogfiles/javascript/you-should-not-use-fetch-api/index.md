@@ -42,6 +42,10 @@ fetch("https://api.github.com/users")
 ```
 
 _the output is straightforward._
+
+![fetch api with valid api](https://capscode-website.github.io/blogfiles/javascript/you-should-not-use-fetch-api/valid-api.JPG)
+
+
 As the API is successful, `fetch()` will return resolved promises so, it will enter inside the first `.then()` method and print the response object(raw format) and we are returning the JSON from it.
 `response.json()` returns a resolved promise to a JSON object.
 
@@ -64,17 +68,21 @@ fetch("https://api.github.com/myusers") //invalid api path
 As the API endpoint is **invalid**. It should print the error statement right,
 
 But that's not the case with `fetch()` API.
+
+![fetch api with invalid api](https://capscode-website.github.io/blogfiles/javascript/you-should-not-use-fetch-api/incorrect-endpoint.JPG)
+
+
 The `fetch()` promise will be resolved into the first `.then()` method and return the JSON response and then it has entered into the second `.then()` method rather than entering inside the catch method
 as the base URL is valid, only the requested resource, i.e `myusers` is invalid / not present (and will return 404).
 
-But that is not fair and may lead to major bugs/breakdown in your code.
+But that is not fair and may lead to major bugs/breakdowns in your code.
 
 NOTE: fetch API only rejects into catch if the request fails due to a network error, or in other words - the request never gets to your server. If you get any response, even an HTTP 500, then the promise resolves into `.then()` method.
 
 [Ref.- MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful)
 
 ```js
-fetch("https://api.mygithub.com/myusers") //invalid api base URL
+fetch("https://api.mygithub.com/users") //invalid api base URL
   .then((response) => {
     console.log("response", response);
     return response.json();
@@ -84,7 +92,7 @@ fetch("https://api.mygithub.com/myusers") //invalid api base URL
 //this will logs the catch method
 //error TypeError: Failed to fetch
 ```
-
+![fetch api with invalid url](https://capscode-website.github.io/blogfiles/javascript/you-should-not-use-fetch-api/incorrect-url.JPG)
 
 Then how we can resolve this issue of `fetch()` API ?
 
@@ -100,6 +108,8 @@ fetch("https://api.github.com/myusers")
   .then((result) => console.log("success: ", result))
   .catch((error) => console.log("error: ", error));
 ```
+![fetch api with invalid url](https://capscode-website.github.io/blogfiles/javascript/you-should-not-use-fetch-api/how-to-handle.JPG)
+
 
 what we are doing here is, we are checking the status of the response we are getting before returning the resolved promise.
 If the status is not 200 or `response.ok` is not true we are returning the rejected promise.
