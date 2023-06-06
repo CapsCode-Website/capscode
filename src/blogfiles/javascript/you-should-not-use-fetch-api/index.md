@@ -1,3 +1,7 @@
+
+<iframe width="699" height="393" src="https://www.youtube.com/embed/eUwxbbwf2Ao" title="Fetch API Issue | You should not use Fetch API in JavaScript #javascript #webdevelopment  #reactjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## Introduction
 
 Fetch API is the most common and traditional way to fetch resources from the server.
@@ -5,7 +9,6 @@ Fetch API is the most common and traditional way to fetch resources from the ser
 
 With all the pros, there are a few cons in using the `fetch()` API to call an endpoint and getting resources from a URI.
 
-<iframe width="699" height="393" src="https://www.youtube.com/embed/eUwxbbwf2Ao" title="Fetch API Issue | You should not use Fetch API in JavaScript #javascript #webdevelopment  #reactjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Syntax of `fetch()` API
 ```js
