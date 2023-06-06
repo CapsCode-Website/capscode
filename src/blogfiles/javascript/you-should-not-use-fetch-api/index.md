@@ -1,5 +1,5 @@
 
-<iframe width="80vw" height="auto" src="https://www.youtube.com/embed/euSMapHlbmY" title="Fetch API Issue | You should not use Fetch API in JavaScript #javascript #webdevelopment  #reactjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="699" height="393" src="https://www.youtube.com/embed/euSMapHlbmY" title="Fetch API Issue | You should not use Fetch API in JavaScript #javascript #webdevelopment  #reactjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Introduction
 
