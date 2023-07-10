@@ -145,7 +145,7 @@ There are a lot of libraries and some of them are,
 No doubt, fetch is an amazing API and every beginner should learn the fetch API first and then only switch to any other libraries.
 There is nothing that we cannot do with fetch API, but we have to write more codes and it will be sometimes difficult to manage. Just keep one thing in mind about fetch API is that in fetch API, only network errors are the actual errors, whereas the other libraries handle all types of errors whether it's a network error or resource not found errors automatically.
 
-**Sorry [fetch API 🙏🏻🙏🏻🙏🏻](https://developer.mozilla.org/en-US/docs/Web/API/fetch)**
+**Sorry, [fetch API 🙏🏻🙏🏻🙏🏻](https://developer.mozilla.org/en-US/docs/Web/API/fetch)**
 
 
 Thank you for reading this so far. This is a brief introduction that why we should not use fetch API for calling an API endpoint.

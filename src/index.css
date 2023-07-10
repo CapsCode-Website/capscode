@@ -1,7 +1,8 @@
-*{
+* {
   scroll-behavior: smooth;
 }
-:root{
+
+:root {
   /* --primary-color1: #ff9770; */
   --primary-color1: #ff6b33;
   --primary-color2: #ffd670;
@@ -10,8 +11,9 @@
   --primary-color5: #70d6ff;
   --primary-color6: #dba1fa;
   --back-primary-color: #fef3f4;
-  --blackcolor:#4d5355;
+  --blackcolor: #4d5355;
 }
+
 html {
   height: 100%;
   margin: 0px;
@@ -36,7 +38,31 @@ code {
     monospace;
 }
 
-h1, h2, h3, h4, h5, p, button, div, span,code{
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+div,
+span,
+code {
   font-family: "Nunito" !important;
 }
 
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
