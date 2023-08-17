@@ -4,14 +4,15 @@ In this article we will learn Destructuring in JavaScript
 
 ## Table Of Contents
 
-1. [Array Destructuring in JavaScript](#one)
-2. [Additional use of Array Destructuring](#two)
-3. [Assigning default values using destructuring assignment](#three)
-4. [Destructuring of nested array](#four)
-5. [Object Destructuring in JavaScript](#five)
-6. [Nested object destructuring](#six)
-7. [How to skip values in Array destructuring](#seven)
-8. [Combined Array and Object Destructuring](#eight)
+- [Table Of Contents](#table-of-contents)
+- [1. Array Destructuring: ](#1-array-destructuring-)
+- [2. Some Additional use of Destructuring ](#2-some-additional-use-of-destructuring-)
+- [3. we can also assign default values using destructuring assignment ](#3-we-can-also-assign-default-values-using-destructuring-assignment-)
+- [4. Destructuring of nested array ](#4-destructuring-of-nested-array-)
+- [5. Object Destructuring ](#5-object-destructuring-)
+- [6.Nested object destructuring ](#6nested-object-destructuring-)
+- [7. How to skip values in Array destructuring ](#7-how-to-skip-values-in-array-destructuring-)
+- [8.Combined Array and Object Destructuring ](#8combined-array-and-object-destructuring-)
 
 Without wasting any time lets get into it,
 
@@ -191,6 +192,26 @@ somefunc()(({ href } = window.location));
 
 🔥 What's happening is, Without the semicolon, when parsing, Javascript engine considers both lines as a single call expression.
 **🔥 So if you are using `()` after any `()` then put `;` after first `()` 😅**
+
+`NOTE: Be very mindful while destructuring that the dstructured keys will behave like a normal variable and the name should be a (https://www.capscode.in/blog/valid-identifier-in-js)[valid identifier] 
+
+For example,
+
+```js
+let obj = {
+  name:"John",
+  "my-company":"CapsCode"
+}
+
+//lets destrucuture this
+let {name, "my-company"} = obj //this will throw an error as my-company is not a valid dentifier
+
+//lets correct this by assigning a variable to my-company
+let {name, "my-company":company} = obj //this will work absolutly fine
+console.log(company) //CapsCode
+```
+
+`
 
 ## 6.Nested object destructuring <a name="six"></a>
 
