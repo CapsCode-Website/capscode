@@ -319,7 +319,7 @@ You may have some questions in your mind that how it is getting exported from fi
 It's as simple as exporting object from JavaScript.
 
 This image speaks 1000's of word.
-![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/6.PNG)
+![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/6.png)
 
 
 Please double-check the *point 1. and point 2.* marked in the image.
