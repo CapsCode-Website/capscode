@@ -83,7 +83,7 @@
         "routeName": "what-is-css-module",
         "sidebarName": "What is CSS Module",
         "title": "What is CSS Module",
-        "link": "blogfiles/reactjs/what-is-css-module",
+        "link": "blogfiles/reactjs/what-is-css-module/index.md",
         "smallTextHint": "What is CSS Module and why should we use it instead of CSS.",
         "like": 100,
         "heart": 300
