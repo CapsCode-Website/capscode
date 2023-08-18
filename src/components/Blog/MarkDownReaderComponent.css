@@ -74,7 +74,7 @@ pre {
 .markdown-body blockquote {
   background: lightyellow;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 /* .MdReaderComp pre {
