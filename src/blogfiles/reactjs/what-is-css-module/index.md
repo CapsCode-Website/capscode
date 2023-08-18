@@ -9,7 +9,7 @@
 7. [Compose in CSS Module]("compose-in-css-module")
 8. [Variable in CSS Module]("variable-in-css-module")
 9. [How CSS Module work]("how-css-module-work")
-10. [Conslusion]("conclusion")
+10. [Conclusion]("conclusion")
 
 
 
@@ -360,14 +360,14 @@ If you find this article useful, share this article. Someone could find it usefu
 Hope it's a nice and informative read for you.
 VISIT https://www.capscode.in/blog TO LEARN MORE...
 
->### Few of the trending articles,
-[How To Hide ReactJS Code From Browser](https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser)
-[DOT & BRACKET Notation in JavaScript](https://www.capscode.in/blog/dot-and-bracket-notation-in-javascript)
-[List of all useful VS Code extensions](https://www.capscode.in/blog/useful-vs-code-extensions)
-[How To Detect Mobile Device, OS using JavaScript](https://www.capscode.in/blog/how-to-detect-mobile-device-in-javascript)
-[Variable in CSS](https://www.capscode.in/blog/variable-in-css)
-[Set Variable as keyname in JS Object](https://www.capscode.in/blog/how-to-set-variable-as-a-key-name-in-javascript-object)
-[You should not use Fetch API](https://www.capscode.in/blog/you-should-not-use-fetch-api)
+### Few of the trending articles,
+* [How To Hide ReactJS Code From Browser](https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser)
+* [DOT & BRACKET Notation in JavaScript](https://www.capscode.in/blog/dot-and-bracket-notation-in-javascript)
+* [List of all useful VS Code extensions](https://www.capscode.in/blog/useful-vs-code-extensions)
+* [How To Detect Mobile Device, OS using JavaScript](https://www.capscode.in/blog/how-to-detect-mobile-device-in-javascript)
+* [Variable in CSS](https://www.capscode.in/blog/variable-in-css)
+* [Set Variable as keyname in JS Object](https://www.capscode.in/blog/how-to-set-variable-as-a-key-name-in-javascript-object)
+* [You should not use Fetch API](https://www.capscode.in/blog/you-should-not-use-fetch-api)
 
 
 Thanks,\
