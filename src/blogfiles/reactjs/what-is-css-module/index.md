@@ -344,7 +344,8 @@ Please double-check the *point 1. and point 2.* marked in the image.
 
 if you want to check the demo of how css module does the export of styles, do cehckout 
 <iframe style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="css-module-export-example"src="https://codesandbox.io/p/sandbox/how-css-module-export-styles-4v8kqc?embed=1"></iframe>
+     title="css-module-export-example" 
+     src="https://codesandbox.io/p/sandbox/how-css-module-export-styles-4v8kqc?embed=1"></iframe>
 
 ## Conclusion <a name="conclusion"></a>
 
