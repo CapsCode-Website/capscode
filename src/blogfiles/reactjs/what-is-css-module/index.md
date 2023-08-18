@@ -16,7 +16,7 @@
 ## 1. Introduction <a name="introduction"></a>
 CSS modules are just like plain CSS which you already know with lots of extra advantages and some specific rules.
 
-### Why we are using **CSS modules** and what is the need to use them? <a name="what-is-css-module"></a>
+## 2. Why we are using **CSS modules** and what is the need to use them? <a name="what-is-css-module"></a>
 If you have worked in ReactJS for creating your web apps, then you might be aware that all of the CSS files in your application are combined and get added to the style tag of your document (at the top).
 
 ![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/1.PNG)
@@ -138,7 +138,7 @@ No one wants to clutter their code with `!important` overrides in CSS as it crea
 
 
 
-## How to use CSS Module in RectJS <a name="how-to-use-css-module"></a>
+## 3. How to use CSS Module in RectJS <a name="how-to-use-css-module"></a>
 
 1. Instead of creating the file as `filename.css` you have to create the file as `filename.module.css`
 
@@ -191,7 +191,7 @@ That's it, you are done. CSS Module is as simple as CSS is.
 
 Let's see some of the important points of **CSS Module** (how to...).
 
-## How to write multiple class names to an element when we are using CSS Module <a name="how-to-write-multiple-class-name-in-css-module"></a>
+## 4. How to write multiple class names to an element when we are using CSS Module <a name="how-to-write-multiple-class-name-in-css-module"></a>
 
 we can use the JSX syntax to write that
 
@@ -205,7 +205,7 @@ we can use the JSX syntax to write that
 ```
 
 
-## How can we make a global styling in **CSS Module** <a name="global-styling-in-css-module"></a>
+## 5. How can we make a global styling in **CSS Module** <a name="global-styling-in-css-module"></a>
 
 We just need to add `:global` suffix before the defined classname in the CSS Module.
 
@@ -229,7 +229,7 @@ Example:
 <h3 className="global-style">Component Heading</h3>
 ```
 
-## We should not give styling to the `elements` in **CSS Module**. <a name="styling-to-element-in-css-module"></a>
+## 6. We should not give styling to the `elements` in **CSS Module**. <a name="styling-to-element-in-css-module"></a>
 
 We should never apply CSS to an `HTML element` in the CSS Module because if we do so, then it will become the global one automatically.
 
@@ -243,7 +243,7 @@ h3 {
 Best practice is to create some global css file (let's say global.css) file and define all your global styling in that file.
 
 
-## Composing multiple styles together in **CSS Module**. <a name="compose-in-css-module"></a>
+## 7. Composing multiple styles together in **CSS Module**. <a name="compose-in-css-module"></a>
 
 You can create a class and then compose it within other classes by using the **composes** selector.
 
@@ -269,7 +269,7 @@ The classes being composed do not have to be in the same file. It can be importe
 ```
 
 
-## How to define CSS variables in **CSS Modules**. <a name="variable-in-css-module"></a>
+## 8. How to define CSS variables in **CSS Modules**. <a name="variable-in-css-module"></a>
 
 CSS Modules have a `variable` system that allows you to create variables in the CSS Module.
 
@@ -316,7 +316,7 @@ Please checkout the codesandbox for the css module example
    ></iframe>
 
 
-## How CSS Module works behind the scene <a name="how-css-module-work"></a>
+## 9. How CSS Module works behind the scene <a name="how-css-module-work"></a>
 
 CSS Modules create a unique classname of the format [filename]\_[classname]\_\_[hash].
 
@@ -347,7 +347,7 @@ if you want to check the demo of how css module does the export of styles, do ce
      title="css-module-export-example" 
      src="https://codesandbox.io/p/sandbox/how-css-module-export-styles-4v8kqc?embed=1"></iframe>
 
-## Conclusion <a name="conclusion"></a>
+## 10. Conclusion <a name="conclusion"></a>
 
 ---
 
