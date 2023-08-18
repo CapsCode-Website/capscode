@@ -3,13 +3,13 @@
 1. [Introduction](#introduction)
 2. [What is CSS Module](#what-is-css-module)
 3. [How to use CSS Module](#how-to-use-css-module)
-4. [How to write multiple class name in CSS Module]("how-to-write-multiple-class-name-in-css-module")
-5. [Gloabel styling in CSS Module]("global-styling-in-css-module")
-6. [Styling HTML element in CSS Module]("styling-to-element-in-css-module")
-7. [Compose in CSS Module]("compose-in-css-module")
-8. [Variable in CSS Module]("variable-in-css-module")
-9. [How CSS Module work]("how-css-module-work")
-10. [Conclusion]("conclusion")
+4. [How to write multiple class name in CSS Module](#how-to-write-multiple-class-name-in-css-module)
+5. [Gloabel styling in CSS Module](#global-styling-in-css-module)
+6. [Styling HTML element in CSS Module](#styling-to-element-in-css-module)
+7. [Compose in CSS Module](#compose-in-css-module)
+8. [Variable in CSS Module](#variable-in-css-module)
+9. [How CSS Module work](#how-css-module-work)
+10. [Conclusion](#conclusion)
 
 
 
