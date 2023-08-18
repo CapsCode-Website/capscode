@@ -1,6 +1,22 @@
+## Table of content
+
+1. [Introduction](#introduction)
+2. [What is CSS Module](#what-is-css-module)
+3. [How to use CSS Module](#how-to-use-css-module)
+4. [How to write multiple class name in CSS Module]("how-to-write-multiple-class-name-in-css-module")
+5. [Gloabel styling in CSS Module]("global-styling-in-css-module")
+6. [Styling HTML element in CSS Module]("styling-to-element-in-css-module")
+7. [Compose in CSS Module]("compose-in-css-module")
+8. [Variable in CSS Module]("variable-in-css-module")
+9. [How CSS Module work]("how-css-module-work")
+10. [Conslusion]("conclusion")
+
+
+
+## 1. Introduction <a name="introduction"></a>
 CSS modules are just like plain CSS which you already know with lots of extra advantages and some specific rules.
 
-## Why we are using **CSS modules** and what is the need to use them?
+### Why we are using **CSS modules** and what is the need to use them? <a name="what-is-css-module"></a>
 If you have worked in ReactJS for creating your web apps, then you might be aware that all of the CSS files in your application are combined and get added to the style tag of your document (at the top).
 
 ![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/1.PNG)
@@ -122,7 +138,7 @@ No one wants to clutter their code with `!important` overrides in CSS as it crea
 
 
 
-## How to use CSS Module in RectJS
+## How to use CSS Module in RectJS <a name="how-to-use-css-module"></a>
 
 1. Instead of creating the file as `filename.css` you have to create the file as `filename.module.css`
 
@@ -171,9 +187,11 @@ As we know that the id's should be unique in the html document, whenever we give
 
 That's it, you are done. CSS Module is as simple as CSS is.
 
-## Let's see some of the important points of **CSS Module** (how to...).
 
-## How to write multiple class names to an element when we are using CSS Module
+
+Let's see some of the important points of **CSS Module** (how to...).
+
+## How to write multiple class names to an element when we are using CSS Module <a name="how-to-write-multiple-class-name-in-css-module"></a>
 
 we can use the JSX syntax to write that
 
@@ -187,7 +205,7 @@ we can use the JSX syntax to write that
 ```
 
 
-## How can we make a global styling in **CSS Module**
+## How can we make a global styling in **CSS Module** <a name="global-styling-in-css-module"></a>
 
 We just need to add `:global` suffix before the defined classname in the CSS Module.
 
@@ -211,7 +229,7 @@ Example:
 <h3 className="global-style">Component Heading</h3>
 ```
 
-## We should not give styling to the `elements` in **CSS Module**.
+## We should not give styling to the `elements` in **CSS Module**. <a name="styling-to-element-in-css-module"></a>
 
 We should never apply CSS to an `HTML element` in the CSS Module because if we do so, then it will become the global one automatically.
 
@@ -225,7 +243,7 @@ h3 {
 Best practice is to create some global css file (let's say global.css) file and define all your global styling in that file.
 
 
-## Composing multiple styles together in **CSS Module**.
+## Composing multiple styles together in **CSS Module**. <a name="compose-in-css-module"></a>
 
 You can create a class and then compose it within other classes by using the **composes** selector.
 
@@ -251,7 +269,7 @@ The classes being composed do not have to be in the same file. It can be importe
 ```
 
 
-## How to define CSS variables in **CSS Modules**.
+## How to define CSS variables in **CSS Modules**. <a name="variable-in-css-module"></a>
 
 CSS Modules have a `variable` system that allows you to create variables in the CSS Module.
 
@@ -298,7 +316,7 @@ Please checkout the codesandbox for the css module example
    ></iframe>
 
 
-## How CSS Module works behind the scene
+## How CSS Module works behind the scene <a name="how-css-module-work"></a>
 
 CSS Modules create a unique classname of the format [filename]\_[classname]\_\_[hash].
 
@@ -327,4 +345,30 @@ Please double-check the *point 1. and point 2.* marked in the image.
 if you want to check the demo of how css module does the export of styles, do cehckout 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;" width="800" height="450" src="https://codesandbox.io/p/sandbox/how-css-module-export-styles-4v8kqc?embed=1" allowfullscreen></iframe>
 
-kebab-case 
+## Conclusion <a name="conclusion"></a>
+
+---
+
+Awesome! Now you become an expert in using CSS Modules in your application.
+CSS module are very much useful when you dont want to install any 3rd party library like StylesComponent, Emotions etc. and want to continue writing your CSS in the tradtional way.
+Its developer friendly, less time consuming, easy to debug and easy to manage as well.
+
+Thank you for reading this far. This is a brief introduction of **CSS Module**.
+
+If you find this article useful, share this article. Someone could find it useful too. If you find anything technically inaccurate please feel free to create a [issue](https://github.com/CapsCode-Website/blogfiles/issues).
+
+Hope it's a nice and informative read for you.
+VISIT https://www.capscode.in/blog TO LEARN MORE...
+
+>### Few of the trending articles,
+[How To Hide ReactJS Code From Browser](https://www.capscode.in/blog/how-to-hide-reactjs-code-from-browser)
+[DOT & BRACKET Notation in JavaScript](https://www.capscode.in/blog/dot-and-bracket-notation-in-javascript)
+[List of all useful VS Code extensions](https://www.capscode.in/blog/useful-vs-code-extensions)
+[How To Detect Mobile Device, OS using JavaScript](https://www.capscode.in/blog/how-to-detect-mobile-device-in-javascript)
+[Variable in CSS](https://www.capscode.in/blog/variable-in-css)
+[Set Variable as keyname in JS Object](https://www.capscode.in/blog/how-to-set-variable-as-a-key-name-in-javascript-object)
+[You should not use Fetch API](https://www.capscode.in/blog/you-should-not-use-fetch-api)
+
+
+Thanks,\
+CapsCode

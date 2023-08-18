@@ -80,15 +80,6 @@
     "category": "JavaScript",
     "children": [
       {
-        "routeName": "what-is-css-module",
-        "sidebarName": "What is CSS Module",
-        "title": "What is CSS Module",
-        "link": "blogfiles/reactjs/what-is-css-module/index.md",
-        "smallTextHint": "What is CSS Module and why should we use it instead of CSS.",
-        "like": 100,
-        "heart": 300
-      },
-      {
         "routeName": "you-should-not-use-fetch-api",
         "sidebarName": "You should not use Fetch API",
         "title": "You should not use Fetch API",
@@ -291,6 +282,15 @@
   {
     "category": "ReactJS",
     "children": [
+      {
+        "routeName": "what-is-css-module",
+        "sidebarName": "What is CSS Module",
+        "title": "What is CSS Module",
+        "link": "blogfiles/reactjs/what-is-css-module/index.md",
+        "smallTextHint": "What is CSS Module and why should we use it instead of CSS.",
+        "like": 100,
+        "heart": 300
+      },
       {
         "routeName": "how-to-hide-reactjs-code-from-browser",
         "sidebarName": "How To Hide ReactJS Code From Browser",
