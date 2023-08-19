@@ -349,8 +349,6 @@ if you want to check the demo of how css module does the export of styles, do ce
 
 ## 10. Conclusion <a name="conclusion"></a>
 
----
-
 Awesome! Now you become an expert in using CSS Modules in your application.
 CSS module are very much useful when you dont want to install any 3rd party library like StylesComponent, Emotions etc. and want to continue writing your CSS in the tradtional way.
 Its developer friendly, less time consuming, easy to debug and easy to manage as well.
