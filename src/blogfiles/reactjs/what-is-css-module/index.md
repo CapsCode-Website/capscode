@@ -110,12 +110,12 @@ export default function App() {
 Please take note that we have imported `ComponentTwo` after importing `ComponentOne`
 and below is the output
 
-![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/4.PNG)
+![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/5.PNG)
 
 What happened here is that the `ComponentTwo` `style.css` has taken priority and its style has overridden the style of `ComponentOne` folder's `style.css`.
 
 What if we import `ComponentTwo` before `ComponentOne`?
-![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/5.PNG)
+![image of map files](https://capscode-website.github.io/blogfiles/reactjs/what-is-css-module/4.PNG)
 
 Have you noticed the difference?
 What happened here is the ComponentOne `style.css` has taken priority and its style has overridden the style of `ComponentTwo` folder's `style.css`.
