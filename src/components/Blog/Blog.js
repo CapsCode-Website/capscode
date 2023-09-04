@@ -176,6 +176,22 @@ function Blog(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  const getCapatalize = (str) => {
+    let new_str = str.split("/")[2].replaceAll("-", " ");
+
+    //option 1
+    // const words = new_str.split(" ");
+    // words.map((word) => {
+    //     return word[0].toUpperCase() + word.substring(1);
+    // }).join(" ");
+
+    //option 2
+    const temp = new_str.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
+      letter.toUpperCase()
+    );
+
+    return temp;
+  };
   return (
     <>
       {props.link === "home" || props.link === "" ? (
@@ -187,7 +203,7 @@ function Blog(props) {
         />
       ) : (
         <SEO
-          title={props.history.location.pathname.split("/")[2]}
+          title={getCapatalize(props.history.location.pathname)}
           description={`${props.shortTitle}`}
           name="CapsCode Blogs"
           type="article"
