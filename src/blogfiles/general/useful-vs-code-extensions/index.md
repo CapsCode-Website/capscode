@@ -610,10 +610,18 @@ this is very useful when we are developing some web applications and need to hav
 ![live_preview](https://capscode-website.github.io/blogfiles/general/useful-vs-code-extensions/images/livepreview.JPG)
 
 
+## 59. Multiple cursor case preserve
+
+Have you ever tried to change a single word in all variable names, but had your camelCase broken? This extension preserves selection cases in these situations. It recognizes CAPS, Uppercase and lowercase. Works for typing or pasting.
+
+[https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve](https://marketplace.visualstudio.com/items?itemName=Cardinal90.multi-cursor-case-preserve)
+
+![case-preserve](https://capscode-website.github.io/blogfiles/general/useful-vs-code-extensions/images/case-preserve.JPG)
+
 # Conclusion <a name="conclusion"></a>
 ---
 
-We have listed almost all the famous and useful VS Code extensions which will help you and make you more productive throughout your career.
+We have listed almost all the famous and useful VS Code extensions that will help you and make you more productive throughout your career.
 
 Thank you for reading this so far. This is a brief introduction to some of the VS Code Extension
 
