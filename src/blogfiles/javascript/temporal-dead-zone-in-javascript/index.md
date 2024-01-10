@@ -46,12 +46,14 @@ Note: Hoisting does not mean `JavaScript` rearranges or moves code above one ano
 
 You can read more about how hoisting works for var, let, const, function declaration and function expressions [here](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting).
 
-When we declare the variables, JS engine `hoist` the variables and keeps it inside the TDZ (Temporal Dead Zone) until execution reaches the line of code where the actual declaration is made.
+When we declare the variables, JS engine `hoist` the variables and keeps them inside the TDZ (Temporal Dead Zone) until execution reaches the line of code where the actual declaration is made.
 Keeping variables in TDZ works differently for var, let, const, function declaration and function expressions. Let's see all of these below.
 
 ## What is a Temporal Dead Zone (TDZ)
 
-
+The **T**emporal **D**ead **Z**one is a specific phase during the execution of your code where a variable declared with let or const exists but cannot be accessed.
+This occurs from the start of the block or scope in which the variable is declared until the actual declaration is reached in the code.
+If you try to access the variable within the Temporal Dead Zone, a `ReferenceError` will be thrown.
 
 
 
