@@ -106,3 +106,18 @@ To display a character that has a special meaning in Markdown (e.g., * or _), yo
 markdown
 
 \*literal asterisks\*
+
+
+
+====================================================
+****************************************************
+====================================================
+
+# image size of Hashnode
+1600 x 840
+
+# image size of Dev.to
+1000*420
+
+# image size of Medium
+1925x300

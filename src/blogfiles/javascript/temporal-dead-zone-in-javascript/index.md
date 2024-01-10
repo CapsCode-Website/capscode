@@ -11,7 +11,7 @@
 6. [Conclusion](#conclusion)
 
 
-## Introduction <a name="#introduction"></a>
+## Introduction <a name="introduction"></a>
 
 Temporal dead zone is a time period where a variable declared with `let` and `const` exists but cannot be accessible to use it or to assign it a value.
 
@@ -36,7 +36,7 @@ let foo="bar" //TDZ of foo ends here
 ```
 
 
-## How hoisting works in JavaScript <a name="#how-hoisting-works-in-javascript"></a>
+## How hoisting works in JavaScript <a name="how-hoisting-works-in-javascript"></a>
 
 Temporal Dead Zone and Hoisting are two related concepts.
 Before hoisting let's first discuss how `JavaScript` engine executes a program in short.
@@ -55,7 +55,7 @@ Keeping variables in TDZ works differently for var, let, const, function declara
 
 
 
-## TDZ of let variables <a name="#temporal-dead-zone-of-let-variables"></a>
+## TDZ of let variables <a name="temporal-dead-zone-of-let-variables"></a>
 
 TDZ of a variable declared with `let` starts at the beginning of the scope in which it is being declared and ends at the point/line of code where it is being declared.
 
@@ -100,7 +100,7 @@ If we do `console.log(foo)` before the initialization of `foo` variable it will 
 But the second `console.log(foo)` returns `bar` because the TDZ of `foo` variable ends when we have declared the variable.
 
 
-## TDZ of const variable <a name="#temporal-dead-zone-of-const-variables"></a>
+## TDZ of const variable <a name="temporal-dead-zone-of-const-variables"></a>
  
 TDZ of `const` is similar to `let` except for one difference, that we have to initialize it with a value while declaring a `const` variable.
 
@@ -129,7 +129,7 @@ But the second `console.log(foo)` returns `bar` because the TDZ of `foo` variabl
 The reason that we get a reference error when we try to access a `let` or `const` variable before its declaration is because of the Temporal Dead Zone (TDZ).
 
 
-## TDZ of var variable <a name="#temporal-dead-zone-of-var-variables"></a>
+## TDZ of var variable <a name="temporal-dead-zone-of-var-variables"></a>
 
 It is important to note that TDZ of var variable works differently.
 
@@ -157,13 +157,13 @@ console.log(foo) //bar
 
 As you can see in the above example the first `console.log` statement returns `undefined` because during the compilation phase, the JS engine sees the variable declared with `var` hence `hoist` the variable and also `initializes` it with the value of `undefined` and that's the reason the `TDZ` of `var` variable ends in the first line of the scope.
 
-## TDZ of functions <a name="#temporal-dead-zone-of-functions"></a>
+## TDZ of functions <a name="temporal-dead-zone-of-functions"></a>
 
 Note that only function declarations are hoisted, not function expressions. This should make sense: as we just learned, variable assignments aren't hoisted
 
 
 
-## Why do we need TDZ <a name="#why-we-need-temporal-dead-zone"></a>
+## Why do we need TDZ <a name="why-we-need-temporal-dead-zone"></a>
 
 1. For better coding practices
 
@@ -178,6 +178,6 @@ The `TDZ` does not apply to the variables declared with `var`. They are hoisted 
 It helps catch potential issues caused by accessing variables before their initialization.
 
 
-## Conclusion <a name="#conclusion"></a>
+## Conclusion <a name="conclusion"></a>
 
 Hoisting and Temporal Dead Zone are two related concepts, having knowledge of the relation between both of them and understanding and respecting the Temporal Dead Zone is an integral part of writing clean and error/bug-free JavaScript code. It aligns with the language's design principles and contributes to a more reliable and maintainable codebase.
