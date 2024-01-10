@@ -1,5 +1,14 @@
 [
   {
+    "routeName": "temporal-dead-zone-in-javascript",
+    "sidebarName": "Temporal Dead Zone",
+    "title": "What is Temporal Dead Zone",
+    "link": "blogfiles/javascript/temporal-dead-zone-in-javascript/index.md",
+    "smallTextHint": "What is Temporal Dead Zone (TDZ) in JavaScript and why it is important to understand the role of TDZ to write error and bug free code.",
+    "like": 100,
+    "heart": 300
+  },
+  {
     "routeName": "what-is-css-module",
     "sidebarName": "What is CSS Module",
     "title": "What is CSS Module",
@@ -287,7 +296,6 @@
     "like": 100,
     "heart": 300
   },
-
   {
     "routeName": "what-is-glassmorphism",
     "sidebarName": "Glassmorphism",

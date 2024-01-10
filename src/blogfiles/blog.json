@@ -80,6 +80,15 @@
     "category": "JavaScript",
     "children": [
       {
+        "routeName": "temporal-dead-zone-in-javascript",
+        "sidebarName": "Temporal Dead Zone",
+        "title": "What is Temporal Dead Zone",
+        "link": "blogfiles/javascript/temporal-dead-zone-in-javascript/index.md",
+        "smallTextHint": "What is Temporal Dead Zone (TDZ) in JavaScript and why it is important to understand the role of TDZ to write error and bug free code.",
+        "like": 100,
+        "heart": 300
+      },
+      {
         "routeName": "you-should-not-use-fetch-api",
         "sidebarName": "You should not use Fetch API",
         "title": "You should not use Fetch API",
