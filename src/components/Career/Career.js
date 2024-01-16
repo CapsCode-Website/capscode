@@ -124,7 +124,7 @@ function Career({ setSelectedIndex }) {
                 <h4 className={classes.text}>
                   Dev.to{" "}
                   <span style={{ color: "darkgrey" }}>
-                    (Total View : 44 K+)
+                    (Total View : 60K+)
                   </span>
                 </h4>
               </div>
@@ -144,7 +144,7 @@ function Career({ setSelectedIndex }) {
                 <h4 className={classes.text}>
                   Hashnode{" "}
                   <span style={{ color: "darkgrey" }}>
-                    (Total Views: 5.2 K+)
+                    (Total Views: 10.5K+)
                   </span>
                 </h4>
               </div>
