@@ -3,15 +3,6 @@
     "category": "General",
     "children": [
       {
-        "routeName": "horizontal-swiper-using-html-css",
-        "sidebarName": "Horizontal swiper using only HTML & CSS",
-        "title": "Horizontal swiper using only HTML & CSS",
-        "link": "blogfiles/general/horizontal-swiper-using-html-css/index.md",
-        "smallTextHint": "Swiper or sliders are commonly used elements in web design to showcase content in a visually appealing way. While JavaScript-powered sliders are prevalent, the challenge lies in creating a slider using only HTML and CSS. Let's embark on this coding journey together.",
-        "like": 100,
-        "heart": 300
-      },
-      {
         "routeName": "why-we-need-http-methods",
         "sidebarName": "Why we need http methods",
         "title": "Why we need http methods",
@@ -323,6 +314,15 @@
   {
     "category": "HTML/CSS",
     "children": [
+      {
+        "routeName": "horizontal-swiper-using-html-css",
+        "sidebarName": "Horizontal swiper using only HTML & CSS",
+        "title": "Horizontal swiper using only HTML & CSS",
+        "link": "blogfiles/html-css/horizontal-swiper-using-html-css/index.md",
+        "smallTextHint": "Swiper or sliders are commonly used elements in web design to showcase content in a visually appealing way. While JavaScript-powered sliders are prevalent, the challenge lies in creating a slider using only HTML and CSS. Let's embark on this coding journey together.",
+        "like": 100,
+        "heart": 300
+      },
       {
         "routeName": "variable-in-css",
         "sidebarName": "Variable in CSS",
