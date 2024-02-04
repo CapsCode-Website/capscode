@@ -8,6 +8,10 @@ In the world of web development, creating interactive and engaging user interfac
 
 ![horizontal-swiper-image](https://capscode-website.github.io/blogfiles/html-css/horizontal-swiper-using-html-css/swiper.gif)
 
+
+<iframe width="699" height="393" src="https://www.youtube.com/embed/ghgNZxLXKys?si=xtTWTozkGhTH-MeV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## HTML Structure
 To begin, we'll structure our HTML to create a container for the swiper and individual items to be swiped. Here's a basic example:
 
