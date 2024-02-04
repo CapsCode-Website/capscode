@@ -1,7 +1,7 @@
 ## Introduction
 In the world of web development, creating interactive and engaging user interfaces often requires the use of JavaScript or external libraries. However, there are instances where a simple solution can be crafted using just HTML and CSS. In this article, we'll explore the process of building a horizontal swiper without relying on any JavaScript or external libraries.
 
-**Swipers** or sliders are commonly used elements in web design to showcase content in a visually appealing way. While JavaScript-powered sliders are prevalent, the challenge lies in creating a slider using only HTML and CSS. Let's embark on this coding journey together.
+**Swipers** or **sliders** are commonly used elements in web design to showcase content in a visually appealing way. While JavaScript-powered sliders are prevalent, the challenge lies in creating a slider using only HTML and CSS. Let's embark on this coding journey together.
 
 
 ## What we are building

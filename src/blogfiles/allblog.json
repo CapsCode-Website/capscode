@@ -1,5 +1,14 @@
 [
   {
+    "routeName": "horizontal-swiper-using-html-css",
+    "sidebarName": "Horizontal swiper using only HTML & CSS",
+    "title": "Horizontal swiper using only HTML & CSS",
+    "link": "blogfiles/general/horizontal-swiper-using-html-css/index.md",
+    "smallTextHint": "Swiper or sliders are commonly used elements in web design to showcase content in a visually appealing way. While JavaScript-powered sliders are prevalent, the challenge lies in creating a slider using only HTML and CSS. Let's embark on this coding journey together.",
+    "like": 100,
+    "heart": 300
+  },
+  {
     "routeName": "temporal-dead-zone-in-javascript",
     "sidebarName": "Temporal Dead Zone",
     "title": "What is Temporal Dead Zone",
